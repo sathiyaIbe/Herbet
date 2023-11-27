@@ -36,7 +36,6 @@ const Gallery = () => {
       scrollTrigger:{
         trigger:'#main_gallery',
         start:"top bottom",
-        markers:true,
       }
       })
     var mySplitText = new SplitType(".gallery_texts"),
