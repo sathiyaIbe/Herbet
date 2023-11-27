@@ -7,6 +7,7 @@ import gsap from "gsap";
 import { fadeIn,slideIn, planetVariants, staggerContainer, textContainer, textVariant, textVariant2 } from "/utils/motion.js";
 import { useEffect, useLayoutEffect, useRef } from "react";
 import { zoomIn } from "../utils/motion";
+import Link from "next/link";
 
 const Hero = () =>{
   const text=["aa", "bb", "ccc", "dddd", "eeee", "ffff", "gggg"]
@@ -330,9 +331,9 @@ function getBack(){
           </a>
 
           
-          <div className="circle_container_menu relative menus  left-[42%]  " >
+          <Link href={"AboutUs"} className="circle_container_menu relative menus  left-[42%]  " >
             <h1  className="circle_text_menu self-center">Resources</h1>
-          </div>
+          </Link>
         </div>
         <div className="circle_container_menu relative menus left-[40%]  "  >
             <h1  className="circle_text_menu self-center ">Contact</h1>

@@ -230,7 +230,7 @@ html.lenis {
   @apply text-[24px] md:text-[64px] text-[#fff] font-[ogg] leading-[44px] md:leading-[74px];
 
 }
-.card_description{
+.card_description_about{
   @apply text-[12px] md:text-[14px]  text-[#FFD551] font-[founder] leading-[20px] md:leading-[26px] ;
 
 }

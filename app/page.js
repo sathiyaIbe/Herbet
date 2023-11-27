@@ -6,22 +6,22 @@ import Lenis from '@studio-freight/lenis'
 import gsap from 'gsap';
 const Page = () =>{
 
-  useEffect(()=>{
+//   useEffect(()=>{
 
   
-    const lenis = new Lenis({
+//     const lenis = new Lenis({
      
 
-    })
+//     })
   
-    function raf(time) {
-        lenis.raf(time)
-        requestAnimationFrame(raf)
-    }
+//     function raf(time) {
+//         lenis.raf(time)
+//         requestAnimationFrame(raf)
+//     }
   
-    requestAnimationFrame(raf)
+//     requestAnimationFrame(raf)
   
-})
+// })
   return (
   <div className='bg-[#463838]'>
     {/* <Navbar /> */}

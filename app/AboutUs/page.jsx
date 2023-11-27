@@ -550,7 +550,7 @@ together with a global and diverse team.
       <h1 className='card_header'>
       Saravanan Sahadevan
       </h1>
-      <p className='card_description'>
+      <p className='card_description_about'>
       CEO & FOUNDER
       </p>
     </motion.div>
@@ -563,7 +563,7 @@ together with a global and diverse team.
       <h1 className='card_header'>
       Amir Norman
       </h1>
-      <p className='card_description'>
+      <p className='card_description_about'>
       COO & CO-FOUNDER
       </p>
     </motion.div>
@@ -576,7 +576,7 @@ together with a global and diverse team.
       <h1 className='card_header'>
       Farra Khalili
       </h1>
-      <p className='card_description'>
+      <p className='card_description_about'>
       CCO 
       </p>
     </motion.div>
