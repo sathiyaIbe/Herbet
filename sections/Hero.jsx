@@ -54,7 +54,7 @@ let secondRef=useRef()
 // });
 
 useEffect(()=>{
-  // heroAnimation()
+   heroAnimation()
   // gsap.fromTo(".menus",{x:30},{x: -40,y:10, repeat:-1, repeatDelay: 0.1, duration:2.5,scrub: true, yoyo: true , ease:"Linear.easeNone"})
   const ctx3=gsap.context(()=>{
    const t1=gsap.timeline()
@@ -188,13 +188,13 @@ function heroAnimation(){
 function getMenu(){
   
   // gsap.to(firstRef,{x:"-100%" , duration:3})
-  gsap.to(secondRef,{x:"-100%", duration:3})
+  gsap.to(secondRef,{x:"-100%", duration:2})
   
 }
 
 function getBack(){
   
-  gsap.to(secondRef,{x:"0%", duration:3})
+  gsap.to(secondRef,{x:"0%", duration:2})
   
 }
 
@@ -325,7 +325,7 @@ function getBack(){
 20.2623 22.6304 20.167 22.2466 20.2508C21.2987 20.4567 20.6003 21.3067 20.6003 22.2938C20.6003 23.9404 20.6118 25.587 20.6156 27.2336C20.6156 29.1737 20.6156 31.1138 20.6156 33.0539L20.6118 33.0577Z" fill="#463838"/>
 </svg>
 <div className="flex flex-col md:block hidden mb-24 ">
-        <div className="circle_main_container gap-11 flex  self-center ">
+        <div className="circle_main_containe gap-11 flex  self-center ">
           <a  onClick={()=>{getBack()}} href="#resourse" className="circle_container_menu relative menus left-[17%] " >
             <h1 className="circle_text_menu self-center  ">Work</h1>
           </a>

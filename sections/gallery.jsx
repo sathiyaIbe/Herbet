@@ -5,30 +5,35 @@ import { motion } from "framer-motion";
 
 import {  useEffect, useRef, useState } from "react";
 import {ScrollTrigger} from "gsap/dist/ScrollTrigger";
-import { ScrollToPlugin,MotionPathPlugin } from 'gsap/all';
+import { ScrollToPlugin,MotionPathPlugin,CSSRulePlugin } from 'gsap/all';
 import SplitType from "split-type";
-gsap.registerPlugin(ScrollTrigger,MotionPathPlugin);
+gsap.registerPlugin(ScrollTrigger,MotionPathPlugin,CSSRulePlugin);
 
 const Gallery = () => {
   useEffect(()=>{
-    // const t1=gsap.timeline({
+    // let rule = CSSRulePlugin.getRule(".reveal:after");
+    // const t111=gsap.timeline({
     //   scrollTrigger:{
-    //   trigger: "#first",
-    //   start: "top bottom",
-    //   markers:true,
+    //     trigger:'#gallery',
+    //     start:"top center",
+    //     end:"top center",
+    //     markers:true,
+    //     toggleActions: "restart none none reset",
+
     //   }
-    // });
-    // t1.to(".reveal", { autoAlpha: 1 })
-    // t1.from(".reveal",  {
-    //   x: -100,
-    //   ease: Power2.out,
+    // })
+    // .set(".reveal", { autoAlpha: 1 })
+
+    // .from(".reveal",  {
+    //   xPercent: -100,
+    //   ease: "easeOut",
     //   duration:1.5
     // })
-    // t1.from(".img1",  {
-    //   x: 500,
+    // .from(".img1",  {
+    //   xPercent: 100,
     //   scale: 1.3,
     //   delay: -1.5,
-    //   ease: Power2.out,
+    //   ease: "easeOut",
     //   duration:1.5
     // });
 
@@ -97,16 +102,15 @@ const Gallery = () => {
   },[])
   
   return(
-  <section className="min-h-screen flex flex-col bg-[#463838] first gap-6"> 
+  <section  className="min-h-screen flex flex-col bg-[#463838]  gap-6"> 
     <div className="w-[90%] self-center" >
-      <h1 className="gallery_header">
-      Our Studio<span className="text-[#FFD551] font-black">/</span>
+      <h1 className="gallery_header">Our Studio<span className="text-[#FFD551] font-black">/</span>
       </h1>
     </div>
-    <div className="flex flex-col bg-[#]">
-      <div className="flex h-[700px] bg-[#]">
+    <div id="gallery" className="flex flex-col bg-[#]">
+      <div className="flex  bg-[#]">
         {/* <div className="bg-[#fff] relative">
-          <div className="reveal">
+          <div className="reveal bg-[#000]">
         <img src="/gallery_1.png" className="w-2/3 img1 " alt="img"/>
         </div>
         </div> */}

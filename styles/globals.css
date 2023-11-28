@@ -91,7 +91,7 @@ html.lenis {
  
 }
 .circle_text_new{
-  @apply text-[16px] md:text-[30px]  text-[#fff] font-[ogg] leading-[24px] md:leading-[36px] text-center w-[65%];
+  @apply text-[16px] md:text-[30px]  text-[#fff] font-black font-[ogg] leading-[24px] md:leading-[36px] text-center w-[65%];
  
 }
 
@@ -178,13 +178,18 @@ html.lenis {
   @apply border-[2px] hover:bg-[#441414] hover:text-[#FFD551]  rounded-lg border-[#441414] p-3 pl-6 pr-6  text-[16px]  md:text-[20.57px] leading-[22px] md:leading-[24px] text-[#441414] font-[founderBold] 
 }
 .count{
-  @apply text-[14px] md:text-[20px]  text-[#fff] font-[founder] leading-[20px] md:leading-[24px] ;
+  @apply text-[24px] md:text-[20px]  text-[#fff] font-[founder] leading-[34px] md:leading-[24px] ;
   visibility: hidden;
 
 }
 
+.count_1{
+  @apply text-[24px] md:text-[20px]  text-[#fff] font-[founder] leading-[34px] md:leading-[24px] ;
+
+}
+
 .container_about_header{
-  @apply text-[20px] md:text-[28px]  text-[#fff] font-[ogg] leading-[28px] md:leading-[36px] font-medium ;
+  @apply text-[24px] md:text-[28px]  text-[#fff] font-[ogg] leading-[28px] md:leading-[36px] font-medium ;
 
 }
 .text_container_1{
@@ -207,8 +212,20 @@ html.lenis {
   visibility: hidden;
 
 }
+.count_text_container_1{
+  visibility: hidden;
+
+}
+.text_cont_1{
+  visibility: hidden;
+}
+.circle_main_container{
+  visibility: hidden;
+
+}
+
 .container_about_description{
-  @apply text-[12px] md:text-[16px]  text-[#fff] font-[founder] leading-[20px] md:leading-[26px] ;
+  @apply text-[18px] md:text-[16px]  text-[#fff] font-[founder] leading-[30px] md:leading-[26px] font-[100] tracking-[1.5px] ;
 
 }
 
@@ -221,8 +238,8 @@ html.lenis {
   visibility: hidden;
 }
 
-.card_header{
-  @apply text-[12px] md:text-[18px]  text-[#fff] font-[founder] leading-[20px] md:leading-[26px] tracking-[0.5px] ;
+.card_header_about{
+  @apply text-[32px] md:text-[38px]  text-[#fff] font-[founderMedium] leading-[60px] md:leading-[56px] tracking-[0.5px] ;
 
 }
 
@@ -231,15 +248,14 @@ html.lenis {
 
 }
 .card_description_about{
-  @apply text-[12px] md:text-[14px]  text-[#FFD551] font-[founder] leading-[20px] md:leading-[26px] ;
+  @apply text-[24px] md:text-[24px]  text-[#FFD551] font-[founder] leading-[30px] md:leading-[32px] ;
 
 }
 .reveal {
   visibility: hidden;
   position: relative;
-  width: 80%;
-  height: 80%;
-  max-width: 500px;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -249,6 +265,8 @@ html.lenis {
   object-fit: cover;
   transform-origin: left;
 }
+
+
 
 /* About Us */
 

@@ -17,7 +17,9 @@ const Resource = () => {
     const contextCreate=gsap.context(()=>{
 
   
-    
+      const mm=gsap.matchMedia()
+mm.add("(min-width:768px)",()=>{
+
     let proxy = { skew: 0 },
   skewSetter = gsap.quickSetter(".skewElem", "skewY", "deg"), // fast
   clamp = gsap.utils.clamp(2, -2); // don't let the skew go beyond 20 degrees. 
@@ -38,7 +40,7 @@ onUpdate: (self) => {
 // make the right edge "stick" to the scroll bar. force3D: true improves performance
 gsap.set(".skewElem", {transformOrigin: "right center", force3D: true});
 
-
+})
 const t2=gsap.timeline({
   scrollTrigger:{
     trigger:'#main2',
@@ -271,9 +273,9 @@ gsap.to(a,
       </motion.div>
     </div>
   </section>
-<section data-lenis-prevent id="main1" className="min-h-screen max-w-[100vw] flex flex-col gap-11 justify-center  bg-[#463838] skewEle">
+<section data-lenis-prevent id="main1" className="md:min-h-screen min-h-[50vh] max-w-[100vw] flex flex-col gap-11 justify-center  bg-[#463838] skewEle">
   <div className="flex flex-col justify-center  mt-6 gap-9 self-center w-[80%]">
-        <div  ref={circleRef}  className="circle_main_container flex  justify-between w-fit self-center ">
+        <div  ref={circleRef}  className="circle_main_containe flex  justify-between w-fit self-center ">
           <div className="circle_container circle3  relative left-[6%]  ">
             <h1   className="circle_text self-center ">1. Strengthening your identity</h1>
           </div>
@@ -292,7 +294,7 @@ gsap.to(a,
         </div>
 </section>
 
-  <section id="main2" className="min-h-screen max-w-[100vw] flex flex-col gap-11 justify-center  bg-[#463838] skewEle">
+  <section id="main2" className="md:min-h-screen min-h-[50vh] max-w-[100vw] flex flex-col gap-11 justify-center  bg-[#463838] skewEle">
 
 <div className="w-[90%] flex flex-col self-center">
 <div className=" self-center w-[90%]">

@@ -22,7 +22,7 @@ const Footer = () => (
       <h1 className="footer_bottom_text order-2 md:order-1 text-center">
       Created by © Herbet 2023 
       </h1>
-      <div className="flex self-en w-full md:w-fit gap-6 order-1 md:order-2">
+      <div className="flex justify-center md:self-start self-en w-full md:w-fit gap-6 order-1 md:order-2">
 <img src='/twitter_icon.svg' className="cursor-pointer" alt="twitter"/>
 <img src='/insta_icon.svg' className="cursor-pointer" alt="instagram"/>
 <img src='/linkedin_icon.svg' className="cursor-pointer" alt="linkedin"/>
