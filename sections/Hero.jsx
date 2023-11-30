@@ -2,12 +2,13 @@
 'use client';
 import { motion } from "framer-motion";
 import SplitType from "split-type";
-
+import MagnetEffect from "../sections/MagnetEffect"
 import gsap from "gsap";
 import { fadeIn,slideIn, planetVariants, staggerContainer, textContainer, textVariant, textVariant2 } from "/utils/motion.js";
 import { useEffect, useLayoutEffect, useRef } from "react";
 import { zoomIn } from "../utils/motion";
 import Link from "next/link";
+import { Observer } from "gsap/Observer";
 
 const Hero = () =>{
   const text=["aa", "bb", "ccc", "dddd", "eeee", "ffff", "gggg"]
@@ -110,6 +111,47 @@ useEffect(()=>{
       ease:"easeIn",
     duration:1,})
      }
+
+     let mouseX = 0
+     let   mouseY = 0
+
+
+   
+    //  gsap.set(".cursour", {xPercent: -50, yPercent: -50});
+
+    //  let xTo = gsap.quickTo(".cursour", "x", {duration: 0.6, ease: "power3"}),
+    //      yTo = gsap.quickTo(".cursour", "y", {duration: 0.6, ease: "power3"});
+   
+    //      Observer.create({
+    //        type: "wheel,touch,pointer",
+    //        target:'#container',
+    //        // wheelSpeed: -1,
+        
+    //        onMove:(self)=>{
+    //          xTo(self.x);
+    //          yTo(self.y);
+    //        },
+    //        // tolerance: 10,
+    //        // preventDefault: true
+    //      });
+    let cursorScale = document.querySelectorAll('.menus')
+    var cursor = document.querySelector('.cursor')
+         cursorScale.forEach(link => {
+          link.addEventListener('mouseleave', () => {
+              cursor.classList.remove('grow');
+              cursor.classList.remove('grow-small');
+          });
+          link.addEventListener('mousemove', () => {
+              cursor.classList.add('grow');
+              if(link.classList.contains('small')){
+                  cursor.classList.remove('grow');
+                  cursor.classList.add('grow-small');
+              }
+          });
+      });
+      
+
+
   })
 
 
@@ -137,7 +179,7 @@ function heroAnimation(){
    // tl.kill()
   }
   gsap.timeline()
-.fromTo(lines,{opacity:0, y:80} , {duration: 2 ,opacity:1, y:0 ,  ease:"Power4.easeInOut",stagger:0.1, delay:2.3});
+.fromTo(lines,{opacity:0, y:80} , {duration: 2 ,opacity:1, y:0 ,  ease:"easeInOut",stagger:0.1, delay:2.3});
 }
 
 // useLayoutEffect(() => {
@@ -203,65 +245,12 @@ function getBack(){
 
   return (
 
-// <div className="wrapper  flex h-screen" ref={wrapperRef}>
-//       <section className=" bg-[#463838] min-w-[100vw] header">
-       
-//         <h1>We help craft transformative brands 
-// that propel the world forward, 
-// one story at a time.</h1>
-//       </section>
-//       <motion.section   ref={firstRef} className="first  bg-green-200 min-w-[100vw]" data-pin="true">
-        
-//         <ul className="flex gap-3 text-xl">
-//    {text.map((each,index)=>{
-  
-//    return(
 
-//    <motion.section
-//    variants={textVariant2(index)}
-//    initial="hidden"
-//    whileInView="show"
-//    >
-//      {each}
-//    </ motion.section> 
-//     )
-//  })}
-  
-//    </ul>
-//    <motion.ul variants={staggerContainer(5)}
-//     initial="hidden"
-//     whileInView="show"
-//      className="flex gap-3 text-xl">
-//    {text.map((each,index)=>{
-  
-//    return(
-
-//    <motion.section
-//    variants={textVariant2(index+15)}
-//    initial="hidden"
-//    whileInView="show"
-//    >
-//      {each}
-//    </ motion.section> 
-//     )
-//  })}
-  
-//    </motion.ul>
-       
-//       </motion.section>
-//       <section  ref={secondRef} className="bg-red-200 min-w-[100vw] second" data-pin2="true">
-        
-//         <motion.img
-//       variants={slideIn("right","spring", 1,1)}
-//       initial="hidden"
-//       whileInView="show"
-//         src='/people-01.png'/>
-//       </section>
-//     </div> 
-<div  id='container' className="flex   md:min-h-screen w-screen overflow-hidden " ref={el=>wrapperRef=el} >
+<div   className="flex   md:min-h-screen w-screen overflow-hidden " ref={el=>wrapperRef=el} >
       <section ref={el=>firstRef=el} className=" flex flex-col    bg-[#463838] min-w-[100vw] header">
       <motion.div  className="flex justify-end w-[95%] self-end  h-[10vh] ">
-       <svg onClick={()=>{getMenu()}} width="57" height="64" viewBox="0 0 57 64"  className="p-4" fill="none" xmlns="http://www.w3.org/2000/svg">
+        
+       <svg onClick={()=>{getMenu()}} width="57" height="64" viewBox="0 0 57 64"  className="p-4 menus" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M55.6875 0C56.3476 0.247752 56.8311 0.659401 56.9616 1.38741C56.9923 1.55512 57 1.73045 57 1.90578C57 18.6309 57 35.3523 57 52.0774C57 53.4915 56.1058 54.5168 54.6667 54.7684C49.4207 55.6908 44.1747 
 56.6208 38.9287 57.5394C37.3207 57.8215 35.7089 58.0959 34.0933 58.3589C32.9075 58.5533 32.0018 57.8291 31.9941 56.6399C31.9711 53.8231 31.9826 51.0026 31.9788 48.1858C31.9788 46.7565 31.9788 45.3233 31.9788 
 43.894C31.9788 43.7796 31.9788 43.6653 31.9788 43.4747C31.7716 43.6348 31.6142 43.7453 31.4684 43.8635C29.5688 45.4034 27.6845 46.9699 25.7542 48.4755C25.2783 48.849 25.0788 49.1882 25.0864 49.7981C25.1248 52.409 
@@ -277,18 +266,18 @@ function getBack(){
 </svg>
 
        </motion.div>
-        <div className="flex flex-col justify-center h-[90vh] ">
+        <div  className="flex flex-col justify-center h-[90vh] ">
      
        
        <div className="flex flex-col self-center justify-center hide_container gap-6   md:w-[65%] w-[80%]">
         
        <div  className="flex flex-col  gap-6  justify-center">
-        <h1  id="hero_headers" className="hero_header text-center self-center text-[#FFD551]  "><a className="text-white font-black">&#123;</a>Herbet is a brand 
+        <h1  id="hero_headers" className="menus hero_header text-center self-center text-[#FFD551]  "><a className="text-white font-black">&#123;</a>Herbet is a brand 
   strategy, design and 
     experience firm<a className="font-black text-white">&#125; </a></h1>
     </div>
     <div className="description_container self-center flex justify-center md:w-[60%] ">
-    <p className="description_header ">We're the folks you go to before shooting for the stars. Before aiming high, we ensure your brand's essence is undeniably strong.</p>
+    <p className="description_header menus small">We're the folks you go to before shooting for the stars. Before aiming high, we ensure your brand's essence is undeniably strong.</p>
         </div>
        
         {/* <div className="flex justify-center  mt-6 self-center">
@@ -309,8 +298,10 @@ function getBack(){
      
       </section>
 
-      <section ref={el=>secondRef=el} className="bg-[#FFD551] min-h-screen flex flex-col min-w-[100vw] menu_conatainer">
-      <svg onClick={()=>{getBack()}} width="57" height="64" className="p-4" viewBox="0 0 57 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <section id='container' ref={el=>secondRef=el} className="bg-[#FFD551] min-h-screen flex flex-col min-w-[100vw] menu_conatainer">
+      {/* <div className='cursour'>  </div> */}
+
+      <svg onClick={()=>{getBack()}} width="57" height="64" className="p-4 menus cursor-pointer" viewBox="0 0 57 64" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M55.6875 0C56.3476 0.247752 56.8311 0.659401 56.9616 1.38741C56.9923 1.55512 57 1.73045 57 1.90578C57 18.6309 57 35.3523 57 52.0774C57 53.4915 56.1058 54.5168 54.6667 54.7684C49.4207 55.6908 44.1747 
 56.6208 38.9287 57.5394C37.3207 57.8215 35.7089 58.0959 34.0933 58.3589C32.9075 58.5533 32.0018 57.8291 31.9941 56.6399C31.9711 53.8231 31.9826 51.0026 31.9788 48.1858C31.9788 46.7565 31.9788 45.3233 31.9788 
 43.894C31.9788 43.7796 31.9788 43.6653 31.9788 43.4747C31.7716 43.6348 31.6142 43.7453 31.4684 43.8635C29.5688 45.4034 27.6845 46.9699 25.7542 48.4755C25.2783 48.849 25.0788 49.1882 25.0864 49.7981C25.1248 52.409 
@@ -325,19 +316,26 @@ function getBack(){
 20.2623 22.6304 20.167 22.2466 20.2508C21.2987 20.4567 20.6003 21.3067 20.6003 22.2938C20.6003 23.9404 20.6118 25.587 20.6156 27.2336C20.6156 29.1737 20.6156 31.1138 20.6156 33.0539L20.6118 33.0577Z" fill="#463838"/>
 </svg>
 <div className="flex flex-col md:block hidden mb-24 ">
-        <div className="circle_main_containe gap-11 flex  self-center ">
-          <a  onClick={()=>{getBack()}} href="#resourse" className="circle_container_menu relative menus left-[17%] " >
-            <h1 className="circle_text_menu self-center  ">Work</h1>
-          </a>
 
-          
+        <div className="circle_main_containe gap-11 flex  self-center ">
+        <MagnetEffect>
+          <a  onClick={()=>{getBack()}} href="#resourse" className="circle_container_menu relative menus left-[17%] " >
+            <h1 className="circle_text_menu circle_cursour self-center  ">Work</h1>
+          </a>
+          </MagnetEffect>
+          <MagnetEffect>
           <Link href={"AboutUs"} className="circle_container_menu relative menus  left-[42%]  " >
-            <h1  className="circle_text_menu self-center">Resources</h1>
+            <h1  className="circle_text_menu circle_cursour self-center">Resources</h1>
           </Link>
+          </MagnetEffect>
+
         </div>
-        <div className="circle_container_menu relative menus left-[40%]  "  >
+        <MagnetEffect>
+        
+        <div className="circle_container_menu circle_cursour relative menus left-[40%]  "  >
             <h1  className="circle_text_menu self-center ">Contact</h1>
           </div>
+          </MagnetEffect>
         
         </div>
 

@@ -13,7 +13,21 @@ const Resource = () => {
   const [svgIcon,setSvgIcon]=useState(false)
   useEffect(()=>{
     // gsap.to('.resourse_texts', {opacity:0})
-
+    let cursorScale = document.querySelectorAll('.menus')
+    var cursor = document.querySelector('.cursor')
+         cursorScale.forEach(link => {
+          link.addEventListener('mouseleave', () => {
+              cursor.classList.remove('grow');
+              cursor.classList.remove('grow-small');
+          });
+          link.addEventListener('mousemove', () => {
+              cursor.classList.add('grow');
+              if(link.classList.contains('small')){
+                  cursor.classList.remove('grow');
+                  cursor.classList.add('grow-small');
+              }
+          });
+      });
     const contextCreate=gsap.context(()=>{
 
   
@@ -230,8 +244,8 @@ gsap.to(a,
   return(
     <div id="resourse" className=" flex flex-col">
        <div className="flex justify-between self-center w-[95%] ">
-          <h1 className="work_text">OUR WORK</h1>
-          <h1 className="work_text">2023</h1>
+          <h1 className="work_text menus small">OUR WORK</h1>
+          <h1 className="work_text menus small">2023</h1>
         </div>
   <section  className="min-h-screen image_container bg-[#463838]">
     <div data-lenis-prevent className="flex flex-col  waves ">
@@ -239,9 +253,9 @@ gsap.to(a,
         viewport={{ once: true }}
          whileInView={()=>{skew('.skewElem')}} className='flex flex-col md:flex-row skewElem'>
         <img
-        src='/work_6.png' alt='work' className="w-2/3 hidden md:block " />
+        src='/work_6.png' alt='work' className="w-2/3 menus  hidden md:block " />
         <img
-         src='/work_1.png' alt='work' className="w-1/3 hidden md:block" />
+         src='/work_1.png' alt='work' className="w-1/3 menus hidden md:block" />
 <img
          src='/work_1_mob.png' alt='work' className=" md:hidden" />
       </motion.div>

@@ -23,6 +23,7 @@ function AboutUs() {
 
     useEffect(()=>{
         // gsap.to('.resourse_texts', {opacity:0})
+        
         const lenis = new Lenis({
      
 
@@ -36,125 +37,28 @@ function AboutUs() {
         requestAnimationFrame(raf)
         const contextCreate=gsap.context(()=>{
 
-        //   const t1=  gsap.timeline({
-        //         scrollTrigger:{
-        //             trigger:".first_container",
-        //             start:'top center',
-                   
-        //         }
-        //       })  .to("#_10",{
-        //         opacity:1,
-        //         duration:0.08,
-        //         delay:1,
-        //       },)
-        //       .fromTo("#_01",{
-        //         y:30,
-        //       },{
-        //         opacity:1,
-        //         y:0,
-        //         duration:0.08,
-        //       })
-        //       .fromTo("#_02",{
-        //         y:30,
-                
-              
-        //       },{
-        //         y:0,
-        //         opacity:1,
-        //         duration:0.08,
-        //       },).fromTo("#_03",{
-        //         y:30,
-               
-              
-        //       },{
-        //         y:0,
-        //         opacity:1,
-        //         duration:0.08,
-              
-        //       })
-        //    .fromTo("#_04",{
-        //         y:30,
-        //       },{
-        //         y:0,
-        //         opacity:1,
-        //         duration:0.08, 
-        //     }).fromTo('.text_container_1',
-        //         {
-        //             y:30,
-        //           },{
-        //             y:0,
-        //             autoAlpha:1,
-        //             duration:0.08,
-                  
-                  
-                
-        //     },0.3).fromTo('.count_text_container_1',
-        //     {
-        //         y:30,
-        //       },{
-        //         y:0,
-        //         autoAlpha:1,
-        //         duration:0.08,
-              
-              
-            
-        // },0.3)
-
-
-
-            var points = gsap.utils.toArray('.point');
-            var points1 = gsap.utils.toArray('.point1');
-
-            
-            var height = 100 * points.length;
-
-            // function goToSection(i) {
-            //   gsap.to(window, {
-            //     scrollTo: { y: i * innerHeight, autoKill: false, ease: "Power3.easeInOut" },
-            //     duration: 0.85
-            //   });
-            // }
-            // points.forEach((eachPanel, i) => {
-            //   // const mainAnim = gsap.timeline({ paused: true });
-            
-            //   ScrollTrigger.create({
-            //     trigger: eachPanel,
-            //     onEnter: () => goToSection(i)
-            //   });
-            
-            //   ScrollTrigger.create({
-            //     trigger: eachPanel,
-            //     start: "bottom bottom",
-            //     onEnterBack: () => goToSection(i)
-            //   });
-            // });
-            
             var tl = gsap.timeline({
                 scrollTrigger: {
                   trigger: ".wrapper",
                   start: "top top",
-                  // end: "+="+height+"%",
                   scrub: 1,
-                //  pin:true,
-                  // snap: 1/(points.length-1)*1.5,
-
                 }
               })
 
+              let mm = gsap.matchMedia();
+              mm.add("(min-width:768px)",()=>{
+
               
-           
-                        const pin = gsap.timeline(
+
+                  const pin = gsap.timeline(
                
                 {
           
                   scrollTrigger: {
                     trigger: ".fourth_container",
                     pin: true,
-                    // scrub:1,
                     start: "top top",
                     end:"+=200%",
-                    // markers:true,
-                    // toggleActions:'restart none none none',
                     snap: {
                           snapTo: 0.2,
                           duration: 0.3,
@@ -163,6 +67,23 @@ function AboutUs() {
                   },
           
                 },0)
+
+                
+                const pinCenter = gsap.timeline(
+               
+                  {
+            
+                    scrollTrigger: {
+                      trigger: ".fourth_container",
+                      start: "top 20%",
+                    //   snap: {
+                    //         snapTo: 0.2,
+                    //         duration: 0.3,
+                    //         delay: 0,
+                    //         },
+                    },
+            
+                  },0)
                 .to('#green',{
                   rotation:"-90",
                   repeat:0,
@@ -196,7 +117,7 @@ function AboutUs() {
                   rotation:90,
                 },0).fromTo("#text_cont_1",{
                   y:100,
-                  ease:Power4.easeIn,
+                  ease:"easeIn",
                   duration:0.2,
 
                   
@@ -542,6 +463,15 @@ function keyDown(e){
                   tolerance: 10,
                   preventDefault: true
                 });
+                return () => {
+                  {/* A return function for killing the animation on component unmount */ }
+                 
+                  pin.kill();
+                 
+                };
+  
+
+              })
               var mySplitText = new SplitType(".header_profile")
  
              var lines=(mySplitText.words)
@@ -578,7 +508,7 @@ function keyDown(e){
                   scrollTrigger:{
                     trigger:'.first_containerss',
                     start: "top top",
-                    end:'=+150%',
+                    end:'=+120%',
                     pin:true,
                     // markers:true,
                     // snap: {
@@ -587,7 +517,19 @@ function keyDown(e){
                     //   delay: 0,
                     //   },
                   }
-                }) .to("#_10",{
+                })
+                
+                const newT1Center=gsap.timeline({
+                  scrollTrigger:{
+                    trigger:'.first_containerss',
+                    start: "top center",
+                   // snap: {
+                    //   snapTo: 0.2,
+                    //   duration: 0.3,
+                    //   delay: 0,
+                    //   },
+                  }
+                }).to("#_10",{
                   opacity:1,
                   duration:0.08,
                   delay:1,
@@ -678,11 +620,11 @@ function keyDown(e){
                 if(targetElement1==1){
                      tss.to("#firstCircleCont",{
                       yPercent:-100,
-                      ease:Power4.easeOut,
+                      ease:"easeOut",
 
                      }).to("#secondCircleCont",{
                       yPercent:-100,
-                      ease:Power4.easeOut,
+                      ease:"easeOut",
                       
                      },0.1).to("#_00",{
                       opacity:1,
@@ -749,11 +691,11 @@ function keyDown(e){
                 if(targetElement1==2){
                   tss.to("#secondCircleCont",{
                     yPercent:-200,
-                    ease:Power4.easeOut,
+                    ease:"easeOut",
 
                    }).to("#thirdCircleCont",{
                     yPercent:-200,
-                    ease:Power4.easeOut,
+                    ease:"easeOut",
                     
                    },0.1) .to("#_000",{
                     opacity:1,
@@ -825,22 +767,22 @@ function keyDown(e){
                 if(e==0){
                      tss.to("#secondCircleCont",{
                       yPercent:0,
-                      ease:Power4.easeOut,
+                      ease:"easeOut",
 
                      }).to("#firstCircleCont",{
                       yPercent:0,
-                      ease:Power4.easeOut,
+                      ease:"easeOut",
                       
                      },0.1)
                 }
                 if(e==1){
                   tss.to("#thirdCircleCont",{
                     yPercent:-100,
-                    ease:Power4.easeOut,
+                    ease:"easeOut",
 
                    }).to("#secondCircleCont",{
                     yPercent:-100,
-                    ease:Power4.easeOut,
+                    ease:"easeOut",
                     
                    },0.1)
                 }
@@ -849,7 +791,6 @@ function keyDown(e){
                 return () => {
                   {/* A return function for killing the animation on component unmount */ }
                   t5.kill();
-                  pin.kill();
                   tl.kill();
                   newT1.kill();
                 };
@@ -963,7 +904,7 @@ In a world where brand identity is paramount, the essence of messaging from with
 
             </div>
              <div className='hidden md:block '>
-                <div className=' min-h-[250vh] ' >
+                <div className=' min-h-[220vh] ' >
                   <div className='first_containerss firstss_another_containaer min-h-[100vh] flex gap-11 flex flex-col point justify-center'>
                     <div className='flex flex-col  h-[400px] overflow-hidden '>
                     <div id="firstCircleCont" className=' flex flex-col justify-center self-center  min-h-[400px] w-[70%]  gap-11 '>
@@ -1056,9 +997,12 @@ In a world where brand identity is paramount, the essence of messaging from with
 
 
 
+
+
         </section>
+        <div className='hidden md:block '>
         <section className=' min-h-[300vh]    bg-[#463838]  ' >
-          <div className='r flex flex-col justify-center another_containaer fourth_container min-h-[100vh] '>
+          <div className=' flex flex-col justify-center another_containaer fourth_container min-h-[100vh] '>
           <div className='flex justify-between self-center w-[90%] '>
             <div className='flex flex-col self-center  h-[400px] overflow-hidden'>
                     <div id='text_cont_1' className='text_cont_1 flex justify-center   w-[90%] gap-11 min-h-[400px] '>
@@ -1139,7 +1083,7 @@ In a world where brand identity is paramount, the essence of messaging from with
     </div>
     
     </div>
-    <div  id="green" className="circle_main_container flex  justify-end w-fit self-center  w-[60%] items-center relative left-[500px]   ">
+    <div  id="green" className="circle_main_container flex  justify-end w-fit self-center  w-[60%] items-center relative left-[450px]   ">
           <div id="green4"  className="circle_container_new circle3  relative left-[15%]  ">
             <h1   className="circle_text_new self-center ">Communication</h1>
           </div>
@@ -1160,6 +1104,113 @@ In a world where brand identity is paramount, the essence of messaging from with
     </div>
     </div>
 </section> 
+</div>
+
+<div className='md:hidden'>
+<section className=' min-h-[100vh]    bg-[#463838]  ' >
+          <div className=' flex flex-col justify-center another_containaer fourth_containe min-h-[100vh] '>
+          <div className='flex flex-col justify-around   self-center w-[90%] '>
+            <div className='flex flex-col self-center mt-24  h-[400px] overflow-hidden'>
+                    <div id='text_cont_1' className='text_cont_1 flex justify-center   w-[90%] gap-11 min-h-[400px] '>
+                      <div className='flex flex-col justify-center'>
+                      <h1 className='count_1 count_text_container_ '>01</h1>
+            </div>
+           
+<div  className='flex flex-col justify-center gap-4  text_container_  '>
+
+
+    <h1 className='container_about_header'>
+    Identity    </h1>
+    <p className='container_about_description'>
+    We're the folks you go to before shooting for the stars. Before aiming high, we ensure your brand's essence is undeniably strong
+    </p>
+   
+    </div>
+   
+
+
+    </div>
+    <div id='text_cont_2' className=' flex justify-center  w-[90%]  gap-11 min-h-[400px] '>
+                      <div className='flex flex-col justify-center'>
+                      <h1 className='count_1 count_text_container_ '>02</h1>
+            </div>
+           
+<div  className='flex flex-col justify-center gap-4  text_container_  '>
+
+
+    <h1 className='container_about_header'>
+    Strategy    </h1>
+    <p className='container_about_description'>
+    We're the folks you go to before shooting for the stars. Before aiming high, we ensure your brand's essence is undeniably strong
+    </p>
+   
+    </div>
+   
+
+
+    </div>
+    <div id='text_cont_3' className=' flex justify-center  w-[90%]  gap-11 min-h-[400px] '>
+                      <div className='flex flex-col justify-center'>
+                      <h1 className='count_1 count_text_container_ '>03</h1>
+            </div>
+           
+<div  className='flex flex-col justify-center gap-4  text_container_  '>
+
+
+    <h1 className='container_about_header'>
+    Experience    </h1>
+    <p className='container_about_description'>
+    We're the folks you go to before shooting for the stars. Before aiming high, we ensure your brand's essence is undeniably strong
+    </p>
+   
+    </div>
+   
+
+
+    </div>
+    <div id='text_cont_4' className=' flex justify-center  w-[90%]  gap-11 min-h-[400px] '>
+                      <div className='flex flex-col justify-center'>
+                      <h1 className='count_1 count_text_container_ '>04</h1>
+            </div>
+           
+<div  className='flex flex-col justify-center gap-4  text_container_  '>
+
+
+    <h1 className='container_about_header'>
+    Communication    </h1>
+    <p className='container_about_description'>
+    We're the folks you go to before shooting for the stars. Before aiming high, we ensure your brand's essence is undeniably strong
+    </p>
+   
+    </div>
+   
+
+
+    </div>
+    
+    </div>
+    <div  id="green" className="circle_main_container flex justify-center  w-fit self-center  w-[60%] items-center relative left-[200px]   ">
+          <div id="green4"  className="circle_container_new circle3  relative left-[35%] md:left-[15%]  ">
+            <h1   className="circle_text_new self-center ">Communication</h1>
+          </div>
+          <div   className='flex flex-col gap-6 relative'>
+          <div id="green1" className="circle_container_new circle3  relative   ">
+            <h1   className="circle_text_new self-center "> Identity </h1>
+          </div>
+          <div id="green2" className="circle_container_new circle3  relative   ">
+            <h1   className="circle_text_new self-center ">  Experience</h1>
+          </div>
+          </div>
+          <div id="green3" className="circle_container_new circle3  relative left-[-35%] md:left-[-15%] ">
+            <h1   className="circle_text_new self-center ">Strategy</h1>
+          </div>
+       
+        </div>
+
+    </div>
+    </div>
+</section> 
+</div>
 <section id="main2" className='min-h-screen flex flex-col justify-center bg-[#463838] pb-11'>
 <div className='md:w-[80%] flex flex-col gap-11 self-center'>
   <div className='hide_profile_text p-2 md:p-0   self-center'>
