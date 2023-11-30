@@ -888,7 +888,7 @@ ts.to('#green',{
                   stagger:0.05,
                 })
 
-
+                mm.add("(min-width:768px)",()=>{
                 const newT1=gsap.timeline({
                   scrollTrigger:{
                     trigger:'.first_containerss',
@@ -971,6 +971,338 @@ ts.to('#green',{
 
               
           },0.3)
+
+      Observer.create({
+                  type: "wheel,touch",
+                  target:'.firstss_another_containaer',
+                  // wheelSpeed: -1,
+                  // onDown: () => !animating && gotoSection(currentIndex - 1, -1),
+                  // onUp: () => !animating && gotoSection(currentIndex + 1, 1),
+                  onDown: () => {
+                    
+                   
+                    if(targetElement1>0){
+                      targetElement1=targetElement1-1 
+                        }
+                        circleKeyDown(targetElement1)
+                      },
+                      onUp:() => {
+                    
+                  animating1&&circleKeyUp(targetElement1)
+                   
+                  },
+                  wheelSpeed: -1,
+                  tolerance: 10,
+                  preventDefault: true,
+                  onPress: self => {
+                    // on touch devices like iOS, if we want to prevent scrolling, we must call preventDefault() on the touchstart (Observer doesn't do that because that would also prevent side-scrolling which is undesirable in most cases)
+                   self.event.preventDefault()
+                  }
+                
+                });
+
+                function circleKeyUp(e){
+                  if(targetElement1<3){
+   
+                    targetElement1=targetElement1+1 
+                      }
+                const tss=gsap.timeline()
+                if(targetElement1==1){
+                     tss.to("#firstCircleCont",{
+                      yPercent:-100,
+                      ease:"easeOut",
+
+                     }).to("#secondCircleCont",{
+                      yPercent:-100,
+                      ease:"easeOut",
+                      
+                     },0.1).to("#_00",{
+                      opacity:1,
+                      duration:0.08,
+                      delay:1,
+                    },)
+                    .fromTo("#_11",{
+                      y:30,
+                    },{
+                      opacity:1,
+                      y:0,
+                      duration:0.08,
+                    })
+                    .fromTo("#_22",{
+                      y:30,
+                      
+                    
+                    },{
+                      y:0,
+                      opacity:1,
+                      duration:0.08,
+                    },).fromTo("#_33",{
+                      y:30,
+                     
+                    
+                    },{
+                      y:0,
+                      opacity:1,
+                      duration:0.08,
+                    
+                    })
+                 .fromTo("#_44",{
+                      y:30,
+                    },{
+                      y:0,
+                      opacity:1,
+                      duration:0.08,
+                    
+                    
+                  
+                      
+                  }).fromTo('.text_container_2',
+                      {
+                          y:30,
+                        },{
+                          y:0,
+                          autoAlpha:1,
+                          duration:0.08,
+                        
+                        
+                      
+                  },1).fromTo('.count_text_container_2',
+                  {
+                      y:30,
+                    },{
+                      y:0,
+                      autoAlpha:1,
+                      duration:0.08,
+                    
+                    
+                  
+              },1)
+                }
+                if(targetElement1==2){
+                  tss.to("#secondCircleCont",{
+                    yPercent:-200,
+                    ease:"easeOut",
+
+                   }).to("#thirdCircleCont",{
+                    yPercent:-200,
+                    ease:"easeOut",
+                    
+                   },0.1) .to("#_000",{
+                    opacity:1,
+                    duration:0.08,
+                    delay:1,
+                  },)
+                  .fromTo("#_111",{
+                    y:30,
+                  },{
+                    opacity:1,
+                    y:0,
+                    duration:0.08,
+                  },">")
+                  .fromTo("#_222",{
+                    y:30,
+                    
+                  
+                  },{
+                    y:0,
+                    opacity:1,
+                    duration:0.08,
+                  },).fromTo("#_333",{
+                    y:30,
+                   
+                  
+                  },{
+                    y:0,
+                    opacity:1,
+                    duration:0.08,
+                  
+                  })
+               .fromTo("#_444",{
+                    y:30,
+                  },{
+                    y:0,
+                    opacity:1,
+                    duration:0.08,
+                  
+                  
+                
+                    
+                }).fromTo('.text_container_3',
+                    {
+                        y:30,
+                      },{
+                        y:0,
+                        autoAlpha:1,
+                        duration:0.08,
+                      
+                      
+                    
+                },1).fromTo('.count_text_container_3',
+                {
+                    y:30,
+                  },{
+                    y:0,
+                    autoAlpha:1,
+                    duration:0.08,
+                  
+                  
+                
+            },1)
+                }
+              }
+                function circleKeyDown(e){
+                 
+
+                const tss=gsap.timeline()
+                if(e==0){
+                     tss.to("#secondCircleCont",{
+                      yPercent:0,
+                      ease:"easeOut",
+
+                     }).to("#firstCircleCont",{
+                      yPercent:0,
+                      ease:"easeOut",
+                      
+                     },0.1)
+                }
+                if(e==1){
+                  tss.to("#thirdCircleCont",{
+                    yPercent:-100,
+                    ease:"easeOut",
+
+                   }).to("#secondCircleCont",{
+                    yPercent:-100,
+                    ease:"easeOut",
+                    
+                   },0.1)
+                }
+                }
+                return () => {
+                  {/* A return function for killing the animation on component unmount */ }
+                  
+                  newT1.kill();
+
+                };
+              })
+              mm.add("(max-width:768px)",()=>{
+                const newT1=gsap.timeline({
+                  scrollTrigger:{
+                    trigger:'.first_containerss',
+                    start: "top top",
+                    end:'=+120%',
+                    pin:true,
+
+                    
+                    // snap: {
+                    //   snapTo: 0.2,
+                    //   duration: 0.3,
+                    //   delay: 0,
+                    //   },
+                  }
+                })
+                
+                const newT1Center=gsap.timeline({
+                  scrollTrigger:{
+                    trigger:'.first_containerss',
+                    start: "top center",
+                   // snap: {
+                    //   snapTo: 0.2,
+                    //   duration: 0.3,
+                    //   delay: 0,
+                    //   },
+                  }
+                }).to("#_10",{
+                  opacity:1,
+                  duration:0.08,
+                  delay:1,
+                },)
+                .fromTo("#_01",{
+                  y:30,
+                },{
+                  opacity:1,
+                  y:0,
+                  duration:0.08,
+                })
+                .fromTo("#_02",{
+                  y:30,
+                  
+                
+                },{
+                  y:0,
+                  opacity:1,
+                  duration:0.08,
+                },).fromTo("#_03",{
+                  y:30,
+                 
+                
+                },{
+                  y:0,
+                  opacity:1,
+                  duration:0.08,
+                
+                })
+             .fromTo("#_04",{
+                  y:30,
+                },{
+                  y:0,
+                  opacity:1,
+                  duration:0.08, 
+              }).fromTo('.text_container_1',
+                  {
+                      y:30,
+                    },{
+                      y:0,
+                      autoAlpha:1,
+                      duration:0.08,
+                    
+                    
+                  
+              },0.3).fromTo('.count_text_container_1',
+              {
+                  y:30,
+                },{
+                  y:0,
+                  autoAlpha:1,
+                  duration:0.08,
+                  onStart:()=>{animating1=true}
+
+              
+          },0.3)
+           
+          ScrollTrigger.create({
+            trigger:".first_containerss",
+            start:'top -20%',
+            end:"top -20%",
+            onEnter:()=>{
+              
+              circleKeyUp(targetElement1)
+            },
+            onEnterBack:()=>{
+              if(targetElement1>0){
+                targetElement1=targetElement1-1 
+                  }
+              circleKeyDown(targetElement1)
+
+            }
+            
+          })
+          ScrollTrigger.create({
+            trigger:".first_containerss",
+            start:'top -50%',
+            end:'top -50%',
+            onEnter:()=>{
+             
+              circleKeyUp(targetElement1)
+            },
+            onEnterBack:()=>{
+              if(targetElement1>0){
+                targetElement1=targetElement1-1 
+                  }
+                  
+              circleKeyDown(targetElement1)
+            }
+
+          })
 
       // Observer.create({
       //             type: "wheel,touch",
@@ -1151,7 +1483,7 @@ ts.to('#green',{
                 }
               }
                 function circleKeyDown(e){
-                 
+                 console.log(e)
 
                 const tss=gsap.timeline()
                 if(e==0){
@@ -1177,12 +1509,17 @@ ts.to('#green',{
                    },0.1)
                 }
                 }
+                return () => {
+                  {/* A return function for killing the animation on component unmount */ }
+                  
+                  newT1.kill();
 
+                };
+              })
                 return () => {
                   {/* A return function for killing the animation on component unmount */ }
                   t5.kill();
                   tl.kill();
-                  newT1.kill();
 
                 };
   
