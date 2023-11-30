@@ -1193,12 +1193,10 @@ ts.to('#green',{
               mm.add("(max-width:768px)",()=>{
                 const newT1s=gsap.timeline({
                   scrollTrigger:{
-                    trigger:'.first_containerss',
+                    trigger:'.contianer_about ',
                     start: "top top",
-                    // end:'=+120%',
+                    // end:"bottom top",
                     // pin:true,
-
-                    
                     // snap: {
                     //   snapTo: 0.2,
                     //   duration: 0.3,
@@ -1209,10 +1207,9 @@ ts.to('#green',{
                 
                 const newT1Center=gsap.timeline({
                   scrollTrigger:{
-                    trigger:'.first_containerss',
+                    trigger:'.contianer_about ',
                     start: "top center",
-                   
-                   // snap: {
+                  //  // snap: {
                     //   snapTo: 0.2,
                     //   duration: 0.3,
                     //   delay: 0,
@@ -1275,73 +1272,40 @@ ts.to('#green',{
 
               
           },0.3)
-           
-          // ScrollTrigger.create({
-          //   trigger:".first_containerss",
-          //   start:'top -40%',
-          //   end:"top -40%",
-          //   onEnter:()=>{
-          //     targetElement1=1
-          //     circleKeyUp(targetElement1)
-          //   },
-          //   onLeaveBack:()=>{
-          //   targetElement1=0
-          //   circleKeyDown(targetElement1)
 
-          //   },
-          //   toggleActions:'play reverse restart reverse'
-            
-          // })
-          // ScrollTrigger.create({
-          //   trigger:".first_containerss",
-          //   start:'top -70%',
-          //   end:'top -70%',
-          //   onEnter:()=>{
-          //    targetElement1=2
-          //     circleKeyUp(targetElement1)
-          //   },
-          //   onLeaveBack:()=>{
-             
-          //    targetElement1=1
-                  
-          //     circleKeyDown(targetElement1)
-          //   }, 
-          //   toggleActions:'play reverse restart reverse'
-
-          // })
-
-      // Observer.create({
-      //             type: "wheel,touch",
-      //             target:'.firstss_another_containaer',
-      //             // wheelSpeed: -1,
-      //             // onDown: () => !animating && gotoSection(currentIndex - 1, -1),
-      //             // onUp: () => !animating && gotoSection(currentIndex + 1, 1),
-      //             onDown: () => {
+      Observer.create({
+                  type: "wheel,touch",
+                  target:'.firstss_another_containaer',
+                  // wheelSpeed: -1,
+                  // onDown: () => !animating && gotoSection(currentIndex - 1, -1),
+                  // onUp: () => !animating && gotoSection(currentIndex + 1, 1),
+                  onDown: () => {
                     
                    
-      //               if(targetElement1>0){
-      //                 targetElement1=targetElement1-1 
-      //                   }
-      //                   circleKeyDown(targetElement1)
-      //                 },
-      //                 onUp:() => {
+                    if(targetElement1>0){
+                      targetElement1=targetElement1-1 
+                        }
+                        circleKeyDown(targetElement1)
+                      },
+                      onUp:() => {
                     
-      //             animating1&&circleKeyUp(targetElement1)
+                  animating1&&circleKeyUp(targetElement1)
                    
-      //             },
-      //             wheelSpeed: -1,
-      //             tolerance: 10,
-      //             preventDefault: true,
-      //             onPress: self => {
-      //               // on touch devices like iOS, if we want to prevent scrolling, we must call preventDefault() on the touchstart (Observer doesn't do that because that would also prevent side-scrolling which is undesirable in most cases)
-      //              self.event.preventDefault()
-      //             }
+                  },
+                  wheelSpeed: -1,
+                  tolerance: 200,
+                  onPress: self => {
+                    // on touch devices like iOS, if we want to prevent scrolling, we must call preventDefault() on the touchstart (Observer doesn't do that because that would also prevent side-scrolling which is undesirable in most cases)
+                   self.event.preventDefault()
+                  }
                 
-      //           });
+                });
 
                 function circleKeyUp(e){
-                  console.log(e)
-                 
+                  if(targetElement1<3){
+   
+                    targetElement1=targetElement1+1 
+                      }
                 const tss=gsap.timeline()
                 if(targetElement1==1){
                      tss.to("#firstCircleCont1",{
@@ -1487,26 +1451,26 @@ ts.to('#green',{
                 }
               }
                 function circleKeyDown(e){
-                 console.log(e)
+                 
 
                 const tss=gsap.timeline()
                 if(e==0){
-                     tss.to("#secondCircleCont1",{
+                     tss.to("#secondCircleCont",{
                       yPercent:0,
                       ease:"easeOut",
 
-                     }).to("#firstCircleCont1",{
+                     }).to("#firstCircleCont",{
                       yPercent:0,
                       ease:"easeOut",
                       
                      },0.1)
                 }
                 if(e==1){
-                  tss.to("#thirdCircleCont1",{
+                  tss.to("#thirdCircleCont",{
                     yPercent:-100,
                     ease:"easeOut",
 
-                   }).to("#secondCircleCont1",{
+                   }).to("#secondCircleCont",{
                     yPercent:-100,
                     ease:"easeOut",
                     
@@ -1636,9 +1600,9 @@ In a world where brand identity is paramount, the essence of messaging from with
 
             </div>
              <div className='hidden md:block '>
-                <div className=' min-h-[220vh] ' >
-                  <div className='first_containerss firstss_another_containaer min-h-[100vh] flex gap-11 flex flex-col point justify-center'>
-                    <div className='flex flex-col h-[700px] md:h-[400px] overflow-hidden '>
+                <div className='hidden md:block md:min-h-[220vh] ' >
+                  <div className='first_containerss firstss_another_containaer md:min-h-[100vh] flex gap-11 flex flex-col point justify-center'>
+                    <div className=' flex flex-col h-[0px] md:h-[400px] overflow-hidden '>
 <div id="firstCircleCont"  className=' self-center hidden md:block'>
 
                     <div  className=' flex flex-col justify-center self-center  hidden md:block min-h-[400px] w-[70%]  gap-11 '>
@@ -1670,7 +1634,7 @@ In a world where brand identity is paramount, the essence of messaging from with
     
     </div>
     </div>
-    <div id="firstCircleCont1" className=' min-h-[700px] md:hidden  flex gap-11 flex flex-col point justify-center ' >
+    <div id="firstCircleCont" className=' min-h-[700px] md:hidden  flex gap-11 flex flex-col point justify-center ' >
                     <div className=' flex justify-between self-center w-[90%] gap-11 '>
                       <div className='flex flex-col justify-start gap-6'>
             <h1 className='count count_text_container_1 '>01</h1>
@@ -1728,7 +1692,7 @@ Building a brand is not an overnight endeavor; it's a long-term process requirin
     </div>
     </div>
     </div>
-    <div id="secondCircleCont1" className=' min-h-[700px] md:hidden flex gap-11 flex flex-col point justify-center ' >
+    <div id="secondCircleCont" className=' min-h-[700px] md:hidden flex gap-11 flex flex-col point justify-center ' >
                     <div className=' flex justify-between self-center w-[90%] gap-11 '>
                       <div className='flex flex-col justify-start gap-6'>
             <h1 className='count count_text_container_1 '>02</h1>
@@ -1786,7 +1750,7 @@ Building a brand is not an overnight endeavor; it's a long-term process requirin
     </div>
     </div>
     </div>
-    <div id="thirdCircleCont1" className=' min-h-[700px] md:hidden flex gap-11 flex flex-col point justify-center ' >
+    <div id="thirdCircleCont" className=' min-h-[700px] md:hidden flex gap-11 flex flex-col point justify-center ' >
                     <div className=' flex justify-between self-center w-[90%] gap-11 '>
                       <div className='flex flex-col justify-start gap-6'>
             <h1 className='count count_text_container_1 '>03</h1>
@@ -1822,7 +1786,7 @@ In a world where brand identity is paramount, the essence of messaging from with
 
 <div className='md:hidden '>
                 <div className=' min-h-[220vh] ' >
-                  <div className='first_containerss firstss_another_containaer min-h-[100vh]  sticky top-0  flex gap-11 flex flex-col point justify-center'>
+                  <div  id="checkCont" className='first_containerss firstss_another_containaer min-h-[100vh]    flex gap-11 flex flex-col point justify-center'>
                     <div className='flex flex-col h-[700px] md:h-[400px] overflow-hidden '>
 <div id="firstCircleCont"  className=' self-center hidden md:block'>
 
