@@ -1274,13 +1274,11 @@ ts.to('#green',{
             start:'top -20%',
             end:"top -20%",
             onEnter:()=>{
-              
+              targetElement1=1
               circleKeyUp(targetElement1)
             },
             onEnterBack:()=>{
-              if(targetElement1>0){
-                targetElement1=targetElement1-1 
-                  }
+            targetElement1=0
               circleKeyDown(targetElement1)
 
             }
@@ -1291,13 +1289,12 @@ ts.to('#green',{
             start:'top -50%',
             end:'top -50%',
             onEnter:()=>{
-             
+             targetElement1=2
               circleKeyUp(targetElement1)
             },
             onEnterBack:()=>{
-              if(targetElement1>0){
-                targetElement1=targetElement1-1 
-                  }
+             
+             targetElement1=1
                   
               circleKeyDown(targetElement1)
             }
@@ -1334,10 +1331,7 @@ ts.to('#green',{
       //           });
 
                 function circleKeyUp(e){
-                  if(targetElement1<3){
-   
-                    targetElement1=targetElement1+1 
-                      }
+                 
                 const tss=gsap.timeline()
                 if(targetElement1==1){
                      tss.to("#firstCircleCont",{
