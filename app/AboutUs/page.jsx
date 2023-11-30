@@ -1277,7 +1277,7 @@ ts.to('#green',{
               targetElement1=1
               circleKeyUp(targetElement1)
             },
-            onEnterBack:()=>{
+            onLeaveBack:()=>{
             targetElement1=0
               circleKeyDown(targetElement1)
 
@@ -1292,7 +1292,7 @@ ts.to('#green',{
              targetElement1=2
               circleKeyUp(targetElement1)
             },
-            onEnterBack:()=>{
+            onLeaveBack:()=>{
              
              targetElement1=1
                   
