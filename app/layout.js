@@ -54,7 +54,7 @@ const RootLayout = ({ children }) => {
 <script src="./page.js"></script>
     </head>
     <body id="body">
-      <div className='cursor'> </div>
+      <div className='cursor hidden md:block'> </div>
       {children}
      
       </body>

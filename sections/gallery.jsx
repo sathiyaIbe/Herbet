@@ -102,7 +102,7 @@ const Gallery = () => {
   },[])
   
   return(
-  <section  className="min-h-screen flex flex-col bg-[#463838]  gap-6"> 
+  <section  className="md:min-h-screen flex flex-col bg-[#463838]  gap-6"> 
     <div className="w-[90%] self-center" >
       <h1 className="gallery_header">Our Studio<span className="text-[#FFD551] font-black">/</span>
       </h1>
