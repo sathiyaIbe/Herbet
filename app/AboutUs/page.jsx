@@ -1271,8 +1271,8 @@ ts.to('#green',{
            
           ScrollTrigger.create({
             trigger:".first_containerss",
-            start:'top -20%',
-            end:"top -20%",
+            start:'top -40%',
+            end:"top -40%",
             onEnter:()=>{
               targetElement1=1
               circleKeyUp(targetElement1)
@@ -1286,8 +1286,8 @@ ts.to('#green',{
           })
           ScrollTrigger.create({
             trigger:".first_containerss",
-            start:'top -50%',
-            end:'top -50%',
+            start:'top -70%',
+            end:'top -70%',
             onEnter:()=>{
              targetElement1=2
               circleKeyUp(targetElement1)
@@ -1331,6 +1331,7 @@ ts.to('#green',{
       //           });
 
                 function circleKeyUp(e){
+                  console.log(e)
                  
                 const tss=gsap.timeline()
                 if(targetElement1==1){
