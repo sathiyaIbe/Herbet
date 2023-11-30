@@ -978,7 +978,7 @@ ts.to('#green',{
                   // wheelSpeed: -1,
                   // onDown: () => !animating && gotoSection(currentIndex - 1, -1),
                   // onUp: () => !animating && gotoSection(currentIndex + 1, 1),
-                  onDown: () => {
+                  onUp: () => {
                     
                    
                     if(targetElement1>0){
@@ -986,7 +986,7 @@ ts.to('#green',{
                         }
                         circleKeyDown(targetElement1)
                       },
-                  onUp: () => {
+                  onDown:() => {
                     
                   animating1&&circleKeyUp(targetElement1)
                    
