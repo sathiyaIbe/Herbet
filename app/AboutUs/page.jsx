@@ -19,6 +19,8 @@ function AboutUs() {
   let targetElement1=0
   let animating1=false
   let animating2=false
+  let toogle=false
+
 
 
     useEffect(()=>{
@@ -1185,12 +1187,12 @@ ts.to('#green',{
                 };
               })
               mm.add("(max-width:768px)",()=>{
-                const newT1=gsap.timeline({
+                const newT1s=gsap.timeline({
                   scrollTrigger:{
                     trigger:'.first_containerss',
                     start: "top top",
-                    end:'=+120%',
-                    pin:true,
+                    // end:'=+120%',
+                    // pin:true,
 
                     
                     // snap: {
@@ -1205,6 +1207,7 @@ ts.to('#green',{
                   scrollTrigger:{
                     trigger:'.first_containerss',
                     start: "top center",
+                    markers:true,
                    // snap: {
                     //   snapTo: 0.2,
                     //   duration: 0.3,
@@ -1269,37 +1272,39 @@ ts.to('#green',{
               
           },0.3)
            
-          ScrollTrigger.create({
-            trigger:".first_containerss",
-            start:'top -40%',
-            end:"top -40%",
-            onEnter:()=>{
-              targetElement1=1
-              circleKeyUp(targetElement1)
-            },
-            onLeaveBack:()=>{
-            targetElement1=0
-              circleKeyDown(targetElement1)
+          // ScrollTrigger.create({
+          //   trigger:".first_containerss",
+          //   start:'top -40%',
+          //   end:"top -40%",
+          //   onEnter:()=>{
+          //     targetElement1=1
+          //     circleKeyUp(targetElement1)
+          //   },
+          //   onLeaveBack:()=>{
+          //   targetElement1=0
+          //   circleKeyDown(targetElement1)
 
-            }
+          //   },
+          //   toggleActions:'play reverse restart reverse'
             
-          })
-          ScrollTrigger.create({
-            trigger:".first_containerss",
-            start:'top -70%',
-            end:'top -70%',
-            onEnter:()=>{
-             targetElement1=2
-              circleKeyUp(targetElement1)
-            },
-            onLeaveBack:()=>{
+          // })
+          // ScrollTrigger.create({
+          //   trigger:".first_containerss",
+          //   start:'top -70%',
+          //   end:'top -70%',
+          //   onEnter:()=>{
+          //    targetElement1=2
+          //     circleKeyUp(targetElement1)
+          //   },
+          //   onLeaveBack:()=>{
              
-             targetElement1=1
+          //    targetElement1=1
                   
-              circleKeyDown(targetElement1)
-            }
+          //     circleKeyDown(targetElement1)
+          //   }, 
+          //   toggleActions:'play reverse restart reverse'
 
-          })
+          // })
 
       // Observer.create({
       //             type: "wheel,touch",
@@ -1335,11 +1340,11 @@ ts.to('#green',{
                  
                 const tss=gsap.timeline()
                 if(targetElement1==1){
-                     tss.to("#firstCircleCont",{
+                     tss.to("#firstCircleCont1",{
                       yPercent:-100,
                       ease:"easeOut",
 
-                     }).to("#secondCircleCont",{
+                     }).to("#secondCircleCont1",{
                       yPercent:-100,
                       ease:"easeOut",
                       
@@ -1406,11 +1411,11 @@ ts.to('#green',{
               },1)
                 }
                 if(targetElement1==2){
-                  tss.to("#secondCircleCont",{
+                  tss.to("#secondCircleCont1",{
                     yPercent:-200,
                     ease:"easeOut",
 
-                   }).to("#thirdCircleCont",{
+                   }).to("#thirdCircleCont1",{
                     yPercent:-200,
                     ease:"easeOut",
                     
@@ -1482,22 +1487,22 @@ ts.to('#green',{
 
                 const tss=gsap.timeline()
                 if(e==0){
-                     tss.to("#secondCircleCont",{
+                     tss.to("#secondCircleCont1",{
                       yPercent:0,
                       ease:"easeOut",
 
-                     }).to("#firstCircleCont",{
+                     }).to("#firstCircleCont1",{
                       yPercent:0,
                       ease:"easeOut",
                       
                      },0.1)
                 }
                 if(e==1){
-                  tss.to("#thirdCircleCont",{
+                  tss.to("#thirdCircleCont1",{
                     yPercent:-100,
                     ease:"easeOut",
 
-                   }).to("#secondCircleCont",{
+                   }).to("#secondCircleCont1",{
                     yPercent:-100,
                     ease:"easeOut",
                     
@@ -1507,7 +1512,7 @@ ts.to('#green',{
                 return () => {
                   {/* A return function for killing the animation on component unmount */ }
                   
-                  newT1.kill();
+                  newT1s.kill();
 
                 };
               })
@@ -1531,7 +1536,7 @@ ts.to('#green',{
        <section id="about" className=' flex flex-col bg-[#463838] philosophie'>
             <div className='contianer_about   flex flex-col wrapper'>
              
-{/* <div className='md:hidden'>
+<div className='md:hidden'>
                 <div className=' first_container min-h-screen flex gap-11 flex flex-col point justify-center ' >
                     <div className=' flex justify-between self-center w-[90%] gap-11 '>
                       <div className='flex flex-col justify-start gap-6'>
@@ -1592,9 +1597,9 @@ In a world where brand identity is paramount, the essence of messaging from with
    
     </div>
 </div>
-</div> */}
+</div>
  
-{/* <div className='md:hidden'>
+<div className='md:hidden'>
                 <div className=' first_container min-h-screen flex gap-11 flex flex-col point justify-center ' >
                     <div className=' flex justify-between self-center w-[90%] gap-11 '>
                       <div className='flex flex-col justify-start gap-6'>
@@ -1623,10 +1628,10 @@ In a world where brand identity is paramount, the essence of messaging from with
    
     </div>
 </div>
-</div> */}
+</div>
 
             </div>
-             <div className=' '>
+             <div className='hidden md:block '>
                 <div className=' min-h-[220vh] ' >
                   <div className='first_containerss firstss_another_containaer min-h-[100vh] flex gap-11 flex flex-col point justify-center'>
                     <div className='flex flex-col h-[700px] md:h-[400px] overflow-hidden '>
@@ -1661,7 +1666,7 @@ In a world where brand identity is paramount, the essence of messaging from with
     
     </div>
     </div>
-    <div id="firstCircleCont" className=' min-h-[700px] md:hidden  flex gap-11 flex flex-col point justify-center ' >
+    <div id="firstCircleCont1" className=' min-h-[700px] md:hidden  flex gap-11 flex flex-col point justify-center ' >
                     <div className=' flex justify-between self-center w-[90%] gap-11 '>
                       <div className='flex flex-col justify-start gap-6'>
             <h1 className='count count_text_container_1 '>01</h1>
@@ -1719,7 +1724,7 @@ Building a brand is not an overnight endeavor; it's a long-term process requirin
     </div>
     </div>
     </div>
-    <div id="secondCircleCont" className=' min-h-[700px] md:hidden flex gap-11 flex flex-col point justify-center ' >
+    <div id="secondCircleCont1" className=' min-h-[700px] md:hidden flex gap-11 flex flex-col point justify-center ' >
                     <div className=' flex justify-between self-center w-[90%] gap-11 '>
                       <div className='flex flex-col justify-start gap-6'>
             <h1 className='count count_text_container_1 '>02</h1>
@@ -1777,7 +1782,7 @@ Building a brand is not an overnight endeavor; it's a long-term process requirin
     </div>
     </div>
     </div>
-    <div id="thirdCircleCont" className=' min-h-[700px] md:hidden flex gap-11 flex flex-col point justify-center ' >
+    <div id="thirdCircleCont1" className=' min-h-[700px] md:hidden flex gap-11 flex flex-col point justify-center ' >
                     <div className=' flex justify-between self-center w-[90%] gap-11 '>
                       <div className='flex flex-col justify-start gap-6'>
             <h1 className='count count_text_container_1 '>03</h1>
@@ -1805,6 +1810,191 @@ In a world where brand identity is paramount, the essence of messaging from with
    
     </div>
 </div>
+    </div>
+    </div>
+</div>
+
+</div>
+
+<div className='md:hidden '>
+                <div className=' min-h-[220vh] ' >
+                  <div className='first_containerss firstss_another_containaer min-h-[100vh]  sticky top-0  flex gap-11 flex flex-col point justify-center'>
+                    <div className='flex flex-col h-[700px] md:h-[400px] overflow-hidden '>
+<div id="firstCircleCont"  className=' self-center hidden md:block'>
+
+                    <div  className=' flex flex-col justify-center self-center  hidden md:block min-h-[400px] w-[70%]  gap-11 '>
+                      <div className='flex self-center  gap-11'>
+                      <div className='flex flex-col justify-start'>
+            <h1 className='count count_text_container_1 '>01</h1>
+            </div>
+
+            
+ <svg width="256" height="200" className='md:w-[400px] w-[200px] ' viewBox="0 0 256 432" fill="none" xmlns="http://www.w3.org/2000/svg">
+ <circle id='_04' cx="127.519" cy="127.518" r="126.093" className='opacity-0' transform="rotate(90 127.519 127.518)" stroke="#FFD551" stroke-width="2.85008"/>
+<circle id='_03' cx="127.519" cy="171.761" r="126.093" className='opacity-0' transform="rotate(90 127.519 171.761)" stroke="#FFD551" stroke-width="2.85008"/>
+<circle id='_02' cx="127.519" cy="216.002" r="126.093" className='opacity-0'  transform="rotate(90 127.519 216.002)" stroke="#FFD551" stroke-width="2.85008"/> 
+<circle id='_01' cx="127.519" cy="260.245" r="126.093" className='opacity-0' transform="rotate(90 127.519 260.245)" stroke="#FFD551" stroke-width="2.85008"/>
+<circle id='_10' cx="127.519" cy="304.482" r="126.093" className='opacity-0' transform="rotate(90 127.519 304.482)" stroke="#FFD551" stroke-width="2.85008"/>
+</svg>
+<div className='flex flex-col justify-center gap-4 text_container text_container_1   '>
+
+    <h1 className='container_about_header'>
+    The Consultancy Approach
+    </h1>
+    <p className='container_about_description'>
+    Building a brand is not an overnight endeavor; it's a long-term process requiring ongoing reflection on its purpose and vision. At Herbet, we partner with brands to empower them. Through our internal training solutions, we ensure that each brand fully understands its vision and is equipped to operate independently.
+
+    </p>
+   
+    </div>
+    </div>
+    
+    </div>
+    </div>
+    {/* <div id="firstCircleCont1" className=' min-h-[700px] md:hidden  flex gap-11 flex flex-col point justify-center ' >
+                    <div className=' flex justify-between self-center w-[90%] gap-11 '>
+                      <div className='flex flex-col justify-start gap-6'>
+            <h1 className='count count_text_container_1 '>01</h1>
+            <h1 className='container_about_header'>
+            The Consultancy Approach
+
+    </h1>
+    
+            </div>
+            
+ <svg width="256" height="200" className='w-[400px] ' viewBox="0 0 256 432" fill="none" xmlns="http://www.w3.org/2000/svg">
+ <circle id='_04' cx="127.519" cy="127.518" r="126.093" className='opacity-0' transform="rotate(90 127.519 127.518)" stroke="#FFD551" stroke-width="2.85008"/>
+<circle id='_03' cx="127.519" cy="171.761" r="126.093" className='opacity-0' transform="rotate(90 127.519 171.761)" stroke="#FFD551" stroke-width="2.85008"/>
+<circle id='_02' cx="127.519" cy="216.002" r="126.093" className='opacity-0'  transform="rotate(90 127.519 216.002)" stroke="#FFD551" stroke-width="2.85008"/> 
+<circle id='_01' cx="127.519" cy="260.245" r="126.093" className='opacity-0' transform="rotate(90 127.519 260.245)" stroke="#FFD551" stroke-width="2.85008"/>
+<circle id='_10' cx="127.519" cy="304.482" r="126.093" className='opacity-0' transform="rotate(90 127.519 304.482)" stroke="#FFD551" stroke-width="2.85008"/>
+</svg>
+
+    </div>
+    <div className='flex flex-col  gap-4 text_container  text_container_1  '>
+<p className='container_about_description w-[90%] self-center'>
+Building a brand is not an overnight endeavor; it's a long-term process requiring ongoing reflection on its purpose and vision. At Herbet, we partner with brands to empower them. Through our internal training solutions, we ensure that each brand fully understands its vision and is equipped to operate independently.
+</p>
+ 
+   
+   
+    </div>
+</div> */}
+
+<div id="secondCircleCont" className=' self-center hidden md:block'>
+    <div  className=' flex flex-col  justify-center self-center  min-h-[400px] w-[70%]  gap-11 '>
+                      <div className='flex self-center  gap-11'>
+                      <div className='flex flex-col justify-start'>
+            <h1 className='count count_text_container_2 '>02</h1>
+            </div>
+
+            
+ <svg width="256" height="200" className='md:w-[400px] w-[200px] ' viewBox="0 0 256 432" fill="none" xmlns="http://www.w3.org/2000/svg">
+ <circle id='_44' cx="127.519" cy="127.518" r="126.093" className='opacity-0' transform="rotate(90 127.519 127.518)" stroke="#FFD551" stroke-width="2.85008"/>
+<circle id='_33' cx="127.519" cy="171.761" r="126.093" className='opacity-0' transform="rotate(90 127.519 171.761)" stroke="#FFD551" stroke-width="2.85008"/>
+<circle id='_22' cx="127.519" cy="216.002" r="126.093" className='opacity-0'  transform="rotate(90 127.519 216.002)" stroke="#FFD551" stroke-width="2.85008"/> 
+<circle id='_11' cx="127.519" cy="260.245" r="126.093" className='opacity-0' transform="rotate(90 127.519 260.245)" stroke="#FFD551" stroke-width="2.85008"/>
+<circle id='_00' cx="127.519" cy="304.482" r="126.093" className='opacity-0' transform="rotate(90 127.519 304.482)" stroke="#FFD551" stroke-width="2.85008"/>
+</svg>
+<div className='flex flex-col justify-center gap-4 text_container text_container_2   '>
+
+    <h1 className='container_about_header'>
+    The Consultancy Approach
+    </h1>
+    <p className='container_about_description'>
+    Building a brand is not an overnight endeavor; it's a long-term process requiring ongoing reflection on its purpose and vision. At Herbet, we partner with brands to empower them. Through our internal training solutions, we ensure that each brand fully understands its vision and is equipped to operate independently.
+    </p>
+   
+    </div>
+    </div>
+    </div>
+    </div>
+    {/* <div id="secondCircleCont1" className=' min-h-[700px] md:hidden flex gap-11 flex flex-col point justify-center ' >
+                    <div className=' flex justify-between self-center w-[90%] gap-11 '>
+                      <div className='flex flex-col justify-start gap-6'>
+            <h1 className='count count_text_container_1 '>02</h1>
+            <h1 className='container_about_header'>
+            The Consultancy Approach
+    </h1>
+    
+            </div>
+            
+ <svg width="256" height="200" className='w-[400px] ' viewBox="0 0 256 432" fill="none" xmlns="http://www.w3.org/2000/svg">
+ <circle id='_44' cx="127.519" cy="127.518" r="126.093" className='opacity-0' transform="rotate(90 127.519 127.518)" stroke="#FFD551" stroke-width="2.85008"/>
+<circle id='_33' cx="127.519" cy="171.761" r="126.093" className='opacity-0' transform="rotate(90 127.519 171.761)" stroke="#FFD551" stroke-width="2.85008"/>
+<circle id='_22' cx="127.519" cy="216.002" r="126.093" className='opacity-0'  transform="rotate(90 127.519 216.002)" stroke="#FFD551" stroke-width="2.85008"/> 
+<circle id='_11' cx="127.519" cy="260.245" r="126.093" className='opacity-0' transform="rotate(90 127.519 260.245)" stroke="#FFD551" stroke-width="2.85008"/>
+<circle id='_00' cx="127.519" cy="304.482" r="126.093" className='opacity-0' transform="rotate(90 127.519 304.482)" stroke="#FFD551" stroke-width="2.85008"/>
+</svg>
+
+    </div>
+    <div className='flex flex-col  gap-4 text_container  text_container_1  '>
+<p className='container_about_description w-[90%] self-center'>
+Building a brand is not an overnight endeavor; it's a long-term process requiring ongoing reflection on its purpose and vision. At Herbet, we partner with brands to empower them. Through our internal training solutions, we ensure that each brand fully understands its vision and is equipped to operate independently.
+</p>
+ 
+   
+   
+    </div>
+</div> */}
+<div id="thirdCircleCont" className=' self-center hidden md:block'>
+
+    <div  className=' flex flex-col justify-center self-center  min-h-[400px] w-[70%]  gap-11 '>
+                      <div className='flex self-center  gap-11'>
+                      <div className='flex flex-col justify-start'>
+            <h1 className='count count_text_container_3 '>03</h1>
+            </div>
+
+            
+ <svg width="256" height="200" className='md:w-[400px] w-[200px] ' viewBox="0 0 256 432" fill="none" xmlns="http://www.w3.org/2000/svg">
+ <circle id='_444' cx="127.519" cy="127.518" r="126.093" className='opacity-0' transform="rotate(90 127.519 127.518)" stroke="#FFD551" stroke-width="2.85008"/>
+<circle id='_333' cx="127.519" cy="171.761" r="126.093" className='opacity-0' transform="rotate(90 127.519 171.761)" stroke="#FFD551" stroke-width="2.85008"/>
+<circle id='_222' cx="127.519" cy="216.002" r="126.093" className='opacity-0'  transform="rotate(90 127.519 216.002)" stroke="#FFD551" stroke-width="2.85008"/> 
+<circle id='_111' cx="127.519" cy="260.245" r="126.093" className='opacity-0' transform="rotate(90 127.519 260.245)" stroke="#FFD551" stroke-width="2.85008"/>
+<circle id='_000' cx="127.519" cy="304.482" r="126.093" className='opacity-0' transform="rotate(90 127.519 304.482)" stroke="#FFD551" stroke-width="2.85008"/>
+</svg>
+<div className='flex flex-col justify-center gap-4 text_container text_container_3   '>
+
+    <h1 className='container_about_header'>
+    The Consultancy Approach
+    </h1>
+    <p className='container_about_description'>
+    Building a brand is not an overnight endeavor; it's a long-term process requiring ongoing reflection on its purpose and vision. At Herbet, we partner with brands to empower them. Through our internal training solutions, we ensure that each brand fully understands its vision and is equipped to operate independently.
+
+    </p>
+   
+    </div>
+    </div>
+    </div>
+    </div>
+    {/* <div id="thirdCircleCont1" className=' min-h-[700px] md:hidden flex gap-11 flex flex-col point justify-center ' >
+                    <div className=' flex justify-between self-center w-[90%] gap-11 '>
+                      <div className='flex flex-col justify-start gap-6'>
+            <h1 className='count count_text_container_1 '>03</h1>
+            <h1 className='container_about_header'>
+            Hollistic Guardianship
+    </h1>
+    
+            </div>
+            
+ <svg width="256" height="200" className='w-[400px] ' viewBox="0 0 256 432" fill="none" xmlns="http://www.w3.org/2000/svg">
+ <circle id='_444' cx="127.519" cy="127.518" r="126.093" className='opacity-0' transform="rotate(90 127.519 127.518)" stroke="#FFD551" stroke-width="2.85008"/>
+<circle id='_333' cx="127.519" cy="171.761" r="126.093" className='opacity-0' transform="rotate(90 127.519 171.761)" stroke="#FFD551" stroke-width="2.85008"/>
+<circle id='_222' cx="127.519" cy="216.002" r="126.093" className='opacity-0'  transform="rotate(90 127.519 216.002)" stroke="#FFD551" stroke-width="2.85008"/> 
+<circle id='_111' cx="127.519" cy="260.245" r="126.093" className='opacity-0' transform="rotate(90 127.519 260.245)" stroke="#FFD551" stroke-width="2.85008"/>
+<circle id='_000' cx="127.519" cy="304.482" r="126.093" className='opacity-0' transform="rotate(90 127.519 304.482)" stroke="#FFD551" stroke-width="2.85008"/>
+</svg>
+
+    </div>
+    <div className='flex flex-col  gap-4 text_container  text_container_1  '>
+<p className='container_about_description w-[90%] self-center'>
+In a world where brand identity is paramount, the essence of messaging from within the brand cannot be overstated. It's vital for brands to cultivate their messaging from their core, ensuring authenticity remains consistent and unambiguous.
+</p>
+ 
+   
+   
+    </div>
+</div> */}
     </div>
     </div>
 </div>
