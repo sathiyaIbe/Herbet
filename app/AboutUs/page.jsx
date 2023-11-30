@@ -978,7 +978,7 @@ ts.to('#green',{
                   // wheelSpeed: -1,
                   // onDown: () => !animating && gotoSection(currentIndex - 1, -1),
                   // onUp: () => !animating && gotoSection(currentIndex + 1, 1),
-                  onUp: () => {
+                  onDown: () => {
                     
                    
                     if(targetElement1>0){
@@ -986,7 +986,7 @@ ts.to('#green',{
                         }
                         circleKeyDown(targetElement1)
                       },
-                  onDown:() => {
+                      onUp:() => {
                     
                   animating1&&circleKeyUp(targetElement1)
                    
@@ -996,7 +996,7 @@ ts.to('#green',{
                   preventDefault: true,
                   onPress: self => {
                     // on touch devices like iOS, if we want to prevent scrolling, we must call preventDefault() on the touchstart (Observer doesn't do that because that would also prevent side-scrolling which is undesirable in most cases)
-                    ScrollTrigger.isTouch && self.event.preventDefault()
+                   self.event.preventDefault()
                   }
                 
                 });
