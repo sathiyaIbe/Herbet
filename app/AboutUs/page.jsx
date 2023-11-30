@@ -847,7 +847,7 @@ ts.to('#green',{
                 animating2&&  keyUp(targetElement)
                  
                 },
-                tolerance: 10,
+                tolerance: 100,
                 preventDefault: true
               });
               return () => {
