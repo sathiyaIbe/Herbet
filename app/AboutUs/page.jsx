@@ -973,7 +973,7 @@ ts.to('#green',{
           },0.3)
 
                 Observer.create({
-                  type: "touch",
+                  type: "wheel,touch,pointer,scroll",
                   target:'.firstss_another_containaer',
                   // wheelSpeed: -1,
                   // onDown: () => !animating && gotoSection(currentIndex - 1, -1),
@@ -991,7 +991,7 @@ ts.to('#green',{
                   animating1&&circleKeyUp(targetElement1)
                    
                   },
-                  tolerance: 10,
+                  // tolerance: 10,
                   preventDefault: true
                 });
 
