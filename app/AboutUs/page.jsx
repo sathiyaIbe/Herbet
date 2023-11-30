@@ -894,7 +894,7 @@ ts.to('#green',{
                     trigger:'.first_containerss',
                     start: "top top",
                     end:'=+120%',
-                    pin:true,
+                    // pin:true,
                     // markers:true,
                     // snap: {
                     //   snapTo: 0.2,
