@@ -486,10 +486,10 @@ function keyDown(e){
         
                 scrollTrigger: {
                   trigger: ".fourth_container",
-                  pin: true,
+                 pin: true,
                   start: "top top",
-                  end:"+=150%",
-                  // markers:true,
+                  end:"bottom botom",
+                
                   // snap: {
                   //       snapTo: 0.2,
                   //       duration: 0.3,
@@ -831,9 +831,9 @@ ts.to('#green',{
 }
 
               Observer.create({
-                type: "wheel,touch,pointer",
+                type: "touch",
                 target:'.another_containaer',
-                wheelSpeed: -1,
+                 wheelSpeed: -1,
              
                 onDown: () => {
                   
@@ -847,8 +847,12 @@ ts.to('#green',{
                 animating2&&  keyUp(targetElement)
                  
                 },
-                tolerance: 500,
-                preventDefault: true
+                tolerance: 200,
+                // preventDefault: true,
+                onPress: self => {
+                  // on touch devices like iOS, if we want to prevent scrolling, we must call preventDefault() on the touchstart (Observer doesn't do that because that would also prevent side-scrolling which is undesirable in most cases)
+                  ScrollTrigger.isTouch && self.event.preventDefault()
+                }
               });
               return () => {
                 {/* A return function for killing the animation on component unmount */ }
@@ -897,7 +901,7 @@ ts.to('#green',{
                     start: "top top",
                     end:'=+120%',
                     pin:true,
-                    // markers:true,
+                    //
                     // snap: {
                     //   snapTo: 0.2,
                     //   duration: 0.3,
@@ -1207,7 +1211,7 @@ ts.to('#green',{
                   scrollTrigger:{
                     trigger:'.first_containerss',
                     start: "top center",
-                    markers:true,
+                   
                    // snap: {
                     //   snapTo: 0.2,
                     //   duration: 0.3,
@@ -2008,7 +2012,7 @@ In a world where brand identity is paramount, the essence of messaging from with
 
         </section>
         <div className=''>
-        <section className=' md:min-h-[300vh] min-h-[200vh]    bg-[#463838]  ' >
+        <section className=' md:min-h-[300vh] min-h-[100vh]    bg-[#463838]  ' >
           <div className=' flex flex-col justify-center another_containaer fourth_container min-h-[100vh] '>
           <div className='flex md:flex-row flex-col md:justify-between self-center w-[90%] '>
             <div className='flex flex-col self-center  h-[400px] overflow-hidden'>
