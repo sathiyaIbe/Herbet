@@ -332,9 +332,9 @@ function getBack(){
 
         </div>
         <div className="flex justify-center">
-        <div className="circle_container_menu  circle_cursour relative menus2 menus left-[0%]  "  >
+        <a  onClick={()=>{getBack()}} href="#footer" className="circle_container_menu  circle_cursour relative menus2 menus left-[0%]  "  >
             <h1  className="circle_text_menu self-center ">Contact</h1>
-          </div>
+          </a>
           </div>
       
         

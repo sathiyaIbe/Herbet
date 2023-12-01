@@ -136,9 +136,8 @@ t1.fromTo(".circle1",{
 // })
 .from(".text_3_glow",{
   autoAlpha:1,
-  duration:0.5,
 
-}) .from(".text_2_glow",{
+},) .from(".text_2_glow",{
   autoAlpha:1,
   
 }) .from(".text_1_glow",{

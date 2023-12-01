@@ -22,7 +22,7 @@ const Footer = () => {
       });
   })
   return(
-  <footer className="min-h-[40vh] flex flex-col bg-[#FFD551] z-40">
+  <footer id="footer" className="min-h-[40vh] flex flex-col bg-[#FFD551] z-40">
     <div className="w-[80%] self-center flex md:flex-row flex-col gap-11 md:gap-0 pt-11 pb-11">
 <div className="basis-1/2 flex flex-col justify-center ">
   <img src='/calendar.svg' className="menus h-5/6 " alt='calendar'/> 
