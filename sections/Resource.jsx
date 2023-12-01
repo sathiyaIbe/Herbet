@@ -333,7 +333,7 @@ gsap.to(a,
         </div>
 </section>
 
-  <section id="main2" className="md:min-h-screen min-h-[40vh] max-w-[100vw] flex flex-col gap-11 md:justify-center  bg-[#463838] skewEle">
+  <section id="main2" className="md:min-h-screen min-h-[33vh] max-w-[100vw] flex flex-col gap-11 md:justify-center  bg-[#463838] skewEle">
 
 <div className="w-[90%] flex flex-col self-center">
 <div className=" self-center w-[90%] ">
