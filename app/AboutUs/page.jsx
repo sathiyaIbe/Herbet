@@ -1598,7 +1598,7 @@ In a world where brand identity is paramount, the essence of messaging from with
 </div>
 
             </div>
-             <div className='hidden md:block '>
+             {/* <div className='hidden md:block '>
                 <div className='hidden md:block md:min-h-[220vh] ' >
                   <div className='first_containerss firstss_another_containaer md:min-h-[100vh] flex gap-11 flex flex-col point justify-center'>
                     <div className=' flex flex-col h-[0px] md:h-[400px] overflow-hidden '>
@@ -1781,9 +1781,9 @@ In a world where brand identity is paramount, the essence of messaging from with
     </div>
 </div>
 
-</div>
+</div> */}
 
-<div className='md:hidden '>
+<div className='md:block hidden '>
                 <div className=' min-h-[220vh] ' >
                   <div  id="checkCont" className='first_containerss firstss_another_containaer min-h-[100vh]    flex gap-11 flex flex-col point justify-center'>
                     <div className='flex flex-col h-[700px] md:h-[400px] overflow-hidden '>
