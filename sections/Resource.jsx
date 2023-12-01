@@ -135,15 +135,16 @@ t1.fromTo(".circle1",{
 //   className:'circle_text_animation circle_text'
 // })
 .from(".text_3_glow",{
-  opacity:1,
+  autoAlpha:1,
+  duration:0.5,
 
-},0.9) .from(".text_2_glow",{
-  opacity:1,
+}) .from(".text_2_glow",{
+  autoAlpha:1,
   
-},0.9) .from(".text_1_glow",{
-  opacity:1,
+}) .from(".text_1_glow",{
+  autoAlpha:1,
   
-},0.9) 
+}) 
 
 
 .from(circle_header.words,{
@@ -268,7 +269,7 @@ gsap.to(a,
         <img
         src='/work_6.png' alt='work' className="w-2/3 menus  hidden md:block " />
         <img
-         src='/work_1.png' alt='work' className="w-1/3  hidden md:block" />
+         src='/work_1.png' alt='work' className="w-1/3 menus hidden md:block" />
 <img
          src='/work_1_mob.png' alt='work' className=" md:hidden" />
       </motion.div>
@@ -277,10 +278,10 @@ gsap.to(a,
          whileInView={()=>{skew('.skewElem1')}} className='flex skewElem'>
         <img
        
-         src='/work_2.png' alt='work' className="w-1/3 hidden md:block" />
+         src='/work_2.png' alt='work' className="w-1/3 menus hidden md:block" />
         <img 
          
-         src='/work_3.png' alt='work' className="w-2/3 hidden md:block" />
+         src='/work_3.png' alt='work' className="w-2/3 menus hidden md:block" />
          <img
          src='/work_2_mob.png' alt='work' className=" md:hidden" />
 
@@ -290,10 +291,10 @@ gsap.to(a,
          whileInView={()=>{skew('.skewElem2')}} className='flex skewElem'>
         <img 
          
-         src='/work_4.png' alt='work' className="w-2/3  hidden md:block" />
+         src='/work_4.png' alt='work' className="w-2/3 menus  hidden md:block" />
         <img 
         
-           src='/work_5.png' alt='work' className="w-1/3  hidden md:block" />
+           src='/work_5.png' alt='work' className="w-1/3 menus hidden md:block" />
            <img
          src='/work_3_mob.png' alt='work' className=" md:hidden" />
 
@@ -304,29 +305,29 @@ gsap.to(a,
   <div className="flex flex-col justify-center  mt-6 gap-9 self-center w-[80%]">
         <div  ref={circleRef}  className="circle_main_containe flex  justify-between w-fit self-center ">
       
-          <div className="circle_container circle3  relative left-[6%]  ">
-          <div className="circle_container absolute   blur-xl opacity-0 text_1_glow  ">
+          <div className="circle_container circle3  relative left-[6%] menus  ">
+          <div className="circle_container absolute text_glow  blur-xl  text_1_glow  ">
             <h1   className="circle_text self-center ">1. Strengthening your identity</h1>
           </div>
             <h1   className="circle_text self-center ">1. Strengthening your identity</h1>
           </div>
-          <div className="circle_container circle2  "  >
-          <div className="circle_container absolute   blur-xl opacity-0 text_2_glow  ">
+          <div className="circle_container circle2 menus "  >
+          <div className="circle_container absolute text_glow  blur-xl  text_2_glow  ">
             <h1   className="circle_text self-center ">2. Building a connection</h1>
           </div>
 
             <h1  className="circle_text self-center">2. Building a connection</h1>
           </div>
-          <div className="circle_container circle1 relative right-[6%]   "  >
-          <div className="circle_container absolute   blur-xl opacity-0 text_3_glow  ">
+          <div className="circle_container circle1 relative right-[6%] menus  "  >
+          <div className="circle_container absolute  text_glow blur-xl  text_3_glow  ">
             <h1   className="circle_text self-center ">3. Planning for consistency</h1>
           </div>
 
-            <h1  className="circle_text self-center">3. Planning for consistency</h1>
+            <h1  className="circle_text self-center ">3. Planning for consistency</h1>
           </div>
         </div>
         <div className=" flex flex-col self-center w-[90%] md:w-[800px]">
-        <h1  className="circle_header self-center text-center ">
+        <h1  className="circle_header self-center text-center menus">
           Your brand can become more than just a logo
         </h1>
         </div>
@@ -336,13 +337,13 @@ gsap.to(a,
   <section id="main2" className="md:min-h-screen min-h-[50vh] max-w-[100vw] flex flex-col gap-11 justify-center  bg-[#463838] skewEle">
 
 <div className="w-[90%] flex flex-col self-center">
-<div className=" self-center w-[90%]">
+<div className=" self-center w-[90%] ">
       <span
      
     
       className="resourse_text  w-[50%]  ">
-        <span className="resourse_texts min-w-[70%]">From the next big thing to the world's best-known brands, we're at the heart of visionary &nbsp;
-        <motion.svg  className="svg_01 " width="58" height="35" viewBox="0 0 58 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <span className="resourse_texts min-w-[70%] menus">From the next big thing to the world's best-known brands, we're at the heart of visionary &nbsp;
+        <motion.svg  className="svg_01 menus small" width="58" height="35" viewBox="0 0 58 35" fill="none" xmlns="http://www.w3.org/2000/svg">
 <circle id="_0" className="opacity-0" cx="17.1205" cy="17.1205" r="16.4699" stroke="#FFD551" stroke-width="1.3012"/>
 
 <circle id="_1" className="opacity-0" cx="23.0604" cy="17.1205" r="16.4699" stroke="#FFD551" stroke-width="1.3012"/>
@@ -360,27 +361,27 @@ gsap.to(a,
        initial="hidden"
        whileInView="show"
       viewport={{ once: true }}
-      src='/co_logo_1.png ' className="hidden md:block w-1/5 " alt='logo' />
+      src='/co_logo_1.png ' className="hidden md:block w-1/5 menus" alt='logo' />
       <motion.img
        variants={fadeIn("up", "tween",.2,1)}
        initial="hidden"
        whileInView="show"
-      viewport={{ once: true }} src='/co_logo_2.png' className="hidden md:block w-1/5" alt='logo' />
+      viewport={{ once: true }} src='/co_logo_2.png' className="hidden md:block w-1/5 menus" alt='logo' />
       <motion.img
        variants={fadeIn("up", "tween",.3,1)}
        initial="hidden"
        whileInView="show"
-      viewport={{ once: true }} src='/co_logo_3.png' className="hidden md:block w-1/5 " alt='logo' />
+      viewport={{ once: true }} src='/co_logo_3.png' className="hidden md:block w-1/5 menus" alt='logo' />
       <motion.img
        variants={fadeIn("up", "tween",.4,1)}
        initial="hidden"
        whileInView="show"
-      viewport={{ once: true }} src='/co_logo_4.png' className="hidden md:block w-1/5" alt='logo' />
+      viewport={{ once: true }} src='/co_logo_4.png' className="hidden md:block w-1/5 menus" alt='logo' />
       <motion.img
        variants={fadeIn("up", "tween",.5,1)}
        initial="hidden"
        whileInView="show"
-      viewport={{ once: true }} src='/co_logo_5.png' className="hidden md:block w-1/5" alt='logo' />
+      viewport={{ once: true }} src='/co_logo_5.png' className="hidden md:block w-1/5 menus" alt='logo' />
     </div>
     {/* <div className="flex flex-col gap-6 justify-around md:hidden self-center ">
       <div className="flex justify-center">

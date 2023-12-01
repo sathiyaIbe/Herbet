@@ -129,7 +129,9 @@ cursor: none;
 .circle_container_menu{
   @apply border border-[#413131] rounded-full  md:w-[600] md:h-[600] w-60 h-60 flex justify-center text-[#413131] ;
 }
-
+.text_glow{
+  visibility: hidden;
+}
 .circle_text_menu{
   @apply text-[44px] text-[#413131] font-[ogg] leading-[84px] 
 
