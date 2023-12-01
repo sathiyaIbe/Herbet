@@ -83,8 +83,7 @@ function AboutUs() {
                     //         duration: 0.3,
                     //         delay: 0,
                     //         },
-                    },
-            
+                    },            
                   },0)
                 .to('#green',{
                   rotation:"-90",
@@ -505,7 +504,8 @@ function keyDown(e){
           
                   scrollTrigger: {
                     trigger: ".fourth_container",
-                    start: "top 20%",
+                    start: "top top",
+                    markers:true
                   //   snap: {
                   //         snapTo: 0.2,
                   //         duration: 0.3,
@@ -1192,10 +1192,12 @@ ts.to('#green',{
               mm.add("(max-width:768px)",()=>{
                 const newT1s=gsap.timeline({
                   scrollTrigger:{
-                    trigger:'.contianer_about ',
+                    trigger:'.first_containerss',
                     start: "top top",
+                    end:'bottom center',
+                    
                     // end:"bottom top",
-                    // pin:true,
+                    pin:true,
                     // snap: {
                     //   snapTo: 0.2,
                     //   duration: 0.3,
@@ -1206,8 +1208,8 @@ ts.to('#green',{
                 
                 const newT1Center=gsap.timeline({
                   scrollTrigger:{
-                    trigger:'.contianer_about ',
-                    start: "top center",
+                    trigger:'.first_containerss',
+                    start: "top top",
                   //  // snap: {
                     //   snapTo: 0.2,
                     //   duration: 0.3,
@@ -1267,44 +1269,226 @@ ts.to('#green',{
                   y:0,
                   autoAlpha:1,
                   duration:0.08,
-                  onStart:()=>{animating1=true}
+                  
 
               
-          },0.3)
+          },0.3).to({},{
+            onComplete:()=>{animating1=true}
+          })
 
-      Observer.create({
-                  type: "wheel,touch",
-                  target:'.firstss_another_containaer',
-                  // wheelSpeed: -1,
-                  // onDown: () => !animating && gotoSection(currentIndex - 1, -1),
-                  // onUp: () => !animating && gotoSection(currentIndex + 1, 1),
-                  onDown: () => {
-                    
-                   
-                    if(targetElement1>0){
-                      targetElement1=targetElement1-1 
-                        }
-                        circleKeyDown(targetElement1)
-                      },
-                      onUp:() => {
-                    
-                  animating1&&circleKeyUp(targetElement1)
-                   
-                  },
-                  wheelSpeed: -1,
-                  tolerance: 200,
-                  onPress: self => {
-                    // on touch devices like iOS, if we want to prevent scrolling, we must call preventDefault() on the touchstart (Observer doesn't do that because that would also prevent side-scrolling which is undesirable in most cases)
-                   self.event.preventDefault()
-                  }
+          ScrollTrigger.create({
+            trigger:'.first_containerss',
+            start:'top -10%',
+            end:'top -10%',
+            onEnter:()=>{
+              const tss=gsap.timeline()
+              tss.to("#firstCircleCont1",{
+                yPercent:-100,
+                ease:"easeOut",
+
+               }).to("#secondCircleCont1",{
+                yPercent:-100,
+                ease:"easeOut",
                 
-                });
+               },0.1).to("#_00",{
+                opacity:1,
+                duration:0.08,
+                delay:1,
+              },)
+              .fromTo("#_11",{
+                y:30,
+              },{
+                opacity:1,
+                y:0,
+                duration:0.08,
+              })
+              .fromTo("#_22",{
+                y:30,
+                
+              
+              },{
+                y:0,
+                opacity:1,
+                duration:0.08,
+              },).fromTo("#_33",{
+                y:30,
+               
+              
+              },{
+                y:0,
+                opacity:1,
+                duration:0.08,
+              
+              })
+           .fromTo("#_44",{
+                y:30,
+              },{
+                y:0,
+                opacity:1,
+                duration:0.08,
+              
+              
+            
+                
+            }).fromTo('.text_container_2',
+                {
+                    y:30,
+                  },{
+                    y:0,
+                    autoAlpha:1,
+                    duration:0.08,
+                  
+                  
+                
+            },1).fromTo('.count_text_container_2',
+            {
+                y:30,
+              },{
+                y:0,
+                autoAlpha:1,
+                duration:0.08,
+               
+              
+            
+        },1)
+            },
+            onLeaveBack:()=>{
+              const tss=gsap.timeline()
+              tss.to("#secondCircleCont1",{
+                yPercent:0,
+                ease:"easeOut",
+
+               }).to("#firstCircleCont1",{
+                yPercent:0,
+                ease:"easeOut",
+                
+               },0.1)
+            }
+          })
+          ScrollTrigger.create({
+            trigger:'.first_containerss',
+            start:'top -30%',
+            end:'top -30%',
+            onEnter:()=>{
+              const tss=gsap.timeline()
+              tss.to("#secondCircleCont1",{
+                yPercent:-200,
+                ease:"easeOut",
+
+               }).to("#thirdCircleCont1",{
+                yPercent:-200,
+                ease:"easeOut",
+                
+               },0.1) .to("#_000",{
+                opacity:1,
+                duration:0.08,
+                delay:1,
+              },)
+              .fromTo("#_111",{
+                y:30,
+              },{
+                opacity:1,
+                y:0,
+                duration:0.08,
+              },">")
+              .fromTo("#_222",{
+                y:30,
+                
+              
+              },{
+                y:0,
+                opacity:1,
+                duration:0.08,
+              },).fromTo("#_333",{
+                y:30,
+               
+              
+              },{
+                y:0,
+                opacity:1,
+                duration:0.08,
+              
+              })
+           .fromTo("#_444",{
+                y:30,
+              },{
+                y:0,
+                opacity:1,
+                duration:0.08,
+              
+              
+            
+                
+            }).fromTo('.text_container_3',
+                {
+                    y:30,
+                  },{
+                    y:0,
+                    autoAlpha:1,
+                    duration:0.08,
+                  
+                  
+                
+            },1).fromTo('.count_text_container_3',
+            {
+                y:30,
+              },{
+                y:0,
+                autoAlpha:1,
+                duration:0.08,
+              
+              
+            
+        },1)
+            },
+            onLeaveBack:()=>{
+              const tss=gsap.timeline()
+              tss.to("#thirdCircleCont1",{
+                yPercent:-100,
+                ease:"easeOut",
+
+               }).to("#secondCircleCont1",{
+                yPercent:-100,
+                ease:"easeOut",
+                
+               },0.1)
+            }
+          })
+
+      // Observer.create({
+      //             type: "wheel,touch",
+      //             target:'.firstss_another_containaer',
+      //             // wheelSpeed: -1,
+      //             // onDown: () => !animating && gotoSection(currentIndex - 1, -1),
+      //             // onUp: () => !animating && gotoSection(currentIndex + 1, 1),
+      //             onDown: () => {
+                    
+                   
+      //               if(targetElement1>0){
+      //                 targetElement1=targetElement1-1 
+      //                   }
+      //                   circleKeyDown(targetElement1)
+      //                 },
+      //                 onUp:() => {
+                    
+      //             animating1&&circleKeyUp(targetElement1)
+                   
+      //             },
+      //             wheelSpeed: -1,
+      //             tolerance: 100,
+      //             // onPress: self => {
+      //             //   // on touch devices like iOS, if we want to prevent scrolling, we must call preventDefault() on the touchstart (Observer doesn't do that because that would also prevent side-scrolling which is undesirable in most cases)
+      //             //  self.event.preventDefault()
+      //             // }
+                
+      //           });
 
                 function circleKeyUp(e){
                   if(targetElement1<3){
-   
+                    animating1=false
                     targetElement1=targetElement1+1 
                       }
+                     
                 const tss=gsap.timeline()
                 if(targetElement1==1){
                      tss.to("#firstCircleCont1",{
@@ -1372,10 +1556,12 @@ ts.to('#green',{
                       y:0,
                       autoAlpha:1,
                       duration:0.08,
-                    
+                     
                     
                   
-              },1)
+              },1).to({},{
+                onComplete:()=>{animating1=true}
+              })
                 }
                 if(targetElement1==2){
                   tss.to("#secondCircleCont1",{
@@ -1446,7 +1632,9 @@ ts.to('#green',{
                   
                   
                 
-            },1)
+            },1).to({},{
+              onComplete:()=>{animating1=true}
+            })
                 }
               }
                 function circleKeyDown(e){
@@ -1454,22 +1642,22 @@ ts.to('#green',{
 
                 const tss=gsap.timeline()
                 if(e==0){
-                     tss.to("#secondCircleCont",{
+                     tss.to("#secondCircleCont1",{
                       yPercent:0,
                       ease:"easeOut",
 
-                     }).to("#firstCircleCont",{
+                     }).to("#firstCircleCont1",{
                       yPercent:0,
                       ease:"easeOut",
                       
                      },0.1)
                 }
                 if(e==1){
-                  tss.to("#thirdCircleCont",{
+                  tss.to("#thirdCircleCont1",{
                     yPercent:-100,
                     ease:"easeOut",
 
-                   }).to("#secondCircleCont",{
+                   }).to("#secondCircleCont1",{
                     yPercent:-100,
                     ease:"easeOut",
                     
@@ -1501,7 +1689,7 @@ ts.to('#green',{
     <div className='philosophi overflow-hidden'>
          <Hero />
        <section id="about" className=' flex flex-col bg-[#463838] philosophie'>
-            <div className='contianer_about   flex flex-col wrapper'>
+            {/* <div className='contianer_about   flex flex-col wrapper'>
              
 <div className='md:hidden'>
                 <div className=' first_container min-h-screen flex gap-11 flex flex-col point justify-center ' >
@@ -1597,7 +1785,7 @@ In a world where brand identity is paramount, the essence of messaging from with
 </div>
 </div>
 
-            </div>
+            </div> */}
              {/* <div className='hidden md:block '>
                 <div className='hidden md:block md:min-h-[220vh] ' >
                   <div className='first_containerss firstss_another_containaer md:min-h-[100vh] flex gap-11 flex flex-col point justify-center'>
@@ -1783,8 +1971,8 @@ In a world where brand identity is paramount, the essence of messaging from with
 
 </div> */}
 
-<div className='md:block hidden '>
-                <div className=' min-h-[220vh] ' >
+<div className=' '>
+                <div className='min-h-[150vh] md:min-h-[220vh] ' >
                   <div  id="checkCont" className='first_containerss firstss_another_containaer min-h-[100vh]    flex gap-11 flex flex-col point justify-center'>
                     <div className='flex flex-col h-[700px] md:h-[400px] overflow-hidden '>
 <div id="firstCircleCont"  className=' self-center hidden md:block'>
@@ -1818,7 +2006,7 @@ In a world where brand identity is paramount, the essence of messaging from with
     
     </div>
     </div>
-    {/* <div id="firstCircleCont1" className=' min-h-[700px] md:hidden  flex gap-11 flex flex-col point justify-center ' >
+    <div id="firstCircleCont1" className=' min-h-[700px] md:hidden  flex gap-11 flex flex-col point justify-center ' >
                     <div className=' flex justify-between self-center w-[90%] gap-11 '>
                       <div className='flex flex-col justify-start gap-6'>
             <h1 className='count count_text_container_1 '>01</h1>
@@ -1846,7 +2034,7 @@ Building a brand is not an overnight endeavor; it's a long-term process requirin
    
    
     </div>
-</div> */}
+</div>
 
 <div id="secondCircleCont" className=' self-center hidden md:block'>
     <div  className=' flex flex-col  justify-center self-center  min-h-[400px] w-[70%]  gap-11 '>
@@ -1876,7 +2064,7 @@ Building a brand is not an overnight endeavor; it's a long-term process requirin
     </div>
     </div>
     </div>
-    {/* <div id="secondCircleCont1" className=' min-h-[700px] md:hidden flex gap-11 flex flex-col point justify-center ' >
+    <div id="secondCircleCont1" className=' min-h-[700px] md:hidden flex gap-11 flex flex-col point justify-center ' >
                     <div className=' flex justify-between self-center w-[90%] gap-11 '>
                       <div className='flex flex-col justify-start gap-6'>
             <h1 className='count count_text_container_1 '>02</h1>
@@ -1903,7 +2091,7 @@ Building a brand is not an overnight endeavor; it's a long-term process requirin
    
    
     </div>
-</div> */}
+</div>
 <div id="thirdCircleCont" className=' self-center hidden md:block'>
 
     <div  className=' flex flex-col justify-center self-center  min-h-[400px] w-[70%]  gap-11 '>
@@ -1934,7 +2122,7 @@ Building a brand is not an overnight endeavor; it's a long-term process requirin
     </div>
     </div>
     </div>
-    {/* <div id="thirdCircleCont1" className=' min-h-[700px] md:hidden flex gap-11 flex flex-col point justify-center ' >
+    <div id="thirdCircleCont1" className=' min-h-[700px] md:hidden flex gap-11 flex flex-col point justify-center ' >
                     <div className=' flex justify-between self-center w-[90%] gap-11 '>
                       <div className='flex flex-col justify-start gap-6'>
             <h1 className='count count_text_container_1 '>03</h1>
@@ -1961,7 +2149,7 @@ In a world where brand identity is paramount, the essence of messaging from with
    
    
     </div>
-</div> */}
+</div>
     </div>
     </div>
 </div>
@@ -2185,7 +2373,7 @@ In a world where brand identity is paramount, the essence of messaging from with
     </div>
 </section> 
 </div> */}
-<section id="main2" className='min-h-screen flex flex-col justify-center bg-[#463838] pb-11'>
+<section id="main2" className='min-h-screen flex flex-col justify-center bg-[#463838] pt-11 md:pt-0 pb-11'>
 <div className='md:w-[80%] flex flex-col gap-11 self-center'>
   <div className='hide_profile_text p-2 md:p-0   self-center'>
   <h1 className='header_profile pr-6 md:pr-0 '>
