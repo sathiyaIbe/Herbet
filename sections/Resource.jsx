@@ -300,8 +300,8 @@ gsap.to(a,
       </motion.div>
     </div>
   </section>
-<section data-lenis-prevent id="main1" className="md:min-h-screen min-h-[50vh] max-w-[100vw] flex flex-col gap-11 justify-center  bg-[#463838] skewEle">
-  <div className="flex flex-col justify-center  mt-6 gap-9 self-center w-[80%]">
+<section data-lenis-prevent id="main1" className="md:min-h-screen min-h-[38vh] mb-24 max-w-[100vw] flex flex-col gap-11 justify-end md:justify-center  bg-[#463838] skewEle">
+  <div className="flex flex-col justify-center  md:mt-6 gap-9 self-center w-[80%]">
         <div  ref={circleRef}  className="circle_main_containe flex  justify-between w-fit self-center ">
       
           <div className="circle_container circle3  relative left-[6%] menus  ">
@@ -333,7 +333,7 @@ gsap.to(a,
         </div>
 </section>
 
-  <section id="main2" className="md:min-h-screen min-h-[50vh] max-w-[100vw] flex flex-col gap-11 justify-center  bg-[#463838] skewEle">
+  <section id="main2" className="md:min-h-screen min-h-[40vh] max-w-[100vw] flex flex-col gap-11 md:justify-center  bg-[#463838] skewEle">
 
 <div className="w-[90%] flex flex-col self-center">
 <div className=" self-center w-[90%] ">
@@ -341,7 +341,7 @@ gsap.to(a,
      
     
       className="resourse_text  w-[50%]  ">
-        <span className="resourse_texts min-w-[70%] menus">From the next big thing to the world's best-known brands, we're at the heart of visionary &nbsp;
+        <span className="resourse_texts min-w-[70%] menus flex">From the next big thing to the world's best-known brands, we're at the heart of visionary &nbsp;
         <motion.svg  className="svg_01 menus small" width="58" height="35" viewBox="0 0 58 35" fill="none" xmlns="http://www.w3.org/2000/svg">
 <circle id="_0" className="opacity-0" cx="17.1205" cy="17.1205" r="16.4699" stroke="#FFD551" stroke-width="1.3012"/>
 

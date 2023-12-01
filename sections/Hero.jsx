@@ -248,9 +248,9 @@ function getBack(){
   return (
 
 
-<div   className="flex   md:min-h-screen w-screen overflow-hidden " ref={el=>wrapperRef=el} >
+<div   className="flex   mmin-h-screen w-screen overflow-hidden " ref={el=>wrapperRef=el} >
       <section ref={el=>firstRef=el} className=" flex flex-col    bg-[#463838] min-w-[100vw] header">
-      <motion.div  className="flex justify-end w-[95%] self-end  h-[10vh] ">
+      <motion.div  className="flex justify-end w-[95%] self-end  md:h-[10vh] ">
         
        <svg onClick={()=>{getMenu()}} width="57" height="64" viewBox="0 0 57 64"  className="p-4 menus" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M55.6875 0C56.3476 0.247752 56.8311 0.659401 56.9616 1.38741C56.9923 1.55512 57 1.73045 57 1.90578C57 18.6309 57 35.3523 57 52.0774C57 53.4915 56.1058 54.5168 54.6667 54.7684C49.4207 55.6908 44.1747 
@@ -268,7 +268,7 @@ function getBack(){
 </svg>
 
        </motion.div>
-        <div  className="flex flex-col justify-center h-[90vh] ">
+        <div  className="flex flex-col justify-center min-h-[80vh] md:h-[90vh] ">
      
        
        <div className="flex flex-col self-center justify-center hide_container gap-6   md:max-w-[850px] w-[80%]">

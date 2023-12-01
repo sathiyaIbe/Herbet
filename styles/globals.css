@@ -112,7 +112,7 @@ cursor: none;
   font-weight: lighter;
  }
 .circle_text{
-  @apply text-[16px] md:text-[30px]  text-[#FFD551] font-[ogg] leading-[24px] md:leading-[36px] text-center w-[65%];
+  @apply text-[12px] md:text-[30px]  text-[#FFD551] font-[ogg] leading-[24px] md:leading-[36px] text-center w-[65%];
  
 }
 .circle_text_new{
