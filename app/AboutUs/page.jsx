@@ -488,8 +488,7 @@ function keyDown(e){
                   trigger: ".fourth_container",
                  pin: true,
                   start: "top top",
-                  end:"bottom botom",
-                
+                  end:"bottom center",
                   // snap: {
                   //       snapTo: 0.2,
                   //       duration: 0.3,
