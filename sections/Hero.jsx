@@ -223,7 +223,7 @@ function heroAnimation(){
    // tl.kill()
   }
   gsap.timeline()
-.fromTo(lines,{opacity:0, y:80} , {duration: 2 ,opacity:1, y:0 ,  ease:"easeInOut",stagger:0.1, delay:2.3});
+.fromTo(lines,{opacity:0, y:80} , {duration: 1 ,opacity:1, y:0 ,  ease:"easeInOut",stagger:0.1, delay:2.3});
 }
 
 // useLayoutEffect(() => {
@@ -310,7 +310,7 @@ function getBack(){
 </svg>
 
        </motion.div>
-        <div  className="flex flex-col justify-center h-[80vh] md:h-[90vh] ">
+        <div  className="flex flex-col justify-center h-[90vh] ">
      
        
        <div className="flex flex-col self-center justify-center hide_container gap-6   md:max-w-[850px] w-[80%]">
