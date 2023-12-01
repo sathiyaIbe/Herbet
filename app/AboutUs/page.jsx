@@ -847,12 +847,12 @@ ts.to('#green',{
                 animating2&&  keyUp(targetElement)
                  
                 },
-                tolerance: 10,
+                tolerance: 100,
                 // preventDefault: true,
-                onPress: self => {
-                  // on touch devices like iOS, if we want to prevent scrolling, we must call preventDefault() on the touchstart (Observer doesn't do that because that would also prevent side-scrolling which is undesirable in most cases)
-                  ScrollTrigger.isTouch && self.event.preventDefault()
-                }
+                // onPress: self => {
+                //   // on touch devices like iOS, if we want to prevent scrolling, we must call preventDefault() on the touchstart (Observer doesn't do that because that would also prevent side-scrolling which is undesirable in most cases)
+                //   ScrollTrigger.isTouch && self.event.preventDefault()
+                // }
               });
               return () => {
                 {/* A return function for killing the animation on component unmount */ }
