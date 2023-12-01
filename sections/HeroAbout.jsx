@@ -10,7 +10,7 @@ import { zoomIn } from "../utils/motion";
 import Link from "next/link";
 import { Observer } from "gsap/Observer";
 
-const Hero = () =>{
+const HeroAbout = () =>{
   const text=["aa", "bb", "ccc", "dddd", "eeee", "ffff", "gggg"]
 
 let textRef = useRef();
@@ -77,9 +77,7 @@ useEffect(()=>{
   //   duration:1,
   // })
 
-const mm=gsap.matchMedia()
 
-mm.add("(min-width:768px)",()=>{
     t1.to(".hide_container",{
       autoAlpha:1
     })
@@ -115,46 +113,6 @@ mm.add("(min-width:768px)",()=>{
       ease:"easeIn",
     duration:1,})
      }
-    })
-
-    mm.add("(max-width:768px)",()=>{
-      t1.to(".hide_container",{
-        autoAlpha:1
-      })
-      
-      .fromTo(".description_container",
-      {y:-100},
-      {
-       y:-100,
-       autoAlpha: 1,
-      }).from(pText.words,{
-        autoAlpha: 0,
-          y:40,
-        
-          transform:'bottom',
-          ease:"easeOut",
-        
-          stagger:0.05,
-          onComplete:containerMove,
-        })
-        .from(hText.words,{
-          autoAlpha: 0,
-          y:40,
-          transform:'bottom',
-          ease:"easeOut",
-        
-          stagger: 0.05,
-          duration:1,
-        },)
-  
-       function containerMove(){
-        gsap.to(".description_container",
-        {y:0,
-        ease:"easeIn",
-      duration:1,})
-       }
-      })
-  
 
      let mouseX = 0
      let   mouseY = 0
@@ -290,7 +248,7 @@ function getBack(){
   return (
 
 
-<div   className="flex    overflow-hidden " ref={el=>wrapperRef=el} >
+<div   className="flex   mmin-h-screen w-screen overflow-hidden " ref={el=>wrapperRef=el} >
       <section ref={el=>firstRef=el} className=" flex flex-col    bg-[#463838] min-w-[100vw] header">
       <motion.div  className="flex justify-end w-[95%] self-end  md:h-[10vh] ">
         
@@ -310,39 +268,39 @@ function getBack(){
 </svg>
 
        </motion.div>
-        <div  className="flex flex-col justify-center h-[80vh] md:h-[90vh] ">
+        <div  className="flex flex-col justify-center min-h-[80vh] md:h-[90vh] ">
      
        
        <div className="flex flex-col self-center justify-center hide_container gap-6   md:max-w-[850px] w-[80%]">
         <div  className="flex flex-col  gap-6  justify-center">
-        <h1  id="hero_headers" className="menus hero_header text-center self-center text-[#FFD551]  "><a className="text-white font-black">&#123;</a>Herbet is a brand 
-  strategy, design and 
-    experience firm<a className="font-black text-white">&#125; </a></h1>
+        <h1  id="hero_headers" className="m hero_header_about text-centr self-center text-[#FFD551]  menus">We help craft transformative brands 
+that propel the world forward, 
+<a className="text-[#FFD551]">one story at a time. </a></h1>
     </div>
-    <div className="description_container self-center flex justify-center md:w-[70%] ">
+    {/* <div className="description_container self-center flex justify-center md:w-[70%] ">
     <p className="description_header menus small">We're the folks you go to before shooting for the stars. Before aiming high, we ensure your brand's essence is undeniably strong.</p>
-        </div>
+        </div> */}
        
     
         </div>
-        {/* <div className="flex justify-center  mt-6 self-center">
+        <div className="flex justify-center  mt-6 self-center">
         <div className="circle_main_containe flex  justify-between w-fit self-center ">
-          <div className="circle_container  opacity-0 relative left-[5%]  " ref={el=>circleRef1=el}>
+          <div className="circle_container  opacity-0 relative left-[5%] menus  " ref={el=>circleRef1=el}>
             <h1 ref={el=>{circleText1=el}} className="circle_text self-center ">Design</h1>
           </div>
-          <div className="circle_container  left-[20%] opacity-[0]"  ref={el=>circleRef2=el}>
+          <div className="circle_container  left-[20%] opacity-[0] menus"  ref={el=>circleRef2=el}>
             <h1 ref={el=>{circleText2=el}} className="circle_text self-center">Culture</h1>
           </div>
-          <div className="circle_container relative right-[5%]  opacity-[0]  "  ref={el=>circleRef3=el}>
+          <div className="circle_container relative right-[5%]  opacity-[0] menus "  ref={el=>circleRef3=el}>
             <h1 ref={el=>{circleText3=el}} className="circle_text self-center">Purpose</h1>
           </div>
         </div>
-        </div>  */}
+        </div> 
         </div>
      
       </section>
 
-      <section id='container' ref={el=>secondRef=el} className="bg-[#FFD551] md:min-h-screen flex flex-col min-w-[100vw] menu_conatainer">
+      <section id='container' ref={el=>secondRef=el} className="bg-[#FFD551] min-h-screen flex flex-col min-w-[100vw] menu_conatainer">
       {/* <div className='cursour'>  </div> */}
 
       <svg onClick={()=>{getBack()}} width="57" height="64" className="p-4 menus cursor-pointer" viewBox="0 0 57 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -360,7 +318,7 @@ function getBack(){
 20.2623 22.6304 20.167 22.2466 20.2508C21.2987 20.4567 20.6003 21.3067 20.6003 22.2938C20.6003 23.9404 20.6118 25.587 20.6156 27.2336C20.6156 29.1737 20.6156 31.1138 20.6156 33.0539L20.6118 33.0577Z" fill="#463838"/>
 </svg>
 <div className=" md:block hidden">
-<div className="flex flex-col justify-center md:min-h-[90vh] md:mb-24 ">
+<div className="flex flex-col justify-center min-h-[90vh] mb-24 ">
 
         <div className="circle_main_containe gap-11 flex  self-center ">
           <a  onClick={()=>{getBack()}} href="#resourse" className="circle_container_menu relative  menus menus1 left-[-20%] " >
@@ -383,18 +341,18 @@ function getBack(){
         </div>
         </div>
 
-        <div className="flex flex-col self-center h-fit relative md:hidden  ">
+        <div className="flex flex-col self-center  md:hidden  ">
       
-          <div className="circle_container_menu relative   bottom-[-40px] " >
+          <div className="circle_container_menu relative   bottom-[20px] " >
             <h1 className="circle_text_menu self-center  ">Design</h1>
           </div>
 
           
-          <div className="circle_container_menu relative   bottom-[px]   " >
+          <div className="circle_container_menu relative   bottom-[75px]   " >
             <h1  className="circle_text_menu self-center">Resources</h1>
           </div>
        
-        <div className="circle_container_menu relative  bottom-[40px]  "  >
+        <div className="circle_container_menu relative  bottom-[130px]  "  >
             <h1  className="circle_text_menu self-center ">Contact</h1>
           </div>
         
@@ -406,4 +364,4 @@ function getBack(){
     
 );
 }
-export default Hero;
+export default HeroAbout;

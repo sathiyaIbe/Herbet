@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import { Gallery, Hero } from '../../sections'
+import { Gallery, Hero, HeroAbout } from '../../sections'
 import Footer from '../../components/Footer'
 import {gsap} from "gsap";
 import { motion } from "framer-motion";
@@ -1688,7 +1688,7 @@ ts.to('#green',{
       },[])
   return (
     <div className='philosophi overflow-hidden'>
-         <Hero />
+         <HeroAbout />
        <section id="about" className=' flex flex-col bg-[#463838] philosophie'>
             {/* <div className='contianer_about   flex flex-col wrapper'>
              

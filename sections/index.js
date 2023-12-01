@@ -6,6 +6,7 @@ import WhatsNew from './WhatsNew';
 import World from './World';
 import Gallery from './gallery';
 import Feedback from './Feedback';
+import HeroAbout from './HeroAbout';
 
 export {
   Hero,
@@ -16,4 +17,5 @@ export {
   World,
   Gallery,
   Feedback,
+  HeroAbout,
 };
