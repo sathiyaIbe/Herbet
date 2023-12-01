@@ -127,7 +127,7 @@ cursor: none;
 }
 
 .circle_container_menu{
-  @apply border border-[#413131] rounded-full  w-60 h-60 flex justify-center text-[#413131] ;
+  @apply border border-[#413131] rounded-full  md:w-[600] md:h-[600] w-60 h-60 flex justify-center text-[#413131] ;
 }
 
 .circle_text_menu{
@@ -183,7 +183,8 @@ cursor: none;
 }
 
 .main_3_header_span{
-  @apply text-[24px] md:text-[64px] text-[#441414] font-[founder] leading-[44px] md:leading-[74px] font-medium underline;
+  @apply text-[24px] md:text-[64px] text-[#441414] font-[founder] leading-[44px] md:leading-[36px] font-medium  border-b-[3px] border-[#441414] pb-[-40px];
+  font-weight: bolder;
 
 }
 .footer_hr{
@@ -196,7 +197,7 @@ cursor: none;
 }
 
 .calendar_list{
-  @apply text-[16px] md:text-[30px]  text-[#441414] font-[ogg] leading-[24px] md:leading-[36px] ;
+  @apply text-[16px] md:text-[36px]  text-[#441414] font-[ogg] leading-[24px] md:leading-[46px] ;
 
 }
 .button_footer{

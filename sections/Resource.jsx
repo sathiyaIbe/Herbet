@@ -46,7 +46,7 @@ onUpdate: (self) => {
   
     proxy.skew = skew;
 
-    gsap.to(proxy, {skew: 0, duration: 2, ease: "power3", overwrite: true, onUpdate: () => skewSetter(proxy.skew)});
+    gsap.to(proxy, {skew: 0, duration: 1.5, ease: "power3", overwrite: true, onUpdate: () => skewSetter(proxy.skew)});
   }
 }
 });
@@ -109,31 +109,44 @@ const t2=gsap.timeline({
 
 t1.fromTo(".circle1",{
   opacity:0,
-  y:200,},{
+  y:300,},{
     opacity:1,
     y:0,
-  duration:0.3,
-  ease:'easeOut'
+  duration:1,
+  ease: "power2.out",
 })
 .fromTo(".circle2",{
   opacity:0,
-  y:200,},{
+  y:300,},{
     opacity:1,
     y:0,
-  duration:0.3,
-  ease:'easeOut'
-},0.1).fromTo(".circle3",{
+    duration:1,
+    ease: "power2.out",
+},0.3).fromTo(".circle3",{
   opacity:0,
-  y:200,},{
+  y:300,},{
     opacity:1,
     y:0,
     
-    duration:0.3,
-  ease:'easeOut'
-},0.2)
-.set(".circle_text",{
-  className:'circle_text_animation circle_text'
-})  .from(circle_header.words,{
+    duration:1,
+    ease: "power2.out",
+},0.6)
+// .set(".circle_text",{
+//   className:'circle_text_animation circle_text'
+// })
+.from(".text_3_glow",{
+  opacity:1,
+
+},0.9) .from(".text_2_glow",{
+  opacity:1,
+  
+},0.9) .from(".text_1_glow",{
+  opacity:1,
+  
+},0.9) 
+
+
+.from(circle_header.words,{
   autoAlpha: 0,
     y:40,
   
@@ -255,7 +268,7 @@ gsap.to(a,
         <img
         src='/work_6.png' alt='work' className="w-2/3 menus  hidden md:block " />
         <img
-         src='/work_1.png' alt='work' className="w-1/3 menus hidden md:block" />
+         src='/work_1.png' alt='work' className="w-1/3  hidden md:block" />
 <img
          src='/work_1_mob.png' alt='work' className=" md:hidden" />
       </motion.div>
@@ -290,18 +303,30 @@ gsap.to(a,
 <section data-lenis-prevent id="main1" className="md:min-h-screen min-h-[50vh] max-w-[100vw] flex flex-col gap-11 justify-center  bg-[#463838] skewEle">
   <div className="flex flex-col justify-center  mt-6 gap-9 self-center w-[80%]">
         <div  ref={circleRef}  className="circle_main_containe flex  justify-between w-fit self-center ">
+      
           <div className="circle_container circle3  relative left-[6%]  ">
+          <div className="circle_container absolute   blur-xl opacity-0 text_1_glow  ">
+            <h1   className="circle_text self-center ">1. Strengthening your identity</h1>
+          </div>
             <h1   className="circle_text self-center ">1. Strengthening your identity</h1>
           </div>
           <div className="circle_container circle2  "  >
+          <div className="circle_container absolute   blur-xl opacity-0 text_2_glow  ">
+            <h1   className="circle_text self-center ">2. Building a connection</h1>
+          </div>
+
             <h1  className="circle_text self-center">2. Building a connection</h1>
           </div>
           <div className="circle_container circle1 relative right-[6%]   "  >
+          <div className="circle_container absolute   blur-xl opacity-0 text_3_glow  ">
+            <h1   className="circle_text self-center ">3. Planning for consistency</h1>
+          </div>
+
             <h1  className="circle_text self-center">3. Planning for consistency</h1>
           </div>
         </div>
-        <div className=" flex flex-col self-center w-[90%] md:w-[60%]">
-        <h1  className="circle_header self-center  ">
+        <div className=" flex flex-col self-center w-[90%] md:w-[800px]">
+        <h1  className="circle_header self-center text-center ">
           Your brand can become more than just a logo
         </h1>
         </div>
@@ -393,7 +418,7 @@ gsap.to(a,
   <section id='main3' className="min-h-[75vh] flex flex-col justify-center bg-white skewEle">
    <div className="md:w-[90%] self-center flex flex-col gap-11 ">
     <div className="w-[90%] self-center md:self-start md:w-[100%]">
-    <h1 className="main_3_header self-center  pt-11">What we’ve been thinking lately. <a id="underline" className="main_3_header_span">See more.</a> </h1>
+    <h1 className="main_3_header self-center flex pt-11 menus ">What we’ve been thinking lately. <a id="underline" className="main_3_header_span">See more.</a> </h1>
     </div>
    <div className="self-center hidden md:block">
     <div className="flex self-center pb-11">
@@ -401,15 +426,15 @@ gsap.to(a,
        initial="hidden"
        viewport={{once:true}}
        whileInView="show" className="md:basis-1/2 flex md:flex-row flex-col border border-[#CDCDCD]">
-      <img className="md:w-1/2" alt='img_1' src="/img_1.png"/>
+      <img className="md:w-1/2 menus" alt='img_1' src="/img_1.png"/>
       <div className="flex flex-col justify-center w-1/2">
         <div className="w-[90%] self-center flex flex-col justify-center mt-11 gap-4 ">
-        <h1 className="card_header ">Herbet Blog</h1>
-        <h1 className="card_header_2">An interview with Learning Designer, Goldie Chaudhuri</h1>
-        <p className="card_description">In our first ever podcast, we talk to Goldie Chaudhuri, about her experience as our Learning Designer, as well as on wider themes around design and its role in society today. You can access the full conversation via Podcast (Spotify / Apple Podcasts) Also enjoy a written summary of the conversation.</p>
+        <h1 className="card_header  menus small">Herbet Blog</h1>
+        <h1 className="card_header_2 menus">An interview with Learning Designer, Goldie Chaudhuri</h1>
+        <p className="card_description  menus small">In our first ever podcast, we talk to Goldie Chaudhuri, about her experience as our Learning Designer, as well as on wider themes around design and its role in society today. You can access the full conversation via Podcast (Spotify / Apple Podcasts) Also enjoy a written summary of the conversation.</p>
         <div className="flex flex-col pb-4">
-        <p className="card_bottom_header">Read More</p>
-        <p className="card_bottom_text">Aug 2023</p>
+        <p className="card_bottom_header  menus small">Read More</p>
+        <p className="card_bottom_text  menus small">Aug 2023</p>
         </div>
         </div>
       </div>
@@ -419,15 +444,15 @@ gsap.to(a,
        whileInView="show"
        viewport={{once:true}}
        className="basis-1/2  flex border border-[#CDCDCD]">
-      <img className="w-1/2 " alt='img_1' src="/img_2.png"/>
+      <img className="w-1/2 menus" alt='img_1' src="/img_2.png"/>
       <div className="flex flex-col justify-center  w-1/2">
         <div className="w-[90%] self-center flex flex-col justify-center mt-11 gap-4 ">
-        <h1 className="card_header ">Herbet Blog</h1>
-        <h1 className="card_header_2">An interview with Learning Designer, Goldie Chaudhuri</h1>
+        <h1 className="card_header  menus small">Herbet Blog</h1>
+        <h1 className="card_header_2 menus">An interview with Learning Designer, Goldie Chaudhuri</h1>
         <p className="card_description">In our first ever podcast, we talk to Goldie Chaudhuri, about her experience as our Learning Designer, as well as on wider themes around design and its role in society today. You can access the full conversation via Podcast (Spotify / Apple Podcasts) Also enjoy a written summary of the conversation.</p>
         <div className="flex flex-col pb-4">
-        <p className="card_bottom_header">Read More</p>
-        <p className="card_bottom_text">Aug 2023</p>
+        <p className="card_bottom_header  menus small">Read More</p>
+        <p className="card_bottom_text  menus small">Aug 2023</p>
         </div>
         </div>
       </div>

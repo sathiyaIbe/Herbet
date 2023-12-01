@@ -1280,6 +1280,7 @@ ts.to('#green',{
             trigger:'.first_containerss',
             start:'top -10%',
             end:'top -10%',
+            markers:true,
             onEnter:()=>{
               const tss=gsap.timeline()
               tss.to("#firstCircleCont1",{

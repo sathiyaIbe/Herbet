@@ -56,8 +56,13 @@ let secondRef=useRef()
 
 useEffect(()=>{
    heroAnimation()
-  // gsap.fromTo(".menus",{x:30},{x: -40,y:10, repeat:-1, repeatDelay: 0.1, duration:2.5,scrub: true, yoyo: true , ease:"Linear.easeNone"})
   const ctx3=gsap.context(()=>{
+    const circleTimeline=gsap.timeline();
+    circleTimeline.fromTo(".menus1",{x:20, rotation:"-5", y:-10},{x: -40,y:10, rotation:5, repeat:-1, duration:2.5,scrub: true, yoyo: true ,  ease: "easeOut(10, 2.3)"})
+    circleTimeline.fromTo(".menus2",{x:20, rotation:"-5" , y:-10},{x: -40,y:10, rotation:5, repeat:-1, duration:2.5,scrub: true, yoyo: true ,  ease: "ease.out(1, 2.3)"},0.3)
+    circleTimeline.fromTo(".menus3",{x:20, rotation:"-5" , y:-10},{x: -40,y:10, rotation:5, repeat:-1,  duration:2.5,scrub: true, yoyo: true ,  ease: "ease.out(1, 2.3)"},0.6)
+
+
    const t1=gsap.timeline()
    var pText = new SplitType(".description_header")
    var hText = new SplitType(".hero_header")
@@ -98,10 +103,7 @@ useEffect(()=>{
         transform:'bottom',
         ease:"easeOut",
       
-        stagger: { 
-          from: "random", 
-          amount: 1 
-        },
+        stagger: 0.05,
         duration:1,
       },)
 
@@ -269,14 +271,14 @@ function getBack(){
         <div  className="flex flex-col justify-center h-[90vh] ">
      
        
-       <div className="flex flex-col self-center justify-center hide_container gap-6   md:w-[65%] w-[80%]">
+       <div className="flex flex-col self-center justify-center hide_container gap-6   md:max-w-[850px] w-[80%]">
         
        <div  className="flex flex-col  gap-6  justify-center">
         <h1  id="hero_headers" className="menus hero_header text-center self-center text-[#FFD551]  "><a className="text-white font-black">&#123;</a>Herbet is a brand 
   strategy, design and 
     experience firm<a className="font-black text-white">&#125; </a></h1>
     </div>
-    <div className="description_container self-center flex justify-center md:w-[60%] ">
+    <div className="description_container self-center flex justify-center md:w-[70%] ">
     <p className="description_header menus small">We're the folks you go to before shooting for the stars. Before aiming high, we ensure your brand's essence is undeniably strong.</p>
         </div>
        
@@ -315,30 +317,29 @@ function getBack(){
 33.9245 36.1184 38.3953 32.4745C39.0515 31.9371 39.7346 31.4264 40.3486 30.8432C41.3119 29.9284 41.0854 28.6897 39.8881 28.1332C37.3131 26.9325 34.738 25.7395 32.1668 24.5389C29.2196 23.1667 26.2684 21.7945 23.3211 20.4224C22.9796 
 20.2623 22.6304 20.167 22.2466 20.2508C21.2987 20.4567 20.6003 21.3067 20.6003 22.2938C20.6003 23.9404 20.6118 25.587 20.6156 27.2336C20.6156 29.1737 20.6156 31.1138 20.6156 33.0539L20.6118 33.0577Z" fill="#463838"/>
 </svg>
-<div className="flex flex-col md:block hidden mb-24 ">
+<div className=" md:block hidden">
+<div className="flex flex-col justify-center min-h-[90vh] mb-24 ">
 
         <div className="circle_main_containe gap-11 flex  self-center ">
-        <MagnetEffect>
-          <a  onClick={()=>{getBack()}} href="#resourse" className="circle_container_menu relative menus left-[17%] " >
+          <a  onClick={()=>{getBack()}} href="#resourse" className="circle_container_menu relative  menus menus1 left-[-20%] " >
             <h1 className="circle_text_menu circle_cursour self-center  ">Work</h1>
           </a>
-          </MagnetEffect>
-          <MagnetEffect>
-          <Link href={"AboutUs"} className="circle_container_menu relative menus  left-[42%]  " >
+         
+          <Link href={"AboutUs"} className="circle_container_menu relative menus menus3 left-[20%]  " >
             <h1  className="circle_text_menu circle_cursour self-center">Resources</h1>
           </Link>
-          </MagnetEffect>
+
 
         </div>
-        <MagnetEffect>
-        
-        <div className="circle_container_menu circle_cursour relative menus left-[40%]  "  >
+        <div className="flex justify-center">
+        <div className="circle_container_menu  circle_cursour relative menus2 menus left-[0%]  "  >
             <h1  className="circle_text_menu self-center ">Contact</h1>
           </div>
-          </MagnetEffect>
+          </div>
+      
         
         </div>
-
+        </div>
 
         <div className="flex flex-col self-center  md:hidden  ">
       
