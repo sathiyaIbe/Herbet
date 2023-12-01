@@ -300,9 +300,8 @@ gsap.to(a,
       </motion.div>
     </div>
   </section>
-  <div className="hidden md:block">
-<section data-lenis-prevent id="main1" className="md:min-h-screen min-h-[50vh] mb-24 max-w-[100vw] flex flex-col gap-11 justify-end md:justify-center  bg-[#463838] skewEle">
-  <div className="flex flex-col justify-center  md:mt-6 gap-9 self-center w-[80%]">
+<section data-lenis-prevent id="main1" className="min-h-screen  mb-24 max-w-[100vw] flex flex-col gap-11 justify-evenly md:justify-center  bg-[#463838] skewEle">
+  <div className="flex flex-col justify-center mt-24    gap-9 self-center w-[80%]">
         <div  ref={circleRef}  className="circle_main_containe flex  justify-between w-fit self-center ">
       
           <div className="circle_container circle3  relative left-[6%] menus  ">
@@ -332,9 +331,7 @@ gsap.to(a,
         </h1>
         </div>
         </div>
-</section>
-
-  <section id="main2" className="md:min-h-screen min-h-[45vh] max-w-[100vw] flex flex-col gap-11 md:justify-center  bg-[#463838] skewEle">
+        <section id="main2" className="md:min-h-screen  max-w-[100vw] flex flex-col gap-11 md:justify-center  bg-[#463838] skewEle">
 
 <div className="w-[90%] flex flex-col self-center">
 <div className=" self-center w-[90%] ">
@@ -355,6 +352,7 @@ gsap.to(a,
       </span>
     </div>
     </div>
+    <div className="hidden md:block ">
     <div className="flex self-center   justify-around w-[90%] ">
       <motion.img
        variants={fadeIn("up", "tween",.1,1)}
@@ -383,41 +381,14 @@ gsap.to(a,
        whileInView="show"
       viewport={{ once: true }} src='/co_logo_5.png' className="hidden md:block w-1/5 menus" alt='logo' />
     </div>
-    {/* <div className="flex flex-col gap-6 justify-around md:hidden self-center ">
-      <div className="flex justify-center">
-      <motion.img
-       variants={fadeIn("up", "tween",.1,1)}
-       initial="hidden"
-       whileInView="show"
-      viewport={{ once: true }}
-      src='/co_logo_1.png ' className="md:w-1/5 w-1/3" alt='logo' />
-      <motion.img
-       variants={fadeIn("up", "tween",.2,1)}
-       initial="hidden"
-       whileInView="show"
-      viewport={{ once: true }} src='/co_logo_2.png' className="w-1/3" alt='logo' />
-      <motion.img
-       variants={fadeIn("up", "tween",.3,1)}
-       initial="hidden"
-       whileInView="show"
-      viewport={{ once: true }} src='/co_logo_3.png' className="w-1/3 " alt='logo' />
-      </div>
-      <div className="flex justify-center">
-      <motion.img
-       variants={fadeIn("up", "tween",.4,1)}
-       initial="hidden"
-       whileInView="show"
-      viewport={{ once: true }} src='/co_logo_4.png' className="w-1/3" alt='logo' />
-      <motion.img
-       variants={fadeIn("up", "tween",.5,1)}
-       initial="hidden"
-       whileInView="show"
-      viewport={{ once: true }} src='/co_logo_5.png' className="w-1/3" alt='logo' />
-      </div>
-    </div> */}
+    </div>
+  
   </section>
-  </div>
-  <div className="md:hidden">
+</section>
+
+
+  
+  {/* <div className="md:hidden">
 <section data-lenis-prevent id="main1" className="min-h-[100vh]  mb-24 max-w-[100vw] flex flex-col gap-11 justify-evenly md:justify-center  bg-[#463838] skewEle">
   <div className="flex flex-col mt-11  md:mt-6 gap-9 self-center w-[80%]">
         <div  ref={circleRef}  className="circle_main_containe flex  justify-between w-fit self-center ">
@@ -504,7 +475,7 @@ gsap.to(a,
 </section>
 
   
-  </div>
+  </div> */}
   <section id='main3' className="min-h-[75vh] flex flex-col justify-center bg-white skewEle">
    <div className="md:w-[90%] self-center flex flex-col gap-11 ">
     <div className="w-[90%] self-center md:self-start md:w-[100%]">
