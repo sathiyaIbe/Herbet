@@ -847,7 +847,7 @@ ts.to('#green',{
                 animating2&&  keyUp(targetElement)
                  
                 },
-                tolerance: 200,
+                tolerance: 10,
                 // preventDefault: true,
                 onPress: self => {
                   // on touch devices like iOS, if we want to prevent scrolling, we must call preventDefault() on the touchstart (Observer doesn't do that because that would also prevent side-scrolling which is undesirable in most cases)
