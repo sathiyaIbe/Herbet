@@ -300,7 +300,8 @@ gsap.to(a,
       </motion.div>
     </div>
   </section>
-<section data-lenis-prevent id="main1" className="md:min-h-screen min-h-[38vh] mb-24 max-w-[100vw] flex flex-col gap-11 justify-end md:justify-center  bg-[#463838] skewEle">
+  <div className="hidden md:block">
+<section data-lenis-prevent id="main1" className="md:min-h-screen min-h-[50vh] mb-24 max-w-[100vw] flex flex-col gap-11 justify-end md:justify-center  bg-[#463838] skewEle">
   <div className="flex flex-col justify-center  md:mt-6 gap-9 self-center w-[80%]">
         <div  ref={circleRef}  className="circle_main_containe flex  justify-between w-fit self-center ">
       
@@ -333,7 +334,7 @@ gsap.to(a,
         </div>
 </section>
 
-  <section id="main2" className="md:min-h-screen min-h-[33vh] max-w-[100vw] flex flex-col gap-11 md:justify-center  bg-[#463838] skewEle">
+  <section id="main2" className="md:min-h-screen min-h-[45vh] max-w-[100vw] flex flex-col gap-11 md:justify-center  bg-[#463838] skewEle">
 
 <div className="w-[90%] flex flex-col self-center">
 <div className=" self-center w-[90%] ">
@@ -415,6 +416,95 @@ gsap.to(a,
       </div>
     </div> */}
   </section>
+  </div>
+  <div className="md:hidden">
+<section data-lenis-prevent id="main1" className="min-h-[100vh]  mb-24 max-w-[100vw] flex flex-col gap-11 justify-evenly md:justify-center  bg-[#463838] skewEle">
+  <div className="flex flex-col mt-11  md:mt-6 gap-9 self-center w-[80%]">
+        <div  ref={circleRef}  className="circle_main_containe flex  justify-between w-fit self-center ">
+      
+          <div className="circle_container circle3  relative left-[6%] menus  ">
+          <div className="circle_container absolute text_glow  blur-xl  text_1_glow  ">
+            <h1   className="circle_text self-center ">1. Strengthening your identity</h1>
+          </div>
+            <h1   className="circle_text self-center ">1. Strengthening your identity</h1>
+          </div>
+          <div className="circle_container circle2 menus "  >
+          <div className="circle_container absolute text_glow  blur-xl  text_2_glow  ">
+            <h1   className="circle_text self-center ">2. Building a connection</h1>
+          </div>
+
+            <h1  className="circle_text self-center">2. Building a connection</h1>
+          </div>
+          <div className="circle_container circle1 relative right-[6%] menus  "  >
+          <div className="circle_container absolute  text_glow blur-xl  text_3_glow  ">
+            <h1   className="circle_text self-center ">3. Planning for consistency</h1>
+          </div>
+
+            <h1  className="circle_text self-center ">3. Planning for consistency</h1>
+          </div>
+        </div>
+        <div className=" flex flex-col self-center w-[90%] md:w-[800px]">
+        <h1  className="circle_header self-center text-center menus">
+          Your brand can become more than just a logo
+        </h1>
+        </div>
+        </div>
+        <section id="main2" className="   max-w-[100vw] flex flex-col gap-11   bg-[#463838] skewEle">
+
+<div className="w-[90%] flex flex-col self-center">
+<div className=" self-center w-[90%] ">
+      <span
+     
+    
+      className="resourse_text  w-[50%]  ">
+        <span className="resourse_texts min-w-[70%] menus flex">From the next big thing to the world's best-known brands, we're at the heart of visionary &nbsp;
+        <motion.svg  className="svg_01 menus small" width="58" height="35" viewBox="0 0 58 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle id="_0" className="opacity-0" cx="17.1205" cy="17.1205" r="16.4699" stroke="#FFD551" stroke-width="1.3012"/>
+
+<circle id="_1" className="opacity-0" cx="23.0604" cy="17.1205" r="16.4699" stroke="#FFD551" stroke-width="1.3012"/>
+<circle id="_2" className="opacity-0" cx="29.0004" cy="17.1205" r="16.4699" stroke="#FFD551" stroke-width="1.3012"/>
+<circle id="_3" className="opacity-0" cx="34.9403" cy="17.1205" r="16.4699" stroke="#FFD551" stroke-width="1.3012"/>
+<circle id="_4" className="opacity-0" cx="40.8796" cy="17.1205" r="16.4699" stroke="#FFD551" stroke-width="1.3012"/>
+</motion.svg>&nbsp;partnerships.</span>
+     
+      </span>
+    </div>
+    </div>
+    <div className="self-center hidden md:block">
+    <div className="flex self-center   justify-around w-[90%] ">
+      <motion.img
+       variants={fadeIn("up", "tween",.1,1)}
+       initial="hidden"
+       whileInView="show"
+      viewport={{ once: true }}
+      src='/co_logo_1.png ' className="hidden md:block w-1/5 menus" alt='logo' />
+      <motion.img
+       variants={fadeIn("up", "tween",.2,1)}
+       initial="hidden"
+       whileInView="show"
+      viewport={{ once: true }} src='/co_logo_2.png' className="hidden md:block w-1/5 menus" alt='logo' />
+      <motion.img
+       variants={fadeIn("up", "tween",.3,1)}
+       initial="hidden"
+       whileInView="show"
+      viewport={{ once: true }} src='/co_logo_3.png' className="hidden md:block w-1/5 menus" alt='logo' />
+      <motion.img
+       variants={fadeIn("up", "tween",.4,1)}
+       initial="hidden"
+       whileInView="show"
+      viewport={{ once: true }} src='/co_logo_4.png' className="hidden md:block w-1/5 menus" alt='logo' />
+      <motion.img
+       variants={fadeIn("up", "tween",.5,1)}
+       initial="hidden"
+       whileInView="show"
+      viewport={{ once: true }} src='/co_logo_5.png' className="hidden md:block w-1/5 menus" alt='logo' />
+    </div>
+    </div>
+  </section>
+</section>
+
+  
+  </div>
   <section id='main3' className="min-h-[75vh] flex flex-col justify-center bg-white skewEle">
    <div className="md:w-[90%] self-center flex flex-col gap-11 ">
     <div className="w-[90%] self-center md:self-start md:w-[100%]">
