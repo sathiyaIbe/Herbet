@@ -303,7 +303,7 @@ const Feedback = () => {
 
   Observer.create({
               type: "wheel,touch",
-              target:'.firstss_another_containaer',
+              target:'.checkCon',
               // wheelSpeed: -1,
               // onDown: () => !animating && gotoSection(currentIndex - 1, -1),
               // onUp: () => !animating && gotoSection(currentIndex + 1, 1),
@@ -785,7 +785,7 @@ const Feedback = () => {
 
       Observer.create({
                   type: "wheel,touch",
-                  target:'.firstss_another_containaer',
+                  target:'#checkCon',
                   // wheelSpeed: -1,
                   // onDown: () => !animating && gotoSection(currentIndex - 1, -1),
                   // onUp: () => !animating && gotoSection(currentIndex + 1, 1),
@@ -1014,10 +1014,10 @@ return ()=>contextCreate.revert();
 
                 <div className='min-h-[200vh] md:min-h-[300vh] ' >
                   <div  id="checkCon" className='  min-h-[100vh] m-6 flex flex-col  justify-center     '>
-                  <div className='flex flex-col h-[700px] md:h-[400px]  self-center overflow-hidden '>
+                  <div className='flex flex-col h-[700px] md:h-[700px]  self-center overflow-hidden '>
 <div id="firstCircleCont"  className=' self-center hidden md:block'>
 
-<div  className=' flex flex-col  justify-center self-center  min-h-[400px] w-[70%]  gap-11 '>
+<div  className=' flex flex-col  justify-center self-center  min-h-[700px] w-[70%]  gap-11 '>
                       <div className='flex self-center  gap-11'>
                       <div className='flex flex-col justify-start'>
             <h1 className='count count_text_container_1 '>01</h1>
@@ -1075,7 +1075,7 @@ Building a brand is not an overnight endeavor; it's a long-term process requirin
 </div>
 
 <div id="secondCircleCont" className=' self-center hidden md:block'>
-    <div  className=' flex flex-col  justify-center self-center  min-h-[400px] w-[70%]  gap-11 '>
+    <div  className=' flex flex-col  justify-center self-center  min-h-[700px] w-[70%]  gap-11 '>
                       <div className='flex self-center  gap-11'>
                       <div className='flex flex-col justify-start'>
             <h1 className='count count_text_container_2 '>02</h1>
@@ -1132,7 +1132,7 @@ Building a brand is not an overnight endeavor; it's a long-term process requirin
 </div>
 <div id="thirdCircleCont" className=' self-center hidden md:block'>
 
-    <div  className=' flex flex-col justify-center self-center  min-h-[400px] w-[70%]  gap-11 '>
+    <div  className=' flex flex-col justify-center self-center  min-h-[700px] w-[70%]  gap-11 '>
                       <div className='flex self-center  gap-11'>
                       <div className='flex flex-col justify-start'>
             <h1 className='count count_text_container_3 '>03</h1>

@@ -2240,7 +2240,7 @@ In a world where brand identity is paramount, the essence of messaging from with
     </div>
     
     </div>
-    <div  id="green" className="circle_main_container flex mt-11 md:mt-0 md:justify-end w-fit self-center  md:w-[60%] items-center relative left-[200px] md:left-[450px]   ">
+    <div  id="green" className="circle_main_container flex mt-11 md:mt-0 md:justify-end w-fit self-center  items-center relative left-[200px] md:left-[450px]   ">
           <div id="green4"  className="circle_container_new circle3  relative left-[15%]  ">
             <h1   className="circle_text_new self-center ">Communication</h1>
           </div>
