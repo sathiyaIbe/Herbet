@@ -944,7 +944,7 @@ tssFirst.to("#firstCircleCont",{
     
     
   
-},1).fromTo('.count_text_container_2',
+},0.1).fromTo('.count_text_container_2',
 {
   y:30,
 },{
@@ -954,7 +954,7 @@ tssFirst.to("#firstCircleCont",{
 
 
 
-},1)
+},0.1)
     },
     onEnterBack:()=>{
       const tss=gsap.timeline()
