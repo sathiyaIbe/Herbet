@@ -37,6 +37,22 @@ const Gallery = () => {
     //   duration:1.5
     // });
 
+    let cursorScale = document.querySelectorAll('.menus')
+    var cursor = document.querySelector('.cursor')
+         cursorScale.forEach(link => {
+          link.addEventListener('mouseleave', () => {
+              cursor.classList.remove('grow');
+              cursor.classList.remove('grow-small');
+          });
+          link.addEventListener('mousemove', () => {
+              cursor.classList.add('grow');
+              if(link.classList.contains('small')){
+                  cursor.classList.remove('grow');
+                  cursor.classList.add('grow-small');
+              }
+          });
+      });
+
     const t2=gsap.timeline({
       scrollTrigger:{
         trigger:'#main_gallery',
@@ -104,7 +120,7 @@ const Gallery = () => {
   return(
   <section  className="md:min-h-screen flex flex-col bg-[#463838]  gap-6"> 
     <div className="w-[90%] self-center" >
-      <h1 className="gallery_header">Our Studio<span className="text-[#FFD551] font-black">/</span>
+      <h1 className="gallery_header menus">Our Studio<span className="text-[#FFD551] font-black">/</span>
       </h1>
     </div>
     <div id="gallery" className="flex flex-col bg-[#]">
@@ -114,14 +130,14 @@ const Gallery = () => {
         <img src="/gallery_1.png" className="w-2/3 img1 " alt="img"/>
         </div>
         </div> */}
-        <img src="/gallery_1.png" className="w-2/3  " alt="img"/>
+        <img src="/gallery_1.png" className="w-2/3 menus " alt="img"/>
 
-        <img src="/gallery_2.png" className="w-1/3"  alt="img"/>
+        <img src="/gallery_2.png" className="w-1/3 menus"  alt="img"/>
 
       </div>
       <div className="flex ">
-        <img src="/gallery_3.png" className="w-1/3" alt="img"/>
-        <img src="/gallery_4.png" className="w-2/3" alt="img"/>
+        <img src="/gallery_3.png" className="w-1/3 menus" alt="img"/>
+        <img src="/gallery_4.png" className="w-2/3 menus" alt="img"/>
 
       </div>
     </div>
@@ -131,8 +147,8 @@ const Gallery = () => {
      
     
       className="gallery_text  w-[80%]  ">
-        <span className="gallery_texts min-w-[70%]">We’re forged in the heartbeat of Malaysia, proudly servicing a global portfolio of brands. &nbsp;
-        <motion.svg  className="svg_01 " width="58" height="35" viewBox="0 0 58 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <span className="gallery_texts min-w-[70%] menus">We’re forged in the heartbeat of Malaysia, proudly servicing a global portfolio of brands. &nbsp;
+        <motion.svg  className="svg_01 menus" width="58" height="35" viewBox="0 0 58 35" fill="none" xmlns="http://www.w3.org/2000/svg">
 <circle id="_0" className="opacity-0" cx="17.1205" cy="17.1205" r="16.4699" stroke="#FFD551" stroke-width="1.3012"/>
 
 <circle id="_1" className="opacity-0" cx="23.0604" cy="17.1205" r="16.4699" stroke="#FFD551" stroke-width="1.3012"/>

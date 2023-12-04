@@ -11,6 +11,7 @@ import { Observer } from "gsap/Observer";
 import Lenis from '@studio-freight/lenis';
 gsap.registerPlugin(ScrollTrigger,MotionPathPlugin,Observer);
 const Feedback = () => {
+  const newRef=useRef(null)
   let animating1=false
   let targetElement1=0
   useEffect(()=>{
@@ -36,7 +37,21 @@ const Feedback = () => {
               scrub: 1,
             }
           })
-
+          let cursorScale = document.querySelectorAll('.menus')
+          var cursor = document.querySelector('.cursor')
+               cursorScale.forEach(link => {
+                link.addEventListener('mouseleave', () => {
+                    cursor.classList.remove('grow');
+                    cursor.classList.remove('grow-small');
+                });
+                link.addEventListener('mousemove', () => {
+                    cursor.classList.add('grow');
+                    if(link.classList.contains('small')){
+                        cursor.classList.remove('grow');
+                        cursor.classList.add('grow-small');
+                    }
+                });
+            });
           let mm = gsap.matchMedia();
          
 
@@ -47,7 +62,7 @@ const Feedback = () => {
               scrollTrigger:{
                 trigger:'#checkCon',
                 start: "top top",
-                end:'+=100%',
+                end:'bottom center',
                  pin:true,
               }
             })
@@ -121,6 +136,212 @@ const Feedback = () => {
       },0.3).to({},{
         onComplete:()=>{animating1=true}
       })
+      // Second Trigger
+const newT1CenterSecond=gsap.timeline({
+  scrollTrigger:{
+    trigger:newRef.current,
+    start: "top 0%",
+    end: "top -20%",
+
+  //  // snap: {
+    //   snapTo: 0.2,
+    //   duration: 0.3,
+    //   delay: 0,
+    //   },
+
+    onLeave:()=>{
+      const tssFirst=gsap.timeline()
+tssFirst.to("#firstCircleCont1",{
+  yPercent:-100,
+  ease:"easeOut",
+
+ }).to("#secondCircleCont1",{
+  yPercent:-100,
+  ease:"easeOut",
+  
+ },0.1).to("#_00",{
+  opacity:1,
+  duration:0.08,
+  delay:1,
+},)
+.fromTo("#_11",{
+  y:30,
+},{
+  opacity:1,
+  y:0,
+  duration:0.08,
+})
+.fromTo("#_22",{
+  y:30,
+  
+
+},{
+  y:0,
+  opacity:1,
+  duration:0.08,
+},).fromTo("#_33",{
+  y:30,
+ 
+
+},{
+  y:0,
+  opacity:1,
+  duration:0.08,
+
+})
+.fromTo("#_44",{
+  y:30,
+},{
+  y:0,
+  opacity:1,
+  duration:0.08,
+
+
+
+  
+}).fromTo('.text_container_2',
+  {
+      y:30,
+    },{
+      y:0,
+      autoAlpha:1,
+      duration:0.08,
+    
+    
+  
+},1).fromTo('.count_text_container_2',
+{
+  y:30,
+},{
+  y:0,
+  autoAlpha:1,
+  duration:0.08,
+
+
+
+},1)
+    },
+    onEnterBack:()=>{
+      const tss=gsap.timeline()
+          tss.to("#secondCircleCont1",{
+            yPercent:0,
+            ease:"easeOut",
+
+           }).to("#firstCircleCont1",{
+            yPercent:0,
+            ease:"easeOut",
+            
+           },0.1)
+        
+    }
+  }
+})
+
+// Third Trigger
+const newT1CenterThird=gsap.timeline({
+  scrollTrigger:{
+    trigger:newRef.current,
+    start: "top 0%",
+    end: "top -40%",
+
+  //  // snap: {
+    //   snapTo: 0.2,
+    //   duration: 0.3,
+    //   delay: 0,
+    //   },
+
+    onLeave:()=>{
+      const tssSecond=gsap.timeline()
+      tssSecond.to("#secondCircleCont1",{
+                yPercent:-200,
+                ease:"easeOut",
+    
+               }).to("#thirdCircleCont1",{
+                yPercent:-200,
+                ease:"easeOut",
+                
+               },0.1) .to("#_000",{
+                opacity:1,
+                duration:0.08,
+                delay:1,
+              },)
+              .fromTo("#_111",{
+                y:30,
+              },{
+                opacity:1,
+                y:0,
+                duration:0.08,
+              },">")
+              .fromTo("#_222",{
+                y:30,
+                
+              
+              },{
+                y:0,
+                opacity:1,
+                duration:0.08,
+              },).fromTo("#_333",{
+                y:30,
+               
+              
+              },{
+                y:0,
+                opacity:1,
+                duration:0.08,
+              
+              })
+           .fromTo("#_444",{
+                y:30,
+              },{
+                y:0,
+                opacity:1,
+                duration:0.08,
+              
+              
+            
+                
+            }).fromTo('.text_container_3',
+                {
+                    y:30,
+                  },{
+                    y:0,
+                    autoAlpha:1,
+                    duration:0.08,
+                  
+                  
+                
+            },1).fromTo('.count_text_container_3',
+            {
+                y:30,
+              },{
+                y:0,
+                autoAlpha:1,
+                duration:0.08,
+              
+              
+            
+        },1)
+    },
+    onEnterBack:()=>{
+      const tss=gsap.timeline()
+            tss.to("#thirdCircleCont1",{
+              yPercent:-100,
+              ease:"easeOut",
+  
+             }).to("#secondCircleCont1",{
+              yPercent:-100,
+              ease:"easeOut",
+              
+             },0.1)
+        
+    }
+  }
+})
+
+
+
+
+
     //   ScrollTrigger.create({
     //     trigger:'#checkCon',
     //     start:'top -50%',
@@ -301,39 +522,42 @@ const Feedback = () => {
     //     }
     //   })
 
-  Observer.create({
-              type: "wheel,touch",
-              target:'.checkCon',
-              // wheelSpeed: -1,
-              // onDown: () => !animating && gotoSection(currentIndex - 1, -1),
-              // onUp: () => !animating && gotoSection(currentIndex + 1, 1),
-              onDown: () => {
+  // Observer.create({
+  //             type: "wheel,touch",
+  //             target:'.checkCon',
+  //             // wheelSpeed: -1,
+  //             // onDown: () => !animating && gotoSection(currentIndex - 1, -1),
+  //             // onUp: () => !animating && gotoSection(currentIndex + 1, 1),
+  //             onDown: () => {
                 
                
-                if(targetElement1>0){
-                  targetElement1=targetElement1-1 
-                    }
-                    circleKeyDown(targetElement1)
-                  },
-                  onUp:() => {
+  //               if(targetElement1>0){
+  //                 targetElement1=targetElement1-1 
+  //                   }
+  //                   circleKeyDown(targetElement1)
+  //                 },
+  //                 onUp:() => {
                 
-              animating1&&circleKeyUp(targetElement1)
+  //             animating1&&circleKeyUp(targetElement1)
+  //             animating1=false
                
-              },
-              wheelSpeed: -1,
-              tolerance: 10,
-              // onPress: self => {
-              //   // on touch devices like iOS, if we want to prevent scrolling, we must call preventDefault() on the touchstart (Observer doesn't do that because that would also prevent side-scrolling which is undesirable in most cases)
-              //  self.event.preventDefault()
-              // }
+  //             },
+  //             wheelSpeed: -1,
+  //             tolerance: 10,
+  //             // onPress: self => {
+  //             //   // on touch devices like iOS, if we want to prevent scrolling, we must call preventDefault() on the touchstart (Observer doesn't do that because that would also prevent side-scrolling which is undesirable in most cases)
+  //             //  self.event.preventDefault()
+  //             // }
             
-            });
+  //           });
 
             function circleKeyUp(e){
               if(targetElement1<3){
-                animating1=false
+
                 targetElement1=targetElement1+1 
                   }
+                  console.log(targetElement1)
+
                  
             const tss=gsap.timeline()
             if(targetElement1==1){
@@ -535,8 +759,8 @@ const Feedback = () => {
             
             const newT1Center=gsap.timeline({
               scrollTrigger:{
-                trigger:'.first_containerss',
-                start: "top top",
+                trigger:'#checkCon',
+                start: "top 0%",
               //  // snap: {
                 //   snapTo: 0.2,
                 //   duration: 0.3,
@@ -599,9 +823,212 @@ const Feedback = () => {
               
 
           
-      },0.3).to({},{
-        onComplete:()=>{animating1=true}
-      })
+      },0.3)
+
+// Second Trigger
+const newT1CenterSecond=gsap.timeline({
+  scrollTrigger:{
+    trigger:newRef.current,
+    start: "top 0%",
+    end: "top -40%",
+
+    markers:true,
+  //  // snap: {
+    //   snapTo: 0.2,
+    //   duration: 0.3,
+    //   delay: 0,
+    //   },
+
+    onLeave:()=>{
+      const tssFirst=gsap.timeline()
+tssFirst.to("#firstCircleCont",{
+  yPercent:-100,
+  ease:"easeOut",
+
+ }).to("#secondCircleCont",{
+  yPercent:-100,
+  ease:"easeOut",
+  
+ },0.1).to("#_00",{
+  opacity:1,
+  duration:0.08,
+  delay:1,
+},)
+.fromTo("#_11",{
+  y:30,
+},{
+  opacity:1,
+  y:0,
+  duration:0.08,
+})
+.fromTo("#_22",{
+  y:30,
+  
+
+},{
+  y:0,
+  opacity:1,
+  duration:0.08,
+},).fromTo("#_33",{
+  y:30,
+ 
+
+},{
+  y:0,
+  opacity:1,
+  duration:0.08,
+
+})
+.fromTo("#_44",{
+  y:30,
+},{
+  y:0,
+  opacity:1,
+  duration:0.08,
+
+
+
+  
+}).fromTo('.text_container_2',
+  {
+      y:30,
+    },{
+      y:0,
+      autoAlpha:1,
+      duration:0.08,
+    
+    
+  
+},1).fromTo('.count_text_container_2',
+{
+  y:30,
+},{
+  y:0,
+  autoAlpha:1,
+  duration:0.08,
+
+
+
+},1)
+    },
+    onEnterBack:()=>{
+      const tss=gsap.timeline()
+          tss.to("#secondCircleCont",{
+            yPercent:0,
+            ease:"easeOut",
+
+           }).to("#firstCircleCont",{
+            yPercent:0,
+            ease:"easeOut",
+            
+           },0.1)
+        
+    }
+  }
+})
+
+// Third Trigger
+const newT1CenterThird=gsap.timeline({
+  scrollTrigger:{
+    trigger:newRef.current,
+    start: "top 0%",
+    end: "top -80%",
+
+  //  // snap: {
+    //   snapTo: 0.2,
+    //   duration: 0.3,
+    //   delay: 0,
+    //   },
+
+    onLeave:()=>{
+      const tssSecond=gsap.timeline()
+      tssSecond.to("#secondCircleCont",{
+                yPercent:-200,
+                ease:"easeOut",
+    
+               }).to("#thirdCircleCont",{
+                yPercent:-200,
+                ease:"easeOut",
+                
+               },0.1) .to("#_000",{
+                opacity:1,
+                duration:0.08,
+                delay:1,
+              },)
+              .fromTo("#_111",{
+                y:30,
+              },{
+                opacity:1,
+                y:0,
+                duration:0.08,
+              },">")
+              .fromTo("#_222",{
+                y:30,
+                
+              
+              },{
+                y:0,
+                opacity:1,
+                duration:0.08,
+              },).fromTo("#_333",{
+                y:30,
+               
+              
+              },{
+                y:0,
+                opacity:1,
+                duration:0.08,
+              
+              })
+           .fromTo("#_444",{
+                y:30,
+              },{
+                y:0,
+                opacity:1,
+                duration:0.08,
+              
+              
+            
+                
+            }).fromTo('.text_container_3',
+                {
+                    y:30,
+                  },{
+                    y:0,
+                    autoAlpha:1,
+                    duration:0.08,
+                  
+                  
+                
+            },1).fromTo('.count_text_container_3',
+            {
+                y:30,
+              },{
+                y:0,
+                autoAlpha:1,
+                duration:0.08,
+              
+              
+            
+        },1)
+    },
+    onEnterBack:()=>{
+      const tss=gsap.timeline()
+            tss.to("#thirdCircleCont",{
+              yPercent:-100,
+              ease:"easeOut",
+  
+             }).to("#secondCircleCont",{
+              yPercent:-100,
+              ease:"easeOut",
+              
+             },0.1)
+        
+    }
+  }
+})
+
+
 
     //   ScrollTrigger.create({
     //     trigger:'#checkCon',
@@ -783,211 +1210,307 @@ const Feedback = () => {
     //     }
     //   })
 
-      Observer.create({
-                  type: "wheel,touch",
-                  target:'#checkCon',
-                  // wheelSpeed: -1,
-                  // onDown: () => !animating && gotoSection(currentIndex - 1, -1),
-                  // onUp: () => !animating && gotoSection(currentIndex + 1, 1),
-                  onDown: () => {
+      // Observer.create({
+      //             type: "wheel,touch",
+      //             target:'#checkCon',
+      //             // wheelSpeed: -1,
+      //             // onDown: () => !animating && gotoSection(currentIndex - 1, -1),
+      //             // onUp: () => !animating && gotoSection(currentIndex + 1, 1),
+      //             onDown: () => {
                     
                    
-                    if(targetElement1>0){
-                      targetElement1=targetElement1-1 
-                        }
-                        circleKeyDown(targetElement1)
-                      },
-                      onUp:() => {
+      //               if(targetElement1>0){
+      //                 targetElement1=targetElement1-1 
+      //                   }
+      //                   circleKeyDown(targetElement1)
+      //                 },
+      //                 onUp:() => {
                     
-                  animating1&&circleKeyUp(targetElement1)
+      //             animating1&&circleKeyUp(targetElement1)
                    
-                  },
-                  wheelSpeed: -1,
-                  tolerance: 10,
-                  preventDefault: true,
-                  onPress: self => {
-                    // on touch devices like iOS, if we want to prevent scrolling, we must call preventDefault() on the touchstart (Observer doesn't do that because that would also prevent side-scrolling which is undesirable in most cases)
-                   self.event.preventDefault()
-                  }
-                
-                });
+      //             },
+      //             wheelSpeed: -1,
+      //             tolerance: 10,
+      //             preventDefault: true,
+                 
+      //           });
 
-                function circleKeyUp(e){
-                              if(targetElement1<3){
+                // function circleKeyUp(e){
+                //               if(targetElement1<3){
                
-                                targetElement1=targetElement1+1 
-                                  }
-                            const tss=gsap.timeline()
-                            if(targetElement1==1){
-                                 tss.to("#firstCircleCont",{
-                                  yPercent:-100,
-                                  ease:"easeOut",
+                //                 targetElement1=targetElement1+1 
+                //                   }
+                //             const tss=gsap.timeline()
+                //             const tss1=gsap.timeline()
+
+                //             if(targetElement1==1){
+                             
+                //                  tss.to("#firstCircleCont",{
+                //                   yPercent:-100,
+                //                   ease:"easeOut",
             
-                                 }).to("#secondCircleCont",{
-                                  yPercent:-100,
-                                  ease:"easeOut",
+                //                  }).to("#secondCircleCont",{
+                //                   yPercent:-100,
+                //                   ease:"easeOut",
                                   
-                                 },0.1).to("#_00",{
-                                  opacity:1,
-                                  duration:0.08,
-                                  delay:1,
-                                },)
-                                .fromTo("#_11",{
-                                  y:30,
-                                },{
-                                  opacity:1,
-                                  y:0,
-                                  duration:0.08,
-                                })
-                                .fromTo("#_22",{
-                                  y:30,
+                //                  },0.1).to("#_00",{
+                //                   opacity:1,
+                //                   duration:0.08,
+                //                   delay:1,
+                //                 },)
+                //                 .fromTo("#_11",{
+                //                   y:30,
+                //                 },{
+                //                   opacity:1,
+                //                   y:0,
+                //                   duration:0.08,
+                //                 })
+                //                 .fromTo("#_22",{
+                //                   y:30,
                                   
                                 
-                                },{
-                                  y:0,
-                                  opacity:1,
-                                  duration:0.08,
-                                },).fromTo("#_33",{
-                                  y:30,
+                //                 },{
+                //                   y:0,
+                //                   opacity:1,
+                //                   duration:0.08,
+                //                 },).fromTo("#_33",{
+                //                   y:30,
                                  
                                 
-                                },{
-                                  y:0,
-                                  opacity:1,
-                                  duration:0.08,
+                //                 },{
+                //                   y:0,
+                //                   opacity:1,
+                //                   duration:0.08,
                                 
-                                })
-                             .fromTo("#_44",{
-                                  y:30,
-                                },{
-                                  y:0,
-                                  opacity:1,
-                                  duration:0.08,
+                //                 })
+                //              .fromTo("#_44",{
+                //                   y:30,
+                //                 },{
+                //                   y:0,
+                //                   opacity:1,
+                //                   duration:0.08,
                                 
                                 
                               
                                   
-                              }).fromTo('.text_container_2',
-                                  {
-                                      y:30,
-                                    },{
-                                      y:0,
-                                      autoAlpha:1,
-                                      duration:0.08,
+                //               }).fromTo('.text_container_2',
+                //                   {
+                //                       y:30,
+                //                     },{
+                //                       y:0,
+                //                       autoAlpha:1,
+                //                       duration:0.08,
                                     
                                     
                                   
-                              },1).fromTo('.count_text_container_2',
-                              {
-                                  y:30,
-                                },{
-                                  y:0,
-                                  autoAlpha:1,
-                                  duration:0.08,
+                //               },1).fromTo('.count_text_container_2',
+                //               {
+                //                   y:30,
+                //                 },{
+                //                   y:0,
+                //                   autoAlpha:1,
+                //                   duration:0.08,
                                 
                                 
                               
-                          },1)
-                            }
-                            if(targetElement1==2){
-                              tss.to("#secondCircleCont",{
-                                yPercent:-200,
-                                ease:"easeOut",
+                //           },1)
+                //             }
+                //             if(targetElement1==2){
+
+                //               tss1.to("#secondCircleCont",{
+                //                 yPercent:-200,
+                //                 ease:"easeOut",
             
-                               }).to("#thirdCircleCont",{
-                                yPercent:-200,
-                                ease:"easeOut",
+                //                }).to("#thirdCircleCont",{
+                //                 yPercent:-200,
+                //                 ease:"easeOut",
                                 
-                               },0.1) .to("#_000",{
-                                opacity:1,
-                                duration:0.08,
-                                delay:1,
-                              },)
-                              .fromTo("#_111",{
-                                y:30,
-                              },{
-                                opacity:1,
-                                y:0,
-                                duration:0.08,
-                              },">")
-                              .fromTo("#_222",{
-                                y:30,
+                //                },0.1) .to("#_000",{
+                //                 opacity:1,
+                //                 duration:0.08,
+                //                 delay:1,
+                //               },)
+                //               .fromTo("#_111",{
+                //                 y:30,
+                //               },{
+                //                 opacity:1,
+                //                 y:0,
+                //                 duration:0.08,
+                //               },">")
+                //               .fromTo("#_222",{
+                //                 y:30,
                                 
                               
-                              },{
-                                y:0,
-                                opacity:1,
-                                duration:0.08,
-                              },).fromTo("#_333",{
-                                y:30,
+                //               },{
+                //                 y:0,
+                //                 opacity:1,
+                //                 duration:0.08,
+                //               },).fromTo("#_333",{
+                //                 y:30,
                                
                               
-                              },{
-                                y:0,
-                                opacity:1,
-                                duration:0.08,
+                //               },{
+                //                 y:0,
+                //                 opacity:1,
+                //                 duration:0.08,
                               
-                              })
-                           .fromTo("#_444",{
-                                y:30,
-                              },{
-                                y:0,
-                                opacity:1,
-                                duration:0.08,
+                //               })
+                //            .fromTo("#_444",{
+                //                 y:30,
+                //               },{
+                //                 y:0,
+                //                 opacity:1,
+                //                 duration:0.08,
                               
                               
                             
                                 
-                            }).fromTo('.text_container_3',
-                                {
-                                    y:30,
-                                  },{
-                                    y:0,
-                                    autoAlpha:1,
-                                    duration:0.08,
+                //             }).fromTo('.text_container_3',
+                //                 {
+                //                     y:30,
+                //                   },{
+                //                     y:0,
+                //                     autoAlpha:1,
+                //                     duration:0.08,
                                   
                                   
                                 
-                            },1).fromTo('.count_text_container_3',
-                            {
-                                y:30,
-                              },{
-                                y:0,
-                                autoAlpha:1,
-                                duration:0.08,
+                //             },1).fromTo('.count_text_container_3',
+                //             {
+                //                 y:30,
+                //               },{
+                //                 y:0,
+                //                 autoAlpha:1,
+                //                 duration:0.08,
                               
                               
                             
-                        },1)
-                            }
-                          }
-                            function circleKeyDown(e){
+                //         },1)
+                //        .to("#_00",{
+                //           opacity:0,
+                         
+                //         },1)
+                //         .to("#_11",{
+                       
+                //           opacity:0,
+                         
+                //         },1)
+                //         .to("#_22",{
+                          
+                //           opacity:0,
+                        
+                //         },1).to("#_33",{
+                          
+                //           opacity:0,
+                        
+                //         },1)
+                //      .to("#_44",{
+                          
+                //       opacity:0,
+                    
+                //     },1).to('.text_container_2',
+                //     {
+                          
+                //       autoAlpha:0,
+                    
+                //     },1).to('.count_text_container_2',
+                //     {
+                          
+                //       autoAlpha:0,
+                    
+                //     },1)
+                //             }
+                //           }
+                //             function circleKeyDown(e){
                              
             
-                            const tss=gsap.timeline()
-                            if(e==0){
-                                 tss.to("#secondCircleCont",{
-                                  yPercent:0,
-                                  ease:"easeOut",
+                //             const tss=gsap.timeline()
+                //             const tss1=gsap.timeline()
+
+                //             if(e==0){
+                //                  tss.to("#secondCircleCont",{
+                //                   yPercent:0,
+                //                   ease:"easeOut",
             
-                                 }).to("#firstCircleCont",{
-                                  yPercent:0,
-                                  ease:"easeOut",
+                //                  }).to("#firstCircleCont",{
+                //                   yPercent:0,
+                //                   ease:"easeOut",
                                   
-                                 },0.1)
-                            }
-                            if(e==1){
-                              tss.to("#thirdCircleCont",{
-                                yPercent:-100,
-                                ease:"easeOut",
+                //                  },0.1)
+                //             }
+                //             if(e==1){
+                            
+                //               tss.to("#thirdCircleCont",{
+                //                 yPercent:-100,
+                //                 ease:"easeOut",
             
-                               }).to("#secondCircleCont",{
-                                yPercent:-100,
-                                ease:"easeOut",
+                //                }).to("#secondCircleCont",{
+                //                 yPercent:-100,
+                //                 ease:"easeOut",
                                 
-                               },0.1)
-                            }
-                            }
+                //                },0.1).to("#_00",{
+                //                 opacity:1,
+                //                 duration:0.08,
+                //                 delay:1,
+                //               },)
+                //               .fromTo("#_11",{
+                //                 y:30,
+                //               },{
+                //                 opacity:1,
+                //                 y:0,
+                //                 duration:0.08,
+                //               })
+                //               .fromTo("#_22",{
+                //                 y:30,
+                                
+                              
+                //               },{
+                //                 y:0,
+                //                 opacity:1,
+                //                 duration:0.08,
+                //               },).fromTo("#_33",{
+                //                 y:30,
+                               
+                              
+                //               },{
+                //                 y:0,
+                //                 opacity:1,
+                //                 duration:0.08,
+                              
+                //               })
+                //            .fromTo("#_44",{
+                //                 y:30,
+                //               },{
+                //                 y:0,
+                //                 opacity:1,
+                //                 duration:0.08,
+                              
+                              
+                            
+                                
+                //             }).fromTo('.text_container_2',
+                //                 {
+                //                     y:30,
+                //                   },{
+                //                     y:0,
+                //                     autoAlpha:1,
+                //                     duration:0.08,
+                                  
+                                  
+                                
+                //             },1).fromTo('.count_text_container_2',
+                //             {
+                //                 y:30,
+                //               },{
+                //                 y:0,
+                //                 autoAlpha:1,
+                //                 duration:0.08,
+                              
+                              
+                            
+                //         },1)
+                //             }
+                //             }
             return () => {
               {/* A return function for killing the animation on component unmount */ }
               
@@ -1012,19 +1535,19 @@ return ()=>contextCreate.revert();
   return(
   <section>
 
-                <div className='min-h-[200vh] md:min-h-[300vh] ' >
-                  <div  id="checkCon" className='  min-h-[100vh] m-6 flex flex-col  justify-center     '>
-                  <div className='flex flex-col h-[700px] md:h-[700px]  self-center overflow-hidden '>
+                <div className='min-h-[150vh] md:min-h-[300vh] ' >
+                  <div ref={newRef} id="checkCon" className='newCont  min-h-[100vh] m-6 flex   justify-center     '>
+                  <div className='flex flex-col h-[700px] md:h-[100vh]  self-center overflow-hidden '>
 <div id="firstCircleCont"  className=' self-center hidden md:block'>
-
-<div  className=' flex flex-col  justify-center self-center  min-h-[700px] w-[70%]  gap-11 '>
+<div className="flex flex-col">
+<div  className=' flex flex-col  justify-center self-center  min-h-[100vh] w-[70%]  gap-11 '>
                       <div className='flex self-center  gap-11'>
-                      <div className='flex flex-col justify-start'>
+                      <div className='flex flex-col justify-start menus small'>
             <h1 className='count count_text_container_1 '>01</h1>
             </div>
 
             
- <svg width="256" height="200" className='md:w-[400px] w-[200px] ' viewBox="0 0 256 432" fill="none" xmlns="http://www.w3.org/2000/svg">
+ <svg width="256" height="200" className='md:w-[400px] w-[200px] menus' viewBox="0 0 256 432" fill="none" xmlns="http://www.w3.org/2000/svg">
  <circle id='_04' cx="127.519" cy="127.518" r="126.093" className='opacity-0' transform="rotate(90 127.519 127.518)" stroke="#FFD551" stroke-width="2.85008"/>
 <circle id='_03' cx="127.519" cy="171.761" r="126.093" className='opacity-0' transform="rotate(90 127.519 171.761)" stroke="#FFD551" stroke-width="2.85008"/>
 <circle id='_02' cx="127.519" cy="216.002" r="126.093" className='opacity-0'  transform="rotate(90 127.519 216.002)" stroke="#FFD551" stroke-width="2.85008"/> 
@@ -1033,13 +1556,14 @@ return ()=>contextCreate.revert();
 </svg>
 <div className='flex flex-col justify-center gap-4 text_container text_container_1   '>
 
-    <h1 className='container_about_header'>
+    <h1 className='container_about_header menus'>
     The Consultancy Approach
     </h1>
-    <p className='container_about_description'>
+    <p className='container_about_description menus small'>
     Building a brand is not an overnight endeavor; it's a long-term process requiring ongoing reflection on its purpose and vision. At Herbet, we partner with brands to empower them. Through our internal training solutions, we ensure that each brand fully understands its vision and is equipped to operate independently.
     </p>
    
+    </div>
     </div>
     </div>
     </div>
@@ -1075,14 +1599,15 @@ Building a brand is not an overnight endeavor; it's a long-term process requirin
 </div>
 
 <div id="secondCircleCont" className=' self-center hidden md:block'>
-    <div  className=' flex flex-col  justify-center self-center  min-h-[700px] w-[70%]  gap-11 '>
+  <div className="flex flex-col">
+    <div  className=' flex flex-col  justify-center self-center  min-h-[100vh] w-[70%]  gap-11 '>
                       <div className='flex self-center  gap-11'>
-                      <div className='flex flex-col justify-start'>
+                      <div className='flex flex-col justify-start menus small'>
             <h1 className='count count_text_container_2 '>02</h1>
             </div>
 
             
- <svg width="256" height="200" className='md:w-[400px] w-[200px] ' viewBox="0 0 256 432" fill="none" xmlns="http://www.w3.org/2000/svg">
+ <svg width="256" height="200" className='md:w-[400px] w-[200px] menus ' viewBox="0 0 256 432" fill="none" xmlns="http://www.w3.org/2000/svg">
  <circle id='_44' cx="127.519" cy="127.518" r="126.093" className='opacity-0' transform="rotate(90 127.519 127.518)" stroke="#FFD551" stroke-width="2.85008"/>
 <circle id='_33' cx="127.519" cy="171.761" r="126.093" className='opacity-0' transform="rotate(90 127.519 171.761)" stroke="#FFD551" stroke-width="2.85008"/>
 <circle id='_22' cx="127.519" cy="216.002" r="126.093" className='opacity-0'  transform="rotate(90 127.519 216.002)" stroke="#FFD551" stroke-width="2.85008"/> 
@@ -1091,13 +1616,14 @@ Building a brand is not an overnight endeavor; it's a long-term process requirin
 </svg>
 <div className='flex flex-col justify-center gap-4 text_container text_container_2   '>
 
-    <h1 className='container_about_header'>
+    <h1 className='container_about_header menus'>
     The Consultancy Approach
     </h1>
-    <p className='container_about_description'>
+    <p className='container_about_description menus small'>
     Building a brand is not an overnight endeavor; it's a long-term process requiring ongoing reflection on its purpose and vision. At Herbet, we partner with brands to empower them. Through our internal training solutions, we ensure that each brand fully understands its vision and is equipped to operate independently.
     </p>
    
+    </div>
     </div>
     </div>
     </div>
@@ -1131,15 +1657,16 @@ Building a brand is not an overnight endeavor; it's a long-term process requirin
     </div>
 </div>
 <div id="thirdCircleCont" className=' self-center hidden md:block'>
+<div className="flex flex-col">
 
-    <div  className=' flex flex-col justify-center self-center  min-h-[700px] w-[70%]  gap-11 '>
+    <div  className=' flex flex-col justify-center self-center  min-h-[100vh] w-[70%]  gap-11 '>
                       <div className='flex self-center  gap-11'>
                       <div className='flex flex-col justify-start'>
-            <h1 className='count count_text_container_3 '>03</h1>
+            <h1 className='count count_text_container_3 menus small'>03</h1>
             </div>
 
             
- <svg width="256" height="200" className='md:w-[400px] w-[200px] ' viewBox="0 0 256 432" fill="none" xmlns="http://www.w3.org/2000/svg">
+ <svg width="256" height="200" className='md:w-[400px] w-[200px] menus ' viewBox="0 0 256 432" fill="none" xmlns="http://www.w3.org/2000/svg">
  <circle id='_444' cx="127.519" cy="127.518" r="126.093" className='opacity-0' transform="rotate(90 127.519 127.518)" stroke="#FFD551" stroke-width="2.85008"/>
 <circle id='_333' cx="127.519" cy="171.761" r="126.093" className='opacity-0' transform="rotate(90 127.519 171.761)" stroke="#FFD551" stroke-width="2.85008"/>
 <circle id='_222' cx="127.519" cy="216.002" r="126.093" className='opacity-0'  transform="rotate(90 127.519 216.002)" stroke="#FFD551" stroke-width="2.85008"/> 
@@ -1148,10 +1675,10 @@ Building a brand is not an overnight endeavor; it's a long-term process requirin
 </svg>
 <div className='flex flex-col justify-center gap-4 text_container text_container_3   '>
 
-    <h1 className='container_about_header'>
+    <h1 className='container_about_header menus'>
     The Consultancy Approach
     </h1>
-    <p className='container_about_description'>
+    <p className='container_about_description  menus small'>
     Building a brand is not an overnight endeavor; it's a long-term process requiring ongoing reflection on its purpose and vision. At Herbet, we partner with brands to empower them. Through our internal training solutions, we ensure that each brand fully understands its vision and is equipped to operate independently.
 
     </p>
@@ -1159,6 +1686,8 @@ Building a brand is not an overnight endeavor; it's a long-term process requirin
     </div>
     </div>
     </div>
+    </div>
+
     </div>
     <div id="thirdCircleCont1" className=' min-h-[700px] md:hidden flex gap-11 flex flex-col point justify-center ' >
                     <div className=' flex justify-between self-center w-[60%] gap-11 '>

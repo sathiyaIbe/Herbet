@@ -2164,15 +2164,15 @@ In a world where brand identity is paramount, the essence of messaging from with
             <div className='flex flex-col self-center  h-[400px] overflow-hidden'>
                     <div id='text_cont_1' className='text_cont_1 flex justify-center   w-[90%] gap-11 min-h-[400px] '>
                       <div className='flex flex-col justify-center'>
-                      <h1 className='count_1 count_text_container_ '>01</h1>
+                      <h1 className='count_1 count_text_container_ menus small'>01</h1>
             </div>
            
 <div  className='flex flex-col justify-center gap-4  text_container_  '>
 
 
-    <h1 className='container_about_header'>
+    <h1 className='container_about_header menus '>
     Identity    </h1>
-    <p className='container_about_description'>
+    <p className='container_about_description menus small'>
     We're the folks you go to before shooting for the stars. Before aiming high, we ensure your brand's essence is undeniably strong
     </p>
    
@@ -2183,15 +2183,15 @@ In a world where brand identity is paramount, the essence of messaging from with
     </div>
     <div id='text_cont_2' className=' flex justify-center  w-[90%]  gap-11 min-h-[400px] '>
                       <div className='flex flex-col justify-center'>
-                      <h1 className='count_1 count_text_container_ '>02</h1>
+                      <h1 className='count_1 count_text_container_  menus small'>02</h1>
             </div>
            
 <div  className='flex flex-col justify-center gap-4  text_container_  '>
 
 
-    <h1 className='container_about_header'>
+    <h1 className='container_about_header menus '>
     Strategy    </h1>
-    <p className='container_about_description'>
+    <p className='container_about_description menus small'>
     We're the folks you go to before shooting for the stars. Before aiming high, we ensure your brand's essence is undeniably strong
     </p>
    
@@ -2202,15 +2202,15 @@ In a world where brand identity is paramount, the essence of messaging from with
     </div>
     <div id='text_cont_3' className=' flex justify-center  w-[90%]  gap-11 min-h-[400px] '>
                       <div className='flex flex-col justify-center'>
-                      <h1 className='count_1 count_text_container_ '>03</h1>
+                      <h1 className='count_1 count_text_container_  menus small'>03</h1>
             </div>
            
 <div  className='flex flex-col justify-center gap-4  text_container_  '>
 
 
-    <h1 className='container_about_header'>
+    <h1 className='container_about_header menus'>
     Experience    </h1>
-    <p className='container_about_description'>
+    <p className='container_about_description menus small'>
     We're the folks you go to before shooting for the stars. Before aiming high, we ensure your brand's essence is undeniably strong
     </p>
    
@@ -2221,15 +2221,15 @@ In a world where brand identity is paramount, the essence of messaging from with
     </div>
     <div id='text_cont_4' className=' flex justify-center  w-[90%]  gap-11 min-h-[400px] '>
                       <div className='flex flex-col justify-center'>
-                      <h1 className='count_1 count_text_container_ '>04</h1>
+                      <h1 className='count_1 count_text_container_ menus small'>04</h1>
             </div>
            
 <div  className='flex flex-col justify-center gap-4  text_container_  '>
 
 
-    <h1 className='container_about_header'>
+    <h1 className='container_about_header menus'>
     Communication    </h1>
-    <p className='container_about_description'>
+    <p className='container_about_description menus small'>
     We're the folks you go to before shooting for the stars. Before aiming high, we ensure your brand's essence is undeniably strong
     </p>
    
@@ -2241,18 +2241,18 @@ In a world where brand identity is paramount, the essence of messaging from with
     
     </div>
     <div  id="green" className="circle_main_container flex mt-11 md:mt-0 md:justify-end w-fit self-center  items-center relative left-[200px] md:left-[450px]   ">
-          <div id="green4"  className="circle_container_new circle3  relative left-[15%]  ">
+          <div id="green4"  className="circle_container_new circle3  relative left-[15%] menus ">
             <h1   className="circle_text_new self-center ">Communication</h1>
           </div>
           <div   className='flex flex-col gap-6'>
-          <div id="green1" className="circle_container_new circle3  relative   ">
+          <div id="green1" className="circle_container_new circle3  relative  menus ">
             <h1   className="circle_text_new self-center "> Identity </h1>
           </div>
-          <div id="green2" className="circle_container_new circle3  relative   ">
+          <div id="green2" className="circle_container_new circle3  relative menus  ">
             <h1   className="circle_text_new self-center ">  Experience</h1>
           </div>
           </div>
-          <div id="green3" className="circle_container_new circle3  relative left-[-15%]  ">
+          <div id="green3" className="circle_container_new circle3  relative left-[-15%] menus ">
             <h1   className="circle_text_new self-center ">Strategy</h1>
           </div>
        
@@ -2369,7 +2369,7 @@ In a world where brand identity is paramount, the essence of messaging from with
 </div>
 <section id="main2" className='min-h-screen flex flex-col justify-center bg-[#463838] pt-11 md:pt-0 pb-11'>
 <div className='md:w-[80%] flex flex-col gap-11 self-center'>
-  <div className='hide_profile_text p-2 md:p-0   self-center'>
+  <div className='hide_profile_text p-2 md:p-0  menus self-center'>
   <h1 className='header_profile pr-6 md:pr-0 '>
   Herbet is spearheaded by its founding members 
 together with a global and diverse team.
@@ -2384,10 +2384,10 @@ together with a global and diverse team.
       <img src='/profile_1.png' className='md:block hidden' alt="pic"/>
       <img src='/profile_1_mob.png' className='md:hidden w-64'  alt="pic"/>
 
-      <h1 className='card_header_about'>
+      <h1 className='card_header_about menus small'>
       Saravanan Sahadevan
       </h1>
-      <p className='card_description_about'>
+      <p className='card_description_about menus small'>
       CEO & FOUNDER
       </p>
     </motion.div>
@@ -2396,12 +2396,12 @@ together with a global and diverse team.
        initial="hidden"
        whileInView="show"
       viewport={{ once: true }} className='flex flex-col '>
-        <img src='/profile_1.png' className='md:block hidden' alt="pic"/>
+        <img src='/profile_1.png' className='md:block hidden ' alt="pic"/>
       <img src='/profile_1_mob.png' className='md:hidden w-64 md:slef-start self-end'  alt="pic"/>
-      <h1 className='card_header_about md:self-start self-end'>
+      <h1 className='card_header_about md:self-start self-end menus small'>
       Amir Norman
       </h1>
-      <p className='card_description_about md:self-start self-end'>
+      <p className='card_description_about md:self-start self-end menus small'>
       COO & CO-FOUNDER
       </p>
     </motion.div>
@@ -2410,12 +2410,12 @@ together with a global and diverse team.
        initial="hidden"
        whileInView="show"
       viewport={{ once: true }} className='flex flex-col'>
-       <img src='/profile_1.png' className='md:block hidden' alt="pic"/>
+       <img src='/profile_1.png' className='md:block hidden ' alt="pic"/>
       <img src='/profile_1_mob.png' className='md:hidden w-64'  alt="pic"/>
-      <h1 className='card_header_about'>
+      <h1 className='card_header_about menus small'>
       Farra Khalili
       </h1>
-      <p className='card_description_about'>
+      <p className='card_description_about menus small'>
       CCO 
       </p>
     </motion.div>
