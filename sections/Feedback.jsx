@@ -62,7 +62,7 @@ const Feedback = () => {
               scrollTrigger:{
                 trigger:'#checkCon',
                 start: "top top",
-                end:'bottom center',
+                end:'bottom top',
                  pin:true,
               }
             })
@@ -71,6 +71,8 @@ const Feedback = () => {
               scrollTrigger:{
                 trigger:'#checkCon',
                 start: "top 40%",
+                // toggleActions:'restart none none reset '
+
               //  // snap: {
                 //   snapTo: 0.2,
                 //   duration: 0.3,
@@ -141,7 +143,7 @@ const newT1CenterSecond=gsap.timeline({
   scrollTrigger:{
     trigger:newRef.current,
     start: "top 0%",
-    end: "top -20%",
+    end: "top -40%",
 
   //  // snap: {
     //   snapTo: 0.2,
@@ -150,7 +152,10 @@ const newT1CenterSecond=gsap.timeline({
     //   },
 
     onLeave:()=>{
-      const tssFirst=gsap.timeline()
+      const tssFirst=gsap.timeline({
+      
+      })
+
 tssFirst.to("#firstCircleCont1",{
   yPercent:-100,
   ease:"easeOut",
@@ -170,7 +175,7 @@ tssFirst.to("#firstCircleCont1",{
   opacity:1,
   y:0,
   duration:0.08,
-})
+},">")
 .fromTo("#_22",{
   y:30,
   
@@ -231,7 +236,27 @@ tssFirst.to("#firstCircleCont1",{
             yPercent:0,
             ease:"easeOut",
             
-           },0.1)
+           },0.1).to("#_00",{          
+            opacity:0,
+          },0)
+          .to("#_11",{          
+            opacity:0,
+          },0)
+          .to("#_22",{          
+            opacity:0,
+          },0).to("#_33",{          
+            opacity:0,
+          },0)
+          .to("#_44",{          
+            opacity:0,
+          },0).to('.text_container_2',
+          {          
+            autoAlpha:0,
+          },0).to('.count_text_container_2',
+          {          
+            autoAlpha:0,
+          },0)
+           
         
     }
   }
@@ -242,7 +267,7 @@ const newT1CenterThird=gsap.timeline({
   scrollTrigger:{
     trigger:newRef.current,
     start: "top 0%",
-    end: "top -40%",
+    end: "top -80%",
 
   //  // snap: {
     //   snapTo: 0.2,
@@ -328,11 +353,31 @@ const newT1CenterThird=gsap.timeline({
               yPercent:-100,
               ease:"easeOut",
   
-             }).to("#secondCircleCont1",{
+             })
+             .to("#secondCircleCont1",{
               yPercent:-100,
               ease:"easeOut",
               
-             },0.1)
+             },0.1).to("#_000",{          
+              opacity:0,
+            },0)
+            .to("#_111",{          
+              opacity:0,
+            })
+            .to("#_222",{          
+              opacity:0,
+            },0).to("#_333",{          
+              opacity:0,
+            },0)
+            .to("#_444",{          
+              opacity:0,
+            },0).to('.text_container_3',
+            {          
+              autoAlpha:0,
+            },0).to('.count_text_container_3',
+            {          
+              autoAlpha:0,
+            },0)
         
     }
   }
@@ -746,7 +791,7 @@ const newT1CenterThird=gsap.timeline({
               scrollTrigger:{
                 trigger:'#checkCon',
                 start: "top top",
-                end:'+=150%',
+                end:'+=170%',
                 // end:"bottom top",
                  pin:true,
                 // snap: {
@@ -761,6 +806,7 @@ const newT1CenterThird=gsap.timeline({
               scrollTrigger:{
                 trigger:'#checkCon',
                 start: "top 0%",
+                // toggleActions:'restart none none reset '
               //  // snap: {
                 //   snapTo: 0.2,
                 //   duration: 0.3,
@@ -830,9 +876,8 @@ const newT1CenterSecond=gsap.timeline({
   scrollTrigger:{
     trigger:newRef.current,
     start: "top 0%",
-    end: "top -40%",
+    end: "top -60%",
 
-    markers:true,
   //  // snap: {
     //   snapTo: 0.2,
     //   duration: 0.3,
@@ -921,7 +966,27 @@ tssFirst.to("#firstCircleCont",{
             yPercent:0,
             ease:"easeOut",
             
-           },0.1)
+           },0.1).to("#_00",{          
+            opacity:0,
+          },0)
+          .to("#_11",{          
+            opacity:0,
+          },0)
+          .to("#_22",{          
+            opacity:0,
+          },0).to("#_33",{          
+            opacity:0,
+          },0)
+          .to("#_44",{          
+            opacity:0,
+          },0).to('.text_container_2',
+          {          
+            autoAlpha:0,
+          },0).to('.count_text_container_2',
+          {          
+            autoAlpha:0,
+          },0)
+           
         
     }
   }
@@ -932,7 +997,7 @@ const newT1CenterThird=gsap.timeline({
   scrollTrigger:{
     trigger:newRef.current,
     start: "top 0%",
-    end: "top -80%",
+    end: "top -120%",
 
   //  // snap: {
     //   snapTo: 0.2,
@@ -1022,7 +1087,26 @@ const newT1CenterThird=gsap.timeline({
               yPercent:-100,
               ease:"easeOut",
               
-             },0.1)
+             },0.1).to("#_000",{          
+              opacity:0,
+            },0)
+            .to("#_111",{          
+              opacity:0,
+            },0)
+            .to("#_222",{          
+              opacity:0,
+            },0).to("#_333",{          
+              opacity:0,
+            },0)
+            .to("#_444",{          
+              opacity:0,
+            },0).to('.text_container_3',
+            {          
+              autoAlpha:0,
+            },0).to('.count_text_container_3',
+            {          
+              autoAlpha:0,
+            },0)
         
     }
   }
@@ -1535,9 +1619,9 @@ return ()=>contextCreate.revert();
   return(
   <section>
 
-                <div className='min-h-[150vh] md:min-h-[300vh] ' >
+                <div className='min-h-[200vh] md:min-h-[300vh] ' >
                   <div ref={newRef} id="checkCon" className='newCont  min-h-[100vh] m-6 flex   justify-center     '>
-                  <div className='flex flex-col h-[700px] md:h-[100vh]  self-center overflow-hidden '>
+                  <div className='flex flex-col h-[100vh]  self-center overflow-hidden '>
 <div id="firstCircleCont"  className=' self-center hidden md:block'>
 <div className="flex flex-col">
 <div  className=' flex flex-col  justify-center self-center  min-h-[100vh] w-[70%]  gap-11 '>
@@ -1568,8 +1652,8 @@ return ()=>contextCreate.revert();
     </div>
     </div>
     </div>
-    <div id="firstCircleCont1" className=' min-h-[700px] md:hidden  flex gap-11 flex flex-col  justify-center ' >
-                    <div className=' flex justify-between self-center w-[60%] gap-11 '>
+    <div id="firstCircleCont1" className=' min-h-[100vh] md:hidden  flex gap-11 flex flex-col  justify-center ' >
+                    <div className=' flex justify-between self-center w-[80%] gap-11 '>
                       <div className='flex flex-col justify-start gap-6'>
             <h1 className='count count_text_container_1 '>01</h1>
             <h1 className='container_about_header'>
@@ -1589,7 +1673,7 @@ return ()=>contextCreate.revert();
 
     </div>
     <div className='flex flex-col  gap-4 text_container  text_container_1  '>
-<p className='container_about_description w-[60%] self-center'>
+<p className='container_about_description w-[80%] self-center'>
 Building a brand is not an overnight endeavor; it's a long-term process requiring ongoing reflection on its purpose and vision. At Herbet, we partner with brands to empower them. Through our internal training solutions, we ensure that each brand fully understands its vision and is equipped to operate independently.
 </p>
  
@@ -1628,8 +1712,8 @@ Building a brand is not an overnight endeavor; it's a long-term process requirin
     </div>
     </div>
     </div>
-    <div id="secondCircleCont1" className=' min-h-[700px] md:hidden flex gap-11 flex flex-col point justify-center ' >
-                    <div className=' flex justify-between self-center w-[60%] gap-11 '>
+    <div id="secondCircleCont1" className=' min-h-[100vh] md:hidden flex gap-11 flex flex-col point justify-center ' >
+                    <div className=' flex justify-between self-center w-[80%] gap-11 '>
                       <div className='flex flex-col justify-start gap-6'>
             <h1 className='count count_text_container_1 '>02</h1>
             <h1 className='container_about_header'>
@@ -1648,7 +1732,7 @@ Building a brand is not an overnight endeavor; it's a long-term process requirin
 
     </div>
     <div className='flex flex-col  gap-4 text_container  text_container_1  '>
-<p className='container_about_description w-[60%] self-center'>
+<p className='container_about_description w-[80%] self-center'>
 Building a brand is not an overnight endeavor; it's a long-term process requiring ongoing reflection on its purpose and vision. At Herbet, we partner with brands to empower them. Through our internal training solutions, we ensure that each brand fully understands its vision and is equipped to operate independently.
 </p>
  
@@ -1689,8 +1773,8 @@ Building a brand is not an overnight endeavor; it's a long-term process requirin
     </div>
 
     </div>
-    <div id="thirdCircleCont1" className=' min-h-[700px] md:hidden flex gap-11 flex flex-col point justify-center ' >
-                    <div className=' flex justify-between self-center w-[60%] gap-11 '>
+    <div id="thirdCircleCont1" className=' min-h-[100vh] md:hidden flex gap-11 flex flex-col point justify-center ' >
+                    <div className=' flex justify-between self-center w-[80%] gap-11 '>
                       <div className='flex flex-col justify-start gap-6'>
             <h1 className='count count_text_container_1 '>03</h1>
             <h1 className='container_about_header'>
@@ -1709,7 +1793,7 @@ Building a brand is not an overnight endeavor; it's a long-term process requirin
 
     </div>
     <div className='flex flex-col  gap-4 text_container  text_container_1  '>
-<p className='container_about_description w-[60%] self-center'>
+<p className='container_about_description w-[80%] self-center'>
 In a world where brand identity is paramount, the essence of messaging from within the brand cannot be overstated. It's vital for brands to cultivate their messaging from their core, ensuring authenticity remains consistent and unambiguous.
 </p>
  
