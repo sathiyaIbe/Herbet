@@ -54,6 +54,7 @@ const Feedback = () => {
             });
           let mm = gsap.matchMedia();
          
+          const section_2 = document.getElementById("checkCon");
 
 
 
@@ -62,7 +63,7 @@ const Feedback = () => {
               scrollTrigger:{
                 trigger:'#checkCon',
                 start: "top top",
-                end:'bottom top',
+                end:"+=" + section_2.offsetWidth,
                  pin:true,
               }
             })
@@ -261,6 +262,7 @@ tssFirst.to("#firstCircleCont1",{
     }
   }
 })
+
 
 // Third Trigger
 const newT1CenterThird=gsap.timeline({
@@ -791,9 +793,10 @@ const newT1CenterThird=gsap.timeline({
               scrollTrigger:{
                 trigger:'#checkCon',
                 start: "top top",
-                end:'+=170%',
+                end:"+=" + section_2.offsetWidth,
                 // end:"bottom top",
                  pin:true,
+                //  scrub:true,
                 // snap: {
                 //   snapTo: 0.2,
                 //   duration: 0.3,
@@ -806,6 +809,7 @@ const newT1CenterThird=gsap.timeline({
               scrollTrigger:{
                 trigger:'#checkCon',
                 start: "top 0%",
+                  // scrub:true,
                 // toggleActions:'restart none none reset '
               //  // snap: {
                 //   snapTo: 0.2,
@@ -991,6 +995,90 @@ tssFirst.to("#firstCircleCont",{
     }
   }
 })
+
+// const newT1CenterSecond=gsap.timeline({
+//   scrollTrigger:{
+//     trigger:newRef.current,
+//     start: "top 0%",
+//     end: "top -40%",
+//     scrub:true,
+
+//   //  // snap: {
+//     //   snapTo: 0.2,
+//     //   duration: 0.3,
+//     //   delay: 0,
+//     //   },
+
+//   }
+// }).to("#firstCircleCont",{
+//     yPercent:-100,
+//     ease:"easeOut",
+  
+//    }).to("#secondCircleCont",{
+//     yPercent:-100,
+//     ease:"easeOut",
+    
+//    }).to("#_00",{
+//     opacity:1,
+//     duration:0.08,
+//     delay:1,
+//   },)
+//   .fromTo("#_11",{
+//     y:30,
+//   },{
+//     opacity:1,
+//     y:0,
+//     duration:0.08,
+//   })
+//   .fromTo("#_22",{
+//     y:30,
+    
+  
+//   },{
+//     y:0,
+//     opacity:1,
+//     duration:0.08,
+//   },).fromTo("#_33",{
+//     y:30,
+   
+  
+//   },{
+//     y:0,
+//     opacity:1,
+//     duration:0.08,
+  
+//   })
+//   .fromTo("#_44",{
+//     y:30,
+//   },{
+//     y:0,
+//     opacity:1,
+//     duration:0.8,
+  
+  
+  
+    
+//   }).fromTo('.text_container_2',
+//     {
+//         y:30,
+//       },{
+//         y:0,
+//         autoAlpha:1,
+//         duration:0.08,
+      
+      
+    
+//   }).fromTo('.count_text_container_2',
+//   {
+//     y:30,
+//   },{
+//     y:0,
+//     autoAlpha:1,
+//     duration:0.08,
+  
+  
+  
+//   })
 
 // Third Trigger
 const newT1CenterThird=gsap.timeline({

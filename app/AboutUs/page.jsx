@@ -24,11 +24,22 @@ function AboutUs() {
 
 
     useEffect(()=>{
+
+      window.onbeforeunload = function () {
+        window.scrollTo(0, 0);
+      }
         // gsap.to('.resourse_texts', {opacity:0})
         
         const lenis = new Lenis({
-     
-
+          duration: 1.2,
+          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
+          direction: 'vertical', // vertical, horizontal
+          gestureDirection: 'vertical', // vertical, horizontal, both
+          smooth: true,
+          mouseMultiplier: 1,
+          smoothTouch: false,
+          touchMultiplier: 2,
+          infinite: false,
         })
       
         function raf(time) {
@@ -49,9 +60,10 @@ function AboutUs() {
 
               let mm = gsap.matchMedia();
              
+              const section_2 = document.getElementById("text_cont");
 
               mm.add("(min-width:768px)",()=>{
-
+                const section_2 = document.getElementById("checkCon1");
                   const pin = gsap.timeline(
                
                 {
@@ -60,7 +72,11 @@ function AboutUs() {
                     trigger: ".fourth_container",
                     pin: true,
                     start: "top top",
-                    end:"+=200%",
+                    end:"+=" + section_2.offsetWidth,
+                    pinReparent: true,
+                    invalidateOnRefresh:true,
+                    // pinSpacing: false,
+                    preventOverlaps: "group1"
                   }
           
                 },0)
@@ -121,6 +137,348 @@ function AboutUs() {
                   onStart:()=>{animating2=true},
                 y:0,
                 },0)
+
+                const pinCenterFirst = gsap.timeline(
+             
+                  {
+            
+                    scrollTrigger: {
+                      trigger: ".fourth_container",
+                      start: "top 0%",
+                      end:'top -60%',
+                     
+                    //   snap: {
+                    //         snapTo: 0.2,
+                    //         duration: 0.3,
+                    //         delay: 0,
+                    //         },
+                    onLeave:()=>{const ts=gsap.timeline()
+                        ts.to('#green',{
+                                        rotation:"-180",
+                                        repeat:0,
+                        
+                                      },0).to("#green1",{
+                                        rotation:180,
+                                        scale:1,
+                                          opacity:0.4,
+                                          y:0,
+                                          x:0
+                                      },0)
+                                      .to("#green2",{
+                                        rotation:180,
+                                          scale:1,
+                                          opacity:0.4,
+                                          y:0,
+                                          x:0
+                                      },0)
+                                      .to("#green3",{
+                                        rotation:180,
+                                        scale:1.5,
+                                          opacity:1,
+                                          y:0,
+                                          x:50
+                                      },0).to("#green4",{
+                                        rotation:180,
+                                        scale:1,
+                                          opacity:0.4,
+                                          y:0,
+                                          x:0
+                                      },0)
+                                      .to("#text_cont_1",{
+                                        opacity:0,
+                                        
+                                          yPercent:-100,
+                                          x:0
+                                      },0)
+                                      .to("#text_cont_2",{
+                                        opacity:1,
+                                        
+                                        yPercent:-100,
+                                        x:0
+                                    },0.1)
+                                    
+                    
+                    },
+                    onEnterBack:()=>{
+                      const ts=gsap.timeline()
+                        ts.to('#green',{
+                                          rotation:"-90",
+                                          repeat:0,
+                        
+                                        },0).to("#green1",{
+                                          rotation:90,
+                                          scale:1.5,
+                                          opacity:1,
+                                          y:-50,
+                                          x:0
+                                        },0)
+                                        .to("#green2",{
+                                          rotation:90,
+                                          scale:1,
+                                          opacity:0.4,
+                                          y:0,
+                                          x:0
+                                        },0)
+                                        .to("#green3",{
+                                          rotation:90,
+                                          opacity:0.4,
+                                          scale:1,
+                                          y:0,
+                                          x:0
+                                        },0).to("#green4",{
+                                          rotation:90,
+                                          scale:1,
+                                          x:0,
+                                          opacity:0.4,
+                                        },0).to("#text_cont_2",{
+                                          opacity:0,
+    
+                                          yPercent:0,
+                                          x:0
+                                      },0)
+                                      .to("#text_cont_1",{
+                                        opacity:1,
+                                        
+                                        yPercent:0,
+                                        x:0
+                                    },0.1)
+                                      
+                    }
+                    },
+            
+                  })
+  
+                  const pinCenterSecond = gsap.timeline(
+               
+                    {
+              
+                      scrollTrigger: {
+                        trigger: ".fourth_container",
+                        start: "top 0%",
+                        end:'top -120%',
+                       
+                      //   snap: {
+                      //         snapTo: 0.2,
+                      //         duration: 0.3,
+                      //         delay: 0,
+                      //         },
+                      onLeave:()=>{const ts=gsap.timeline()
+                          ts.to('#green',{
+                                            rotation:"-270",
+                                            repeat:0,
+                          
+                                          },0).to("#green1",{
+                                            rotation:270,
+                                            scale:1,
+                                            opacity:0.4,
+                                            y:0,
+                                            x:0
+            
+                                          },0)
+                                          .to("#green2",{
+                                            rotation:270,
+                                            scale:1.5,
+                                            opacity:1,
+                                            y:50,
+                                            x:0
+                                          },0)
+                                          .to("#green3",{
+                                            rotation:270,
+                                            scale:1,
+                                            opacity:0.4,
+                                            y:0,
+                                            x:0
+                                          },0).to("#green4",{
+                                            rotation:270,
+                                            scale:1,
+                                            opacity:0.4,
+                                            y:0,
+                                            x:0
+                                          },0).to("#text_cont_2",{
+                                            opacity:0,
+                                            yPercent:-200,
+                                            x:0
+                                        },0)
+                                        .to("#text_cont_3",{
+                                          opacity:1,
+                                          yPercent:-200,
+                                          x:0
+                                      },0.1)
+                                        
+                                      
+                      
+                      },
+                      onEnterBack:()=>{
+                        const ts=gsap.timeline()
+                          ts.to('#green',{
+                                            rotation:"-180",
+                                            repeat:0,
+                                           
+                                        
+                                          },0).to("#green1",{
+                                            rotation:180,
+                                            scale:1,
+                                           y:0,
+                                            opacity:0.4,
+                                          },0.1)
+                                          .to("#green2",{
+                                            rotation:180,
+                                            scale:1,
+                                            opacity:0.4,
+                                            y:0,
+                                           x:0
+                                          },0)
+                                          .to("#green3",{
+                                            rotation:180,
+                                            scale:1.5,
+                                            opacity:1,
+                                            y:0,
+                                            x:50
+          
+                                          },0).to("#green4",{
+                                            rotation:180,
+                                            scale:1,
+                                            opacity:0.4,
+                                            y:0,
+                                            x:0
+          
+                                          },0).to("#text_cont_2",{
+                                            opacity:1,
+                          
+                                            yPercent:-100,
+                                            x:0
+                                        },0)
+                                        .to("#text_cont_3",{
+                                          opacity:0,
+                                          
+                                          yPercent:-100,
+                                          x:0
+                                      },0.1)
+                                        
+                                        
+                      }
+                      },
+              
+                    })
+                    const pinCenterThird = gsap.timeline(
+               
+                      {
+                
+                        scrollTrigger: {
+                          trigger: ".fourth_container",
+                          start: "top 0%",
+                          end:'top -180%',
+                         
+                        //   snap: {
+                        //         snapTo: 0.2,
+                        //         duration: 0.3,
+                        //         delay: 0,
+                        //         },
+                       
+                      
+                        onLeave:()=>{const ts=gsap.timeline()    
+                            ts.to('#green',{
+                                              rotation:"-360",
+                                              repeat:0,
+                            
+                                            },0).to("#green1",{
+                                              rotation:360,
+                                              scale:1,
+                                              opacity:0.4,
+                                              y:0,
+                                              x:0
+                                            },0)
+                                            .to("#green2",{
+                                              rotation:360,
+                                              scale:1,
+                                              opacity:0.4,
+                                              y:0,
+                                              x:0
+                                            },0)
+                                            .to("#green3",{
+                                              rotation:360,
+                                              scale:1,
+                                              opacity:0.4,
+                                              y:0,
+                                              x:0
+                                            },0).to("#green4",{
+                                              rotation:360,
+                                              scale:1.5,
+                                              opacity:1,
+                                              y:0,
+                                              x:-50
+                                            },0).to("#text_cont_3",{
+              
+                                              yPercent:-300,
+                                              x:0,
+                                              opacity:0
+                                          },0)
+                                          .to("#text_cont_4",{
+                                            
+                                            yPercent:-300,
+                                            x:0,
+                                            opacity:1,
+                                        },0.1)
+                                          
+                                          
+                                        
+                        
+                        },
+                        onEnterBack:()=>{
+                          const ts=gsap.timeline()
+                            ts.to('#green',{
+                                              rotation:"-270",
+                                              repeat:0,
+                                            },0)
+                                            .to("#green1",{
+                                              rotation:"270",
+                                              scale:1,
+                                              opacity:0.4,
+                                              y:0,
+                                              x:0
+                            
+                                            },0)
+                                            .to("#green2",{
+                                              rotation:"270",
+                                              scale:1.5,
+                                              y:50,
+                                              x:0,
+                                             opacity:1,
+                                            },0)
+                                            .to("#green3",{
+                                              rotation:"270",
+                                              scale:1,
+                                              opacity:0.4,
+                                              y:0,
+                                              x:0
+                                            },0).to("#green4",{
+                                              rotation:"270",
+                                              scale:1,
+                                              opacity:0.4,
+                                              y:0,
+                                              x:0
+                                            },0).to("#text_cont_3",{
+                                            
+                                              yPercent:-200,
+                                              x:0,
+                                              opacity:1,
+                                          },0)
+                                          .to("#text_cont_4",{
+                                            opacity:0,
+                                            
+                                            yPercent:-200,
+                                            x:0
+                                        },0.1)
+                                    
+                                          
+                                          
+                                          
+                        }
+                        },
+                
+                      })
+
+
                 
 function keyUp(e){
   if(targetElement<4){
@@ -439,26 +797,26 @@ function keyDown(e){
                                                 }
 }
 
-                Observer.create({
-                  type: "wheel,touch,pointer",
-                  target:'.another_containaer',
-                  wheelSpeed: -1,
+                // Observer.create({
+                //   type: "wheel,touch,pointer",
+                //   target:'.another_containaer',
+                //   wheelSpeed: -1,
                
-                  onDown: () => {
+                //   onDown: () => {
                     
-                    keyDown(targetElement)
-                    if(targetElement>0){
-                      targetElement=targetElement-1 
-                        }
-                      },
-                  onUp: () => {
+                //     keyDown(targetElement)
+                //     if(targetElement>0){
+                //       targetElement=targetElement-1 
+                //         }
+                //       },
+                //   onUp: () => {
                     
-                  animating2&&  keyUp(targetElement)
+                //   animating2&&  keyUp(targetElement)
                    
-                  },
-                  tolerance: 10,
-                  preventDefault: true
-                });
+                //   },
+                //   tolerance: 10,
+                //   preventDefault: true
+                // });
               
                 return () => {
                   {/* A return function for killing the animation on component unmount */ }
@@ -482,7 +840,7 @@ function keyDown(e){
                   trigger: ".fourth_container",
                  pin: true,
                   start: "top top",
-                  end:"+=150%",
+                  end:"+=" + section_2.offsetWidth,
                   // snap: {
                   //       snapTo: 0.2,
                   //       duration: 0.3,
@@ -1214,783 +1572,6 @@ ts.to('#green',{
                   stagger:0.05,
                 })
 
-      //           mm.add("(min-width:768px)",()=>{
-      //           const newT1=gsap.timeline({
-      //             scrollTrigger:{
-      //               trigger:'.first_containerss',
-      //               start: "top top",
-      //               // end:'=+120%',
-      //               // pin:true,
-      //               //
-      //               // snap: {
-      //               //   snapTo: 0.2,
-      //               //   duration: 0.3,
-      //               //   delay: 0,
-      //               //   },
-      //             }
-      //           })
-                
-      //           const newT1Center=gsap.timeline({
-      //             scrollTrigger:{
-      //               trigger:'.first_containerss',
-      //               start: "top center",
-      //              // snap: {
-      //               //   snapTo: 0.2,
-      //               //   duration: 0.3,
-      //               //   delay: 0,
-      //               //   },
-      //             }
-      //           }).to("#_10",{
-      //             opacity:1,
-      //             duration:0.08,
-      //             delay:1,
-      //           },)
-      //           .fromTo("#_01",{
-      //             y:30,
-      //           },{
-      //             opacity:1,
-      //             y:0,
-      //             duration:0.08,
-      //           })
-      //           .fromTo("#_02",{
-      //             y:30,
-                  
-                
-      //           },{
-      //             y:0,
-      //             opacity:1,
-      //             duration:0.08,
-      //           },).fromTo("#_03",{
-      //             y:30,
-                 
-                
-      //           },{
-      //             y:0,
-      //             opacity:1,
-      //             duration:0.08,
-                
-      //           })
-      //        .fromTo("#_04",{
-      //             y:30,
-      //           },{
-      //             y:0,
-      //             opacity:1,
-      //             duration:0.08, 
-      //         }).fromTo('.text_container_1',
-      //             {
-      //                 y:30,
-      //               },{
-      //                 y:0,
-      //                 autoAlpha:1,
-      //                 duration:0.08,
-                    
-                    
-                  
-      //         },0.3).fromTo('.count_text_container_1',
-      //         {
-      //             y:30,
-      //           },{
-      //             y:0,
-      //             autoAlpha:1,
-      //             duration:0.08,
-      //             onStart:()=>{animating1=true}
-
-              
-      //     },0.3)
-
-      // // Observer.create({
-      // //             type: "wheel,touch",
-      // //             target:'.firstss_another_containaer',
-      // //             // wheelSpeed: -1,
-      // //             // onDown: () => !animating && gotoSection(currentIndex - 1, -1),
-      // //             // onUp: () => !animating && gotoSection(currentIndex + 1, 1),
-      // //             onDown: () => {
-                    
-                   
-      // //               if(targetElement1>0){
-      // //                 targetElement1=targetElement1-1 
-      // //                   }
-      // //                   circleKeyDown(targetElement1)
-      // //                 },
-      // //                 onUp:() => {
-                    
-      // //             animating1&&circleKeyUp(targetElement1)
-                   
-      // //             },
-      // //             wheelSpeed: -1,
-      // //             tolerance: 10,
-      // //             preventDefault: true,
-      // //             onPress: self => {
-      // //               // on touch devices like iOS, if we want to prevent scrolling, we must call preventDefault() on the touchstart (Observer doesn't do that because that would also prevent side-scrolling which is undesirable in most cases)
-      // //              self.event.preventDefault()
-      // //             }
-                
-      // //           });
-
-      //           function circleKeyUp(e){
-      //             if(targetElement1<3){
-   
-      //               targetElement1=targetElement1+1 
-      //                 }
-      //           const tss=gsap.timeline()
-      //           if(targetElement1==1){
-      //                tss.to("#firstCircleCont",{
-      //                 yPercent:-100,
-      //                 ease:"easeOut",
-
-      //                }).to("#secondCircleCont",{
-      //                 yPercent:-100,
-      //                 ease:"easeOut",
-                      
-      //                },0.1).to("#_00",{
-      //                 opacity:1,
-      //                 duration:0.08,
-      //                 delay:1,
-      //               },)
-      //               .fromTo("#_11",{
-      //                 y:30,
-      //               },{
-      //                 opacity:1,
-      //                 y:0,
-      //                 duration:0.08,
-      //               })
-      //               .fromTo("#_22",{
-      //                 y:30,
-                      
-                    
-      //               },{
-      //                 y:0,
-      //                 opacity:1,
-      //                 duration:0.08,
-      //               },).fromTo("#_33",{
-      //                 y:30,
-                     
-                    
-      //               },{
-      //                 y:0,
-      //                 opacity:1,
-      //                 duration:0.08,
-                    
-      //               })
-      //            .fromTo("#_44",{
-      //                 y:30,
-      //               },{
-      //                 y:0,
-      //                 opacity:1,
-      //                 duration:0.08,
-                    
-                    
-                  
-                      
-      //             }).fromTo('.text_container_2',
-      //                 {
-      //                     y:30,
-      //                   },{
-      //                     y:0,
-      //                     autoAlpha:1,
-      //                     duration:0.08,
-                        
-                        
-                      
-      //             },1).fromTo('.count_text_container_2',
-      //             {
-      //                 y:30,
-      //               },{
-      //                 y:0,
-      //                 autoAlpha:1,
-      //                 duration:0.08,
-                    
-                    
-                  
-      //         },1)
-      //           }
-      //           if(targetElement1==2){
-      //             tss.to("#secondCircleCont",{
-      //               yPercent:-200,
-      //               ease:"easeOut",
-
-      //              }).to("#thirdCircleCont",{
-      //               yPercent:-200,
-      //               ease:"easeOut",
-                    
-      //              },0.1) .to("#_000",{
-      //               opacity:1,
-      //               duration:0.08,
-      //               delay:1,
-      //             },)
-      //             .fromTo("#_111",{
-      //               y:30,
-      //             },{
-      //               opacity:1,
-      //               y:0,
-      //               duration:0.08,
-      //             },">")
-      //             .fromTo("#_222",{
-      //               y:30,
-                    
-                  
-      //             },{
-      //               y:0,
-      //               opacity:1,
-      //               duration:0.08,
-      //             },).fromTo("#_333",{
-      //               y:30,
-                   
-                  
-      //             },{
-      //               y:0,
-      //               opacity:1,
-      //               duration:0.08,
-                  
-      //             })
-      //          .fromTo("#_444",{
-      //               y:30,
-      //             },{
-      //               y:0,
-      //               opacity:1,
-      //               duration:0.08,
-                  
-                  
-                
-                    
-      //           }).fromTo('.text_container_3',
-      //               {
-      //                   y:30,
-      //                 },{
-      //                   y:0,
-      //                   autoAlpha:1,
-      //                   duration:0.08,
-                      
-                      
-                    
-      //           },1).fromTo('.count_text_container_3',
-      //           {
-      //               y:30,
-      //             },{
-      //               y:0,
-      //               autoAlpha:1,
-      //               duration:0.08,
-                  
-                  
-                
-      //       },1)
-      //           }
-      //         }
-      //           function circleKeyDown(e){
-                 
-
-      //           const tss=gsap.timeline()
-      //           if(e==0){
-      //                tss.to("#secondCircleCont",{
-      //                 yPercent:0,
-      //                 ease:"easeOut",
-
-      //                }).to("#firstCircleCont",{
-      //                 yPercent:0,
-      //                 ease:"easeOut",
-                      
-      //                },0.1)
-      //           }
-      //           if(e==1){
-      //             tss.to("#thirdCircleCont",{
-      //               yPercent:-100,
-      //               ease:"easeOut",
-
-      //              }).to("#secondCircleCont",{
-      //               yPercent:-100,
-      //               ease:"easeOut",
-                    
-      //              },0.1)
-      //           }
-      //           }
-      //           return () => {
-      //             {/* A return function for killing the animation on component unmount */ }
-                  
-      //             newT1.kill();
-
-      //           };
-      //         })
-      //         mm.add("(max-width:768px)",()=>{
-      //           const newT1s=gsap.timeline({
-      //             scrollTrigger:{
-      //               trigger:'.first_containerss',
-      //               start: "top top",
-      //               end:'bottom center',
-                    
-      //               // end:"bottom top",
-      //               // snap: {
-      //               //   snapTo: 0.2,
-      //               //   duration: 0.3,
-      //               //   delay: 0,
-      //               //   },
-      //             }
-      //           })
-                
-      //           const newT1Center=gsap.timeline({
-      //             scrollTrigger:{
-      //               trigger:'.first_containerss',
-      //               start: "top top",
-      //             //  // snap: {
-      //               //   snapTo: 0.2,
-      //               //   duration: 0.3,
-      //               //   delay: 0,
-      //               //   },
-      //             }
-      //           }).to("#_10",{
-      //             opacity:1,
-      //             duration:0.08,
-      //             delay:1,
-      //           },)
-      //           .fromTo("#_01",{
-      //             y:30,
-      //           },{
-      //             opacity:1,
-      //             y:0,
-      //             duration:0.08,
-      //           })
-      //           .fromTo("#_02",{
-      //             y:30,
-                  
-                
-      //           },{
-      //             y:0,
-      //             opacity:1,
-      //             duration:0.08,
-      //           },).fromTo("#_03",{
-      //             y:30,
-                 
-                
-      //           },{
-      //             y:0,
-      //             opacity:1,
-      //             duration:0.08,
-                
-      //           })
-      //        .fromTo("#_04",{
-      //             y:30,
-      //           },{
-      //             y:0,
-      //             opacity:1,
-      //             duration:0.08, 
-      //         }).fromTo('.text_container_1',
-      //             {
-      //                 y:30,
-      //               },{
-      //                 y:0,
-      //                 autoAlpha:1,
-      //                 duration:0.08,
-                    
-                    
-                  
-      //         },0.3).fromTo('.count_text_container_1',
-      //         {
-      //             y:30,
-      //           },{
-      //             y:0,
-      //             autoAlpha:1,
-      //             duration:0.08,
-                  
-
-              
-      //     },0.3).to({},{
-      //       onComplete:()=>{animating1=true}
-      //     })
-
-      //     ScrollTrigger.create({
-      //       trigger:'.first_containerss',
-      //       start:'top -50%',
-      //       end:'top -100%',
-      //       onEnter:()=>{
-      //         const tss=gsap.timeline()
-      //         tss.to("#firstCircleCont1",{
-      //           yPercent:-100,
-      //           ease:"easeOut",
-
-      //          }).to("#secondCircleCont1",{
-      //           yPercent:-100,
-      //           ease:"easeOut",
-                
-      //          },0.1).to("#_00",{
-      //           opacity:1,
-      //           duration:0.08,
-      //           delay:1,
-      //         },)
-      //         .fromTo("#_11",{
-      //           y:30,
-      //         },{
-      //           opacity:1,
-      //           y:0,
-      //           duration:0.08,
-      //         })
-      //         .fromTo("#_22",{
-      //           y:30,
-                
-              
-      //         },{
-      //           y:0,
-      //           opacity:1,
-      //           duration:0.08,
-      //         },).fromTo("#_33",{
-      //           y:30,
-               
-              
-      //         },{
-      //           y:0,
-      //           opacity:1,
-      //           duration:0.08,
-              
-      //         })
-      //      .fromTo("#_44",{
-      //           y:30,
-      //         },{
-      //           y:0,
-      //           opacity:1,
-      //           duration:0.08,
-              
-              
-            
-                
-      //       }).fromTo('.text_container_2',
-      //           {
-      //               y:30,
-      //             },{
-      //               y:0,
-      //               autoAlpha:1,
-      //               duration:0.08,
-                  
-                  
-                
-      //       },1).fromTo('.count_text_container_2',
-      //       {
-      //           y:30,
-      //         },{
-      //           y:0,
-      //           autoAlpha:1,
-      //           duration:0.08,
-               
-              
-            
-      //   },1)
-      //       },
-      //       onLeaveBack:()=>{
-      //         const tss=gsap.timeline()
-      //         tss.to("#secondCircleCont1",{
-      //           yPercent:0,
-      //           ease:"easeOut",
-
-      //          }).to("#firstCircleCont1",{
-      //           yPercent:0,
-      //           ease:"easeOut",
-                
-      //          },0.1)
-      //       }
-      //     })
-      //     ScrollTrigger.create({
-      //       trigger:'.first_containerss',
-      //       start:'top -100%',
-      //       end:'top -150%',
-      //       onEnter:()=>{
-      //         const tss=gsap.timeline()
-      //         tss.to("#secondCircleCont1",{
-      //           yPercent:-200,
-      //           ease:"easeOut",
-
-      //          }).to("#thirdCircleCont1",{
-      //           yPercent:-200,
-      //           ease:"easeOut",
-                
-      //          },0.1) .to("#_000",{
-      //           opacity:1,
-      //           duration:0.08,
-      //           delay:1,
-      //         },)
-      //         .fromTo("#_111",{
-      //           y:30,
-      //         },{
-      //           opacity:1,
-      //           y:0,
-      //           duration:0.08,
-      //         },">")
-      //         .fromTo("#_222",{
-      //           y:30,
-                
-              
-      //         },{
-      //           y:0,
-      //           opacity:1,
-      //           duration:0.08,
-      //         },).fromTo("#_333",{
-      //           y:30,
-               
-              
-      //         },{
-      //           y:0,
-      //           opacity:1,
-      //           duration:0.08,
-              
-      //         })
-      //      .fromTo("#_444",{
-      //           y:30,
-      //         },{
-      //           y:0,
-      //           opacity:1,
-      //           duration:0.08,
-              
-              
-            
-                
-      //       }).fromTo('.text_container_3',
-      //           {
-      //               y:30,
-      //             },{
-      //               y:0,
-      //               autoAlpha:1,
-      //               duration:0.08,
-                  
-                  
-                
-      //       },1).fromTo('.count_text_container_3',
-      //       {
-      //           y:30,
-      //         },{
-      //           y:0,
-      //           autoAlpha:1,
-      //           duration:0.08,
-              
-              
-            
-      //   },1)
-      //       },
-      //       onLeaveBack:()=>{
-      //         const tss=gsap.timeline()
-      //         tss.to("#thirdCircleCont1",{
-      //           yPercent:-100,
-      //           ease:"easeOut",
-
-      //          }).to("#secondCircleCont1",{
-      //           yPercent:-100,
-      //           ease:"easeOut",
-                
-      //          },0.1)
-      //       }
-      //     })
-
-      // // Observer.create({
-      // //             type: "wheel,touch",
-      // //             target:'.firstss_another_containaer',
-      // //             // wheelSpeed: -1,
-      // //             // onDown: () => !animating && gotoSection(currentIndex - 1, -1),
-      // //             // onUp: () => !animating && gotoSection(currentIndex + 1, 1),
-      // //             onDown: () => {
-                    
-                   
-      // //               if(targetElement1>0){
-      // //                 targetElement1=targetElement1-1 
-      // //                   }
-      // //                   circleKeyDown(targetElement1)
-      // //                 },
-      // //                 onUp:() => {
-                    
-      // //             animating1&&circleKeyUp(targetElement1)
-                   
-      // //             },
-      // //             wheelSpeed: -1,
-      // //             tolerance: 100,
-      // //             // onPress: self => {
-      // //             //   // on touch devices like iOS, if we want to prevent scrolling, we must call preventDefault() on the touchstart (Observer doesn't do that because that would also prevent side-scrolling which is undesirable in most cases)
-      // //             //  self.event.preventDefault()
-      // //             // }
-                
-      // //           });
-
-      //           function circleKeyUp(e){
-      //             if(targetElement1<3){
-      //               animating1=false
-      //               targetElement1=targetElement1+1 
-      //                 }
-                     
-      //           const tss=gsap.timeline()
-      //           if(targetElement1==1){
-      //                tss.to("#firstCircleCont1",{
-      //                 yPercent:-100,
-      //                 ease:"easeOut",
-
-      //                }).to("#secondCircleCont1",{
-      //                 yPercent:-100,
-      //                 ease:"easeOut",
-                      
-      //                },0.1).to("#_00",{
-      //                 opacity:1,
-      //                 duration:0.08,
-      //                 delay:1,
-      //               },)
-      //               .fromTo("#_11",{
-      //                 y:30,
-      //               },{
-      //                 opacity:1,
-      //                 y:0,
-      //                 duration:0.08,
-      //               })
-      //               .fromTo("#_22",{
-      //                 y:30,
-                      
-                    
-      //               },{
-      //                 y:0,
-      //                 opacity:1,
-      //                 duration:0.08,
-      //               },).fromTo("#_33",{
-      //                 y:30,
-                     
-                    
-      //               },{
-      //                 y:0,
-      //                 opacity:1,
-      //                 duration:0.08,
-                    
-      //               })
-      //            .fromTo("#_44",{
-      //                 y:30,
-      //               },{
-      //                 y:0,
-      //                 opacity:1,
-      //                 duration:0.08,
-                    
-                    
-                  
-                      
-      //             }).fromTo('.text_container_2',
-      //                 {
-      //                     y:30,
-      //                   },{
-      //                     y:0,
-      //                     autoAlpha:1,
-      //                     duration:0.08,
-                        
-                        
-                      
-      //             },1).fromTo('.count_text_container_2',
-      //             {
-      //                 y:30,
-      //               },{
-      //                 y:0,
-      //                 autoAlpha:1,
-      //                 duration:0.08,
-                     
-                    
-                  
-      //         },1).to({},{
-      //           onComplete:()=>{animating1=true}
-      //         })
-      //           }
-      //           if(targetElement1==2){
-      //             tss.to("#secondCircleCont1",{
-      //               yPercent:-200,
-      //               ease:"easeOut",
-
-      //              }).to("#thirdCircleCont1",{
-      //               yPercent:-200,
-      //               ease:"easeOut",
-                    
-      //              },0.1) .to("#_000",{
-      //               opacity:1,
-      //               duration:0.08,
-      //               delay:1,
-      //             },)
-      //             .fromTo("#_111",{
-      //               y:30,
-      //             },{
-      //               opacity:1,
-      //               y:0,
-      //               duration:0.08,
-      //             },">")
-      //             .fromTo("#_222",{
-      //               y:30,
-                    
-                  
-      //             },{
-      //               y:0,
-      //               opacity:1,
-      //               duration:0.08,
-      //             },).fromTo("#_333",{
-      //               y:30,
-                   
-                  
-      //             },{
-      //               y:0,
-      //               opacity:1,
-      //               duration:0.08,
-                  
-      //             })
-      //          .fromTo("#_444",{
-      //               y:30,
-      //             },{
-      //               y:0,
-      //               opacity:1,
-      //               duration:0.08,
-                  
-                  
-                
-                    
-      //           }).fromTo('.text_container_3',
-      //               {
-      //                   y:30,
-      //                 },{
-      //                   y:0,
-      //                   autoAlpha:1,
-      //                   duration:0.08,
-                      
-                      
-                    
-      //           },1).fromTo('.count_text_container_3',
-      //           {
-      //               y:30,
-      //             },{
-      //               y:0,
-      //               autoAlpha:1,
-      //               duration:0.08,
-                  
-                  
-                
-      //       },1).to({},{
-      //         onComplete:()=>{animating1=true}
-      //       })
-      //           }
-      //         }
-      //           function circleKeyDown(e){
-                 
-
-      //           const tss=gsap.timeline()
-      //           if(e==0){
-      //                tss.to("#secondCircleCont1",{
-      //                 yPercent:0,
-      //                 ease:"easeOut",
-
-      //                }).to("#firstCircleCont1",{
-      //                 yPercent:0,
-      //                 ease:"easeOut",
-                      
-      //                },0.1)
-      //           }
-      //           if(e==1){
-      //             tss.to("#thirdCircleCont1",{
-      //               yPercent:-100,
-      //               ease:"easeOut",
-
-      //              }).to("#secondCircleCont1",{
-      //               yPercent:-100,
-      //               ease:"easeOut",
-                    
-      //              },0.1)
-      //           }
-      //           }
-      //           return () => {
-      //             {/* A return function for killing the animation on component unmount */ }
-                  
-      //             newT1s.kill();
-
-      //           };
-      //         })
                 return () => {
                   {/* A return function for killing the animation on component unmount */ }
                   t5.kill();
@@ -2004,18 +1585,18 @@ ts.to('#green',{
     return ()=>contextCreate.revert();
       
       
-      },[])
+      })
   return (
     <div className='bg-[#463838] overflow-hidden'>
          <HeroAbout />
          <Feedback />
     
         <div className=''>
-        <section className=' md:min-h-[300vh] min-h-[150vh]    bg-[#463838]  ' >
+        <section id="checkCon1" className=' md:min-h-[300vh] min-h-[150vh]    bg-[#463838]  ' >
           <div className=' flex flex-col justify-center another_containaer fourth_container min-h-[100vh] '>
           <div className='flex md:flex-row flex-col md:justify-between self-center w-[90%] '>
-            <div className='flex flex-col self-center  h-[400px] overflow-hidden'>
-                    <div id='text_cont_1' className='text_cont_1 flex justify-center   w-[90%] gap-11 min-h-[400px] '>
+            <div it="text_cont" className='flex flex-col self-center  h-[400px] overflow-hidden'>
+                    <div id='text_cont_1' className='text_cont_1 flex justify-center w-[90%] gap-11 min-h-[400px] '>
                       <div className='flex flex-col justify-center'>
                       <h1 className='count_1 count_text_container_ menus small'>01</h1>
             </div>
@@ -2053,7 +1634,7 @@ ts.to('#green',{
 
 
     </div>
-    <div id='text_cont_3' className=' flex justify-center  w-[90%]  gap-11 min-h-[400px] '>
+    <div id='text_cont_3' className=' flex justify-center  text_hhide_cont   w-[90%]  gap-11 min-h-[400px] '>
                       <div className='flex flex-col justify-center'>
                       <h1 className='count_1 count_text_container_  menus small'>03</h1>
             </div>

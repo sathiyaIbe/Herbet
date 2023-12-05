@@ -261,7 +261,7 @@ gsap.to(a,
           <h1 className="work_text menus small">2023</h1>
         </div>
   <section  className="min-h-screen image_container bg-[#463838]">
-    <div data-lenis-prevent className="flex flex-col  waves ">
+    <div  className="flex flex-col  waves ">
      <motion.div
         viewport={{ once: true }}
          whileInView={()=>{skew('.skewElem')}} className='flex flex-col md:flex-row skewElem'>
@@ -353,7 +353,8 @@ gsap.to(a,
     </div>
     </div>
     <div className="hidden md:block ">
-    <div className="flex self-center   justify-around w-[90%] ">
+      <div className="flex flex-col">
+    <div className="flex self-center   justify-between min-w-[80%] ">
       <motion.img
        variants={fadeIn("up", "tween",.1,1)}
        initial="hidden"
@@ -380,6 +381,7 @@ gsap.to(a,
        initial="hidden"
        whileInView="show"
       viewport={{ once: true }} src='/co_logo_5.png' className="hidden md:block w-1/5 menus" alt='logo' />
+    </div>
     </div>
     </div>
   

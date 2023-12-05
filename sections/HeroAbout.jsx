@@ -164,10 +164,10 @@ useEffect(()=>{
 
 
 function heroAnimation(){
-  gsap.fromTo(circleRef1,  {opacity: 0,x:100, y:-200}, {opacity: 1, duration: 1,x:0 , y:0, delay:2.3 });
+  gsap.fromTo(circleRef1,  {opacity: 0,x:100, y:-100}, {opacity: 1, duration: 1,x:0 , y:0, delay:2.3 });
   gsap.fromTo(circleRef2,  { scaleX:2.5, scaleY:2.5, y:-200}, { scaleX:1, scaleY:1, duration: 1,});
  gsap.fromTo(circleRef2,  {opacity: 0.8,y:-200 , }, {opacity: 1,  duration: 1,y:0, delay:2 });
-  gsap.fromTo(circleRef3,  {opacity: 0,x:-100,y:-200}, {opacity: 1, duration: 1,x:0 , y:0, delay:2.3 });
+  gsap.fromTo(circleRef3,  {opacity: 0,x:-100,y:-100}, {opacity: 1, duration: 1,x:0 , y:0, delay:2.3 });
   gsap.fromTo(textRef,  {opacity: 0,x:200}, {opacity: 0.8, duration: 1,x:0 ,delay:3 , ease: Power1.easeIn});
   gsap.fromTo(circleText1,{opacity: 0} , {opacity:1, delay:2.5 , ease: "Power1.easeIn"})
   gsap.fromTo(circleText2,{opacity: 0} , {opacity:1, delay:2.5 , ease: "Power1.easeIn"})
