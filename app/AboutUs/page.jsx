@@ -60,10 +60,9 @@ function AboutUs() {
 
               let mm = gsap.matchMedia();
              
-              const section_2 = document.getElementById("text_cont");
+              const section_2 = document.getElementById("checkCon1");
 
               mm.add("(min-width:768px)",()=>{
-                const section_2 = document.getElementById("checkCon1");
                   const pin = gsap.timeline(
                
                 {
@@ -840,7 +839,7 @@ function keyDown(e){
                   trigger: ".fourth_container",
                  pin: true,
                   start: "top top",
-                  end:"+=" + section_2.offsetWidth,
+                  end:"+=150%",
                   // snap: {
                   //       snapTo: 0.2,
                   //       duration: 0.3,

@@ -63,7 +63,7 @@ const Feedback = () => {
               scrollTrigger:{
                 trigger:'#checkCon',
                 start: "top top",
-                end:"+=" + section_2.offsetWidth,
+                end:'bottom top',
                  pin:true,
               }
             })
@@ -82,15 +82,15 @@ const Feedback = () => {
               }
             }).to("#_10",{
               opacity:1,
-              duration:0.08,
-              delay:1,
+              duration:0.05,
+              delay:0.03,
             },)
             .fromTo("#_01",{
               y:30,
             },{
               opacity:1,
               y:0,
-              duration:0.08,
+              duration:0.05,
             })
             .fromTo("#_02",{
               y:30,
@@ -99,7 +99,7 @@ const Feedback = () => {
             },{
               y:0,
               opacity:1,
-              duration:0.08,
+              duration:0.05,
             },).fromTo("#_03",{
               y:30,
              
@@ -107,7 +107,7 @@ const Feedback = () => {
             },{
               y:0,
               opacity:1,
-              duration:0.08,
+              duration:0.05,
             
             })
          .fromTo("#_04",{
@@ -115,7 +115,7 @@ const Feedback = () => {
             },{
               y:0,
               opacity:1,
-              duration:0.08, 
+              duration:0.05, 
           }).fromTo('.text_container_1',
               {
                   y:30,
@@ -167,15 +167,15 @@ tssFirst.to("#firstCircleCont1",{
   
  },0.1).to("#_00",{
   opacity:1,
-  duration:0.08,
-  delay:1,
+  duration:0.05,
+  delay:0.03,
 },)
 .fromTo("#_11",{
   y:30,
 },{
   opacity:1,
   y:0,
-  duration:0.08,
+  duration:0.05,
 },">")
 .fromTo("#_22",{
   y:30,
@@ -184,7 +184,7 @@ tssFirst.to("#firstCircleCont1",{
 },{
   y:0,
   opacity:1,
-  duration:0.08,
+  duration:0.05,
 },).fromTo("#_33",{
   y:30,
  
@@ -192,7 +192,7 @@ tssFirst.to("#firstCircleCont1",{
 },{
   y:0,
   opacity:1,
-  duration:0.08,
+  duration:0.05,
 
 })
 .fromTo("#_44",{
@@ -200,7 +200,7 @@ tssFirst.to("#firstCircleCont1",{
 },{
   y:0,
   opacity:1,
-  duration:0.08,
+  duration:0.05,
 
 
 
@@ -215,7 +215,7 @@ tssFirst.to("#firstCircleCont1",{
     
     
   
-},1).fromTo('.count_text_container_2',
+},0.5).fromTo('.count_text_container_2',
 {
   y:30,
 },{
@@ -225,7 +225,7 @@ tssFirst.to("#firstCircleCont1",{
 
 
 
-},1)
+},0.5)
     },
     onEnterBack:()=>{
       const tss=gsap.timeline()
@@ -289,15 +289,15 @@ const newT1CenterThird=gsap.timeline({
                 
                },0.1) .to("#_000",{
                 opacity:1,
-                duration:0.08,
-                delay:1,
+                duration:0.05,
+                delay:0.03,
               },)
               .fromTo("#_111",{
                 y:30,
               },{
                 opacity:1,
                 y:0,
-                duration:0.08,
+                duration:0.05,
               },">")
               .fromTo("#_222",{
                 y:30,
@@ -306,7 +306,7 @@ const newT1CenterThird=gsap.timeline({
               },{
                 y:0,
                 opacity:1,
-                duration:0.08,
+                duration:0.05,
               },).fromTo("#_333",{
                 y:30,
                
@@ -314,7 +314,7 @@ const newT1CenterThird=gsap.timeline({
               },{
                 y:0,
                 opacity:1,
-                duration:0.08,
+                duration:0.05,
               
               })
            .fromTo("#_444",{
@@ -322,7 +322,7 @@ const newT1CenterThird=gsap.timeline({
               },{
                 y:0,
                 opacity:1,
-                duration:0.08,
+                duration:0.05,
               
               
             
@@ -337,7 +337,7 @@ const newT1CenterThird=gsap.timeline({
                   
                   
                 
-            },1).fromTo('.count_text_container_3',
+            },0.5).fromTo('.count_text_container_3',
             {
                 y:30,
               },{
@@ -347,7 +347,7 @@ const newT1CenterThird=gsap.timeline({
               
               
             
-        },1)
+        },0.5)
     },
     onEnterBack:()=>{
       const tss=gsap.timeline()
@@ -819,15 +819,15 @@ const newT1CenterThird=gsap.timeline({
               }
             }).to("#_10",{
               opacity:1,
-              duration:0.08,
-              delay:1,
+              duration:0.05,
+              delay:0.3,
             },)
             .fromTo("#_01",{
               y:30,
             },{
               opacity:1,
               y:0,
-              duration:0.08,
+              duration:0.05,
             })
             .fromTo("#_02",{
               y:30,
@@ -836,7 +836,7 @@ const newT1CenterThird=gsap.timeline({
             },{
               y:0,
               opacity:1,
-              duration:0.08,
+              duration:0.05,
             },).fromTo("#_03",{
               y:30,
              
@@ -852,7 +852,7 @@ const newT1CenterThird=gsap.timeline({
             },{
               y:0,
               opacity:1,
-              duration:0.08, 
+              duration:0.05, 
           }).fromTo('.text_container_1',
               {
                   y:30,
@@ -900,15 +900,15 @@ tssFirst.to("#firstCircleCont",{
   
  },0.1).to("#_00",{
   opacity:1,
-  duration:0.08,
-  delay:1,
+  duration:0.05,
+  delay:0.03,
 },)
 .fromTo("#_11",{
   y:30,
 },{
   opacity:1,
   y:0,
-  duration:0.08,
+  duration:0.05,
 })
 .fromTo("#_22",{
   y:30,
@@ -917,7 +917,7 @@ tssFirst.to("#firstCircleCont",{
 },{
   y:0,
   opacity:1,
-  duration:0.08,
+  duration:0.05,
 },).fromTo("#_33",{
   y:30,
  
@@ -925,7 +925,7 @@ tssFirst.to("#firstCircleCont",{
 },{
   y:0,
   opacity:1,
-  duration:0.08,
+  duration:0.05,
 
 })
 .fromTo("#_44",{
@@ -933,7 +933,7 @@ tssFirst.to("#firstCircleCont",{
 },{
   y:0,
   opacity:1,
-  duration:0.08,
+  duration:0.05,
 
 
 
@@ -948,7 +948,7 @@ tssFirst.to("#firstCircleCont",{
     
     
   
-},0.1).fromTo('.count_text_container_2',
+},0.5).fromTo('.count_text_container_2',
 {
   y:30,
 },{
@@ -958,7 +958,7 @@ tssFirst.to("#firstCircleCont",{
 
 
 
-},0.1)
+},0.5)
     },
     onEnterBack:()=>{
       const tss=gsap.timeline()
@@ -1105,15 +1105,15 @@ const newT1CenterThird=gsap.timeline({
                 
                },0.1) .to("#_000",{
                 opacity:1,
-                duration:0.08,
-                delay:1,
+                duration:0.05,
+                delay:0.03,
               },)
               .fromTo("#_111",{
                 y:30,
               },{
                 opacity:1,
                 y:0,
-                duration:0.08,
+                duration:0.05,
               },">")
               .fromTo("#_222",{
                 y:30,
@@ -1122,7 +1122,7 @@ const newT1CenterThird=gsap.timeline({
               },{
                 y:0,
                 opacity:1,
-                duration:0.08,
+                duration:0.05,
               },).fromTo("#_333",{
                 y:30,
                
@@ -1130,7 +1130,7 @@ const newT1CenterThird=gsap.timeline({
               },{
                 y:0,
                 opacity:1,
-                duration:0.08,
+                duration:0.05,
               
               })
            .fromTo("#_444",{
@@ -1138,7 +1138,7 @@ const newT1CenterThird=gsap.timeline({
               },{
                 y:0,
                 opacity:1,
-                duration:0.08,
+                duration:0.05,
               
               
             
@@ -1149,21 +1149,21 @@ const newT1CenterThird=gsap.timeline({
                   },{
                     y:0,
                     autoAlpha:1,
-                    duration:0.08,
+                    duration:0.05,
                   
                   
                 
-            },1).fromTo('.count_text_container_3',
+            },0.5).fromTo('.count_text_container_3',
             {
                 y:30,
               },{
                 y:0,
                 autoAlpha:1,
-                duration:0.08,
+                duration:0.05,
               
               
             
-        },1)
+        },0.5)
     },
     onEnterBack:()=>{
       const tss=gsap.timeline()
