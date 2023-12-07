@@ -98,7 +98,7 @@ const t2=gsap.timeline({
       })
     const t3=gsap.timeline({
       scrollTrigger:{
-        trigger:'#main3',
+        trigger:'#resources',
       start:"top center",
       }
       })
@@ -143,7 +143,7 @@ t1.fromTo(".circle1",{
 }) .from(".text_1_glow",{
   autoAlpha:1,
   
-}) 
+},0.5) 
 
 
 .from(circle_header.words,{
@@ -154,7 +154,7 @@ t1.fromTo(".circle1",{
     ease:"easeOut",
   
     stagger:0.05,
-})
+},1.5)
 
     //   const pin = gsap.to(
     //     circleRef,
@@ -255,7 +255,7 @@ gsap.to(a,
 
 
   return(
-    <div id="resourse" className=" flex flex-col">
+    <div id="work" className=" flex flex-col">
        <div className="flex justify-between self-center w-[95%] ">
           <h1 className="work_text menus small">OUR WORK</h1>
           <h1 className="work_text menus small">2023</h1>
@@ -300,7 +300,7 @@ gsap.to(a,
       </motion.div>
     </div>
   </section>
-<section data-lenis-prevent id="main1" className="min-h-screen  mb-24 max-w-[100vw] flex flex-col gap-11 justify-evenly md:justify-center  bg-[#463838] skewEle">
+<section id="main1" className="min-h-screen  mb-24 max-w-[100vw] flex flex-col gap-11 justify-evenly md:justify-center  bg-[#463838] skewEle">
   <div className="flex flex-col justify-center mt-24    gap-9 self-center w-[80%]">
         <div  ref={circleRef}  className="circle_main_containe flex  justify-between w-fit self-center ">
       
@@ -354,7 +354,7 @@ gsap.to(a,
     </div>
     <div className="hidden md:block ">
       <div className="flex flex-col">
-    <div className="flex self-center   justify-between min-w-[80%] ">
+    <div className="flex self-center   justify-between w-[90%] ">
       <motion.img
        variants={fadeIn("up", "tween",.1,1)}
        initial="hidden"
@@ -478,7 +478,7 @@ gsap.to(a,
 
   
   </div> */}
-  <section id='main3' className="min-h-[75vh] flex flex-col justify-center bg-white skewEle">
+  <section id='resources' className="min-h-[75vh] flex flex-col justify-center bg-white skewEle">
    <div className="md:w-[90%] self-center flex flex-col gap-11 ">
     <div className="w-[90%] self-center md:self-start md:w-[100%]">
     <h1 className="main_3_header self-center flex pt-11 menus ">What we’ve been thinking lately. <a id="underline" className="main_3_header_span">See more.</a> </h1>

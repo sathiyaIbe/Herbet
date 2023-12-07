@@ -59,8 +59,8 @@ html.lenis {
 
 .cursor{
   position: fixed;
-  width: 40px;
-  height: 40px;
+  width: 20px;
+  height: 20px;
   margin-left: -20px;
   margin-top: -20px;
   border-radius: 50%;
@@ -71,7 +71,7 @@ html.lenis {
   z-index: 1000;
 }
 .grow, .grow-small{
-  transform: scale(2.5);
+  transform: scale(3.5);
   background: #fff !important;
   mix-blend-mode: difference;
   border: none;
@@ -79,7 +79,7 @@ html.lenis {
   /* opacity: 0.1; */
 }
 .grow-small{
-  transform: scale(1.5);
+  transform: scale(2.5);
   border:none;
 }
 .image_container{
@@ -107,12 +107,12 @@ cursor: none;
 }
 
 .circle_container{
- @apply border border-[#FFD551]  rounded-full h-32 w-32 md:h-72 md:w-72 flex justify-center ;
+ @apply border border-[#FFD551]  rounded-full h-32 w-32 md:h-[320px] md:w-[320px] flex justify-center ;
  border-width: thin;
  font-weight: lighter;
 }
 .circle_container_new{
-  @apply border border-[#FFD551]  rounded-full min-h-[200px] min-w-[200px] md:min-h-[250px] md:min-w-[250px] flex justify-center overflow-hidden;
+  @apply border border-[#FFD551]  rounded-full min-h-[200px] min-w-[200px] md:min-h-[280px] md:min-w-[280px] flex justify-center overflow-hidden;
   border-width: thin;
   font-weight: lighter;
  }
@@ -132,13 +132,13 @@ cursor: none;
 }
 
 .circle_container_menu{
-  @apply border border-[#413131] rounded-full  md:w-[600] md:h-[600] w-[200px] h-[200px] flex justify-center text-[#413131] ;
+  @apply border border-[#413131] rounded-full  md:w-[250px] md:h-[250px] w-[300px] h-[300px] flex justify-center text-[#413131] ;
 }
 .text_glow{
   visibility: hidden;
 }
 .circle_text_menu{
-  @apply text-[34px] md:text-[44px] text-[#413131] font-[ogg] leading-[84px] 
+  @apply text-[44px] md:text-[44px] text-[#413131] font-[ogg] leading-[84px] 
 
 }
 

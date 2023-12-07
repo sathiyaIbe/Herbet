@@ -55,14 +55,60 @@ let secondRef=useRef()
 // });
 
 useEffect(()=>{
-   heroAnimation()
+  //  heroAnimation()
   const ctx3=gsap.context(()=>{
     const circleTimeline=gsap.timeline();
-    circleTimeline.fromTo(".menus1",{x:20, rotation:"-5", y:-10},{x: -40,y:10, rotation:5, repeat:-1, duration:2.5,scrub: true, yoyo: true ,  ease: "easeOut(10, 2.3)"})
-    circleTimeline.fromTo(".menus2",{x:20, rotation:"-5" , y:-10},{x: -40,y:10, rotation:5, repeat:-1, duration:2.5,scrub: true, yoyo: true ,  ease: "ease.out(1, 2.3)"},0.3)
-    circleTimeline.fromTo(".menus3",{x:20, rotation:"-5" , y:-10},{x: -40,y:10, rotation:5, repeat:-1,  duration:2.5,scrub: true, yoyo: true ,  ease: "ease.out(1, 2.3)"},0.6)
+const mm=gsap.matchMedia()
+mm.add("(min-width:768px)",()=>{
+  gsap.fromTo(circleRef1,  {opacity: 0,x:100, y:-100}, {opacity: 1, duration: 1,x:0 , y:0, delay:2.3 });
+  gsap.fromTo(circleRef2,  { scaleX:2.5, scaleY:2.5, y:-200}, { scaleX:1, scaleY:1, duration: 1,});
+ gsap.fromTo(circleRef2,  {opacity: 0.8,y:-200 , }, {opacity: 1,  duration: 1,y:0, delay:2 });
+  gsap.fromTo(circleRef3,  {opacity: 0,x:-100,y:-100}, {opacity: 1, duration: 1,x:0 , y:0, delay:2.3 });
+  gsap.fromTo(textRef,  {opacity: 0,x:200}, {opacity: 0.8, duration: 1,x:0 ,delay:3 , ease: Power1.easeIn});
+  gsap.fromTo(circleText1,{opacity: 0} , {opacity:1, delay:2.5 , ease: "Power1.easeIn"})
+  gsap.fromTo(circleText2,{opacity: 0} , {opacity:1, delay:2.5 , ease: "Power1.easeIn"})
+  gsap.fromTo(circleText3,{opacity: 0} , {opacity:1, delay:2.5 , ease: "Power1.easeIn"})
+  gsap.to(textRef,{opacity:1})
+  var mySplitText = new SplitType("#hero_headers"),
+ 
+  lines=(mySplitText.words)
+  function allDone() {
+    mySplitText.revert();
+   // tl.kill()
+  }
+  gsap.timeline()
+.fromTo(lines,{opacity:0, y:80} , {duration: 0.8 ,opacity:1, y:0 ,  ease:"easeInOut",stagger:0.1, delay:2});
+})
+
+mm.add("(max-width:768px)",()=>{
+  const tt=gsap.timeline()
+  tt.fromTo(circleRef2,  { scaleX:2.5, scaleY:2.5, y:-200}, { scaleX:1, scaleY:1, duration: 1,})
+ .fromTo(circleRef2,  {opacity: 0.8,y:-200 , }, {opacity: 1,  duration: 1,y:0,  })
+.fromTo(circleRef1,  {opacity: 0,x:100, y:0}, {opacity: 1, duration: 1,x:0 , y:0,  },1.8)
+
+.fromTo(circleRef3,  {opacity: 0,x:-100,y:0}, {opacity: 1, duration: 1,x:0 , y:0,  },1.8);
+  gsap.fromTo(textRef,  {opacity: 0,x:200}, {opacity: 0.8, duration: 1,x:0 ,delay:3 , ease: Power1.easeIn});
+  gsap.fromTo(circleText1,{opacity: 0} , {opacity:1, delay:2.5 , ease: "Power1.easeIn"})
+  gsap.fromTo(circleText2,{opacity: 0} , {opacity:1, delay:2.5 , ease: "Power1.easeIn"})
+  gsap.fromTo(circleText3,{opacity: 0} , {opacity:1, delay:2.5 , ease: "Power1.easeIn"})
+  gsap.to(textRef,{opacity:1})
+  var mySplitText = new SplitType("#hero_headers"),
+ 
+  lines=(mySplitText.words)
+  function allDone() {
+    mySplitText.revert();
+   // tl.kill()
+  }
+  gsap.timeline()
+.fromTo(lines,{opacity:0, y:80} , {duration: 0.5 ,opacity:1, y:0 ,  ease:"easeInOut",stagger:0.1, delay:2});
+})
+circleTimeline.fromTo(".menus1",{x:20, rotation:"-5", y:-10},{x: -40,y:10, rotation:5, repeat:-1, duration:2.5,scrub: true, yoyo: true ,  ease: "easeOut(10, 2.3)"})
+circleTimeline.fromTo(".menus2",{x:20, rotation:"-5" , y:-10},{x: -40,y:10, rotation:5, repeat:-1, duration:2.5,scrub: true, yoyo: true ,  ease: "ease.out(1, 2.3)"},0.3)
+circleTimeline.fromTo(".menus3",{x:20, rotation:"-5" , y:-10},{x: -40,y:10, rotation:5, repeat:-1,  duration:2.5,scrub: true, yoyo: true ,  ease: "ease.out(1, 2.3)"},0.6)
 
 
+
+  
    const t1=gsap.timeline()
    var pText = new SplitType(".description_header")
    var hText = new SplitType(".hero_header")
@@ -352,9 +398,9 @@ that propel the world forward,
             <h1  className="circle_text_menu self-center">Resources</h1>
           </div>
        
-        <div className="circle_container_menu relative  bottom-[130px]  "  >
+        <a onClick={()=>{getBack()}} href="#footer" className="circle_container_menu relative  bottom-[130px]  "  >
             <h1  className="circle_text_menu self-center ">Contact</h1>
-          </div>
+          </a>
         
         </div>
       </section>

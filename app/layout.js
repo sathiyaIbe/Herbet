@@ -19,11 +19,12 @@ const RootLayout = ({ children }) => {
             gsap.set(".cursor", {
               
                 css: {
-                    left: mouseX,
-                    top: mouseY
+                    left: mouseX+10,
+                    top: mouseY+10
                 },
-                ease:'easeIn',
-                delay:'0.01',
+                
+                ease:"back.inOut",
+                delay:'0.05',
             })
         }
     });

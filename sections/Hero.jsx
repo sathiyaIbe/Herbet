@@ -363,7 +363,7 @@ function getBack(){
 <div className="flex flex-col justify-center md:min-h-[90vh] md:mb-24 ">
 
         <div className="circle_main_containe gap-11 flex  self-center ">
-          <a  onClick={()=>{getBack()}} href="#resourse" className="circle_container_menu relative  menus menus1 left-[-20%] " >
+          <a  onClick={()=>{getBack()}} href="#work" className="circle_container_menu relative  menus menus1 left-[-20%] " >
             <h1 className="circle_text_menu circle_cursour self-center  ">Work</h1>
           </a>
          
@@ -394,9 +394,9 @@ function getBack(){
             <h1  className="circle_text_menu self-center">Resources</h1>
           </div>
        
-        <div className="circle_container_menu relative  bottom-[40px]  "  >
+        <a onClick={()=>{getBack()}} href="#footer" className="circle_container_menu relative  bottom-[40px]  "  >
             <h1  className="circle_text_menu self-center ">Contact</h1>
-          </div>
+          </a>
         
         </div>
       </section>

@@ -54,7 +54,7 @@ const Feedback = () => {
             });
           let mm = gsap.matchMedia();
          
-          const section_2 = document.getElementById("checkCon");
+          const section_2 = document.getElementById("checkConMain");
 
 
 
@@ -164,7 +164,7 @@ tssFirst.to("#firstCircleCont1",{
  }).to("#secondCircleCont1",{
   yPercent:-100,
   ease:"easeOut",
-  
+  opacity:1,
  },0.1).to("#_00",{
   opacity:1,
   duration:0.05,
@@ -232,7 +232,7 @@ tssFirst.to("#firstCircleCont1",{
           tss.to("#secondCircleCont1",{
             yPercent:0,
             ease:"easeOut",
-
+            opacity:1,
            }).to("#firstCircleCont1",{
             yPercent:0,
             ease:"easeOut",
@@ -347,19 +347,22 @@ const newT1CenterThird=gsap.timeline({
               
               
             
-        },0.5)
+        },0.5).to("#secondCircleCont1",{
+         opacity:0,
+
+         })
     },
     onEnterBack:()=>{
       const tss=gsap.timeline()
             tss.to("#thirdCircleCont1",{
               yPercent:-100,
               ease:"easeOut",
-  
+              opacity:1,
              })
              .to("#secondCircleCont1",{
               yPercent:-100,
               ease:"easeOut",
-              
+              opacity:1,
              },0.1).to("#_000",{          
               opacity:0,
             },0)
@@ -385,402 +388,6 @@ const newT1CenterThird=gsap.timeline({
   }
 })
 
-
-
-
-
-    //   ScrollTrigger.create({
-    //     trigger:'#checkCon',
-    //     start:'top -50%',
-    //     end:'top -100%',
-    //     markers:true,
-    //     onEnter:()=>{
-    //       const tss=gsap.timeline()
-    //       tss.to("#firstCircleCont1",{
-    //         yPercent:-100,
-    //         ease:"easeOut",
-
-    //        }).to("#secondCircleCont1",{
-    //         yPercent:-100,
-    //         ease:"easeOut",
-            
-    //        },0.1).to("#_00",{
-    //         opacity:1,
-    //         duration:0.08,
-    //         delay:1,
-    //       },)
-    //       .fromTo("#_11",{
-    //         y:30,
-    //       },{
-    //         opacity:1,
-    //         y:0,
-    //         duration:0.08,
-    //       })
-    //       .fromTo("#_22",{
-    //         y:30,
-            
-          
-    //       },{
-    //         y:0,
-    //         opacity:1,
-    //         duration:0.08,
-    //       },).fromTo("#_33",{
-    //         y:30,
-           
-          
-    //       },{
-    //         y:0,
-    //         opacity:1,
-    //         duration:0.08,
-          
-    //       })
-    //    .fromTo("#_44",{
-    //         y:30,
-    //       },{
-    //         y:0,
-    //         opacity:1,
-    //         duration:0.08,
-          
-          
-        
-            
-    //     }).fromTo('.text_container_2',
-    //         {
-    //             y:30,
-    //           },{
-    //             y:0,
-    //             autoAlpha:1,
-    //             duration:0.08,
-              
-              
-            
-    //     },1).fromTo('.count_text_container_2',
-    //     {
-    //         y:30,
-    //       },{
-    //         y:0,
-    //         autoAlpha:1,
-    //         duration:0.08,
-           
-          
-        
-    // },1)
-    //     },
-    //     onLeaveBack:()=>{
-    //       const tss=gsap.timeline()
-    //       tss.to("#secondCircleCont1",{
-    //         yPercent:0,
-    //         ease:"easeOut",
-
-    //        }).to("#firstCircleCont1",{
-    //         yPercent:0,
-    //         ease:"easeOut",
-            
-    //        },0.1)
-    //     }
-    //   })
-    //   ScrollTrigger.create({
-    //     trigger:'#checkCon',
-    //     start:'top -100%',
-    //     end:'top -150%',
-    //     onEnter:()=>{
-    //       const tss=gsap.timeline()
-    //       tss.to("#secondCircleCont1",{
-    //         yPercent:-200,
-    //         ease:"easeOut",
-
-    //        }).to("#thirdCircleCont1",{
-    //         yPercent:-200,
-    //         ease:"easeOut",
-            
-    //        },0.1) .to("#_000",{
-    //         opacity:1,
-    //         duration:0.08,
-    //         delay:1,
-    //       },)
-    //       .fromTo("#_111",{
-    //         y:30,
-    //       },{
-    //         opacity:1,
-    //         y:0,
-    //         duration:0.08,
-    //       },">")
-    //       .fromTo("#_222",{
-    //         y:30,
-            
-          
-    //       },{
-    //         y:0,
-    //         opacity:1,
-    //         duration:0.08,
-    //       },).fromTo("#_333",{
-    //         y:30,
-           
-          
-    //       },{
-    //         y:0,
-    //         opacity:1,
-    //         duration:0.08,
-          
-    //       })
-    //    .fromTo("#_444",{
-    //         y:30,
-    //       },{
-    //         y:0,
-    //         opacity:1,
-    //         duration:0.08,
-          
-          
-        
-            
-    //     }).fromTo('.text_container_3',
-    //         {
-    //             y:30,
-    //           },{
-    //             y:0,
-    //             autoAlpha:1,
-    //             duration:0.08,
-              
-              
-            
-    //     },1).fromTo('.count_text_container_3',
-    //     {
-    //         y:30,
-    //       },{
-    //         y:0,
-    //         autoAlpha:1,
-    //         duration:0.08,
-          
-          
-        
-    // },1)
-    //     },
-    //     onLeaveBack:()=>{
-    //       const tss=gsap.timeline()
-    //       tss.to("#thirdCircleCont1",{
-    //         yPercent:-100,
-    //         ease:"easeOut",
-
-    //        }).to("#secondCircleCont1",{
-    //         yPercent:-100,
-    //         ease:"easeOut",
-            
-    //        },0.1)
-    //     }
-    //   })
-
-  // Observer.create({
-  //             type: "wheel,touch",
-  //             target:'.checkCon',
-  //             // wheelSpeed: -1,
-  //             // onDown: () => !animating && gotoSection(currentIndex - 1, -1),
-  //             // onUp: () => !animating && gotoSection(currentIndex + 1, 1),
-  //             onDown: () => {
-                
-               
-  //               if(targetElement1>0){
-  //                 targetElement1=targetElement1-1 
-  //                   }
-  //                   circleKeyDown(targetElement1)
-  //                 },
-  //                 onUp:() => {
-                
-  //             animating1&&circleKeyUp(targetElement1)
-  //             animating1=false
-               
-  //             },
-  //             wheelSpeed: -1,
-  //             tolerance: 10,
-  //             // onPress: self => {
-  //             //   // on touch devices like iOS, if we want to prevent scrolling, we must call preventDefault() on the touchstart (Observer doesn't do that because that would also prevent side-scrolling which is undesirable in most cases)
-  //             //  self.event.preventDefault()
-  //             // }
-            
-  //           });
-
-            function circleKeyUp(e){
-              if(targetElement1<3){
-
-                targetElement1=targetElement1+1 
-                  }
-                  console.log(targetElement1)
-
-                 
-            const tss=gsap.timeline()
-            if(targetElement1==1){
-                 tss.to("#firstCircleCont1",{
-                  yPercent:-100,
-                  ease:"easeOut",
-
-                 }).to("#secondCircleCont1",{
-                  yPercent:-100,
-                  ease:"easeOut",
-                  
-                 },0.1).to("#_00",{
-                  opacity:1,
-                  duration:0.08,
-                  delay:1,
-                },)
-                .fromTo("#_11",{
-                  y:30,
-                },{
-                  opacity:1,
-                  y:0,
-                  duration:0.08,
-                })
-                .fromTo("#_22",{
-                  y:30,
-                  
-                
-                },{
-                  y:0,
-                  opacity:1,
-                  duration:0.08,
-                },).fromTo("#_33",{
-                  y:30,
-                 
-                
-                },{
-                  y:0,
-                  opacity:1,
-                  duration:0.08,
-                
-                })
-             .fromTo("#_44",{
-                  y:30,
-                },{
-                  y:0,
-                  opacity:1,
-                  duration:0.08,
-                
-                
-              
-                  
-              }).fromTo('.text_container_2',
-                  {
-                      y:30,
-                    },{
-                      y:0,
-                      autoAlpha:1,
-                      duration:0.08,
-                    
-                    
-                  
-              },1).fromTo('.count_text_container_2',
-              {
-                  y:30,
-                },{
-                  y:0,
-                  autoAlpha:1,
-                  duration:0.08,
-                 
-                
-              
-          },1).to({},{
-            onComplete:()=>{animating1=true}
-          })
-            }
-            if(targetElement1==2){
-              tss.to("#secondCircleCont1",{
-                yPercent:-200,
-                ease:"easeOut",
-
-               }).to("#thirdCircleCont1",{
-                yPercent:-200,
-                ease:"easeOut",
-                
-               },0.1) .to("#_000",{
-                opacity:1,
-                duration:0.08,
-                delay:1,
-              },)
-              .fromTo("#_111",{
-                y:30,
-              },{
-                opacity:1,
-                y:0,
-                duration:0.08,
-              },">")
-              .fromTo("#_222",{
-                y:30,
-                
-              
-              },{
-                y:0,
-                opacity:1,
-                duration:0.08,
-              },).fromTo("#_333",{
-                y:30,
-               
-              
-              },{
-                y:0,
-                opacity:1,
-                duration:0.08,
-              
-              })
-           .fromTo("#_444",{
-                y:30,
-              },{
-                y:0,
-                opacity:1,
-                duration:0.08,
-              
-              
-            
-                
-            }).fromTo('.text_container_3',
-                {
-                    y:30,
-                  },{
-                    y:0,
-                    autoAlpha:1,
-                    duration:0.08,
-                  
-                  
-                
-            },1).fromTo('.count_text_container_3',
-            {
-                y:30,
-              },{
-                y:0,
-                autoAlpha:1,
-                duration:0.08,
-              
-              
-            
-        },1).to({},{
-          onComplete:()=>{animating1=true}
-        })
-            }
-          }
-            function circleKeyDown(e){
-             
-
-            const tss=gsap.timeline()
-            if(e==0){
-                 tss.to("#secondCircleCont1",{
-                  yPercent:0,
-                  ease:"easeOut",
-
-                 }).to("#firstCircleCont1",{
-                  yPercent:0,
-                  ease:"easeOut",
-                  
-                 },0.1)
-            }
-            if(e==1){
-              tss.to("#thirdCircleCont1",{
-                yPercent:-100,
-                ease:"easeOut",
-
-               }).to("#secondCircleCont1",{
-                yPercent:-100,
-                ease:"easeOut",
-                
-               },0.1)
-            }
-            }
             return () => {
               {/* A return function for killing the animation on component unmount */ }
               
@@ -793,7 +400,7 @@ const newT1CenterThird=gsap.timeline({
               scrollTrigger:{
                 trigger:'#checkCon',
                 start: "top top",
-                end:"+=" + section_2.offsetWidth,
+                end:"+=160%",
                 // end:"bottom top",
                  pin:true,
                 //  scrub:true,
@@ -996,91 +603,6 @@ tssFirst.to("#firstCircleCont",{
   }
 })
 
-// const newT1CenterSecond=gsap.timeline({
-//   scrollTrigger:{
-//     trigger:newRef.current,
-//     start: "top 0%",
-//     end: "top -40%",
-//     scrub:true,
-
-//   //  // snap: {
-//     //   snapTo: 0.2,
-//     //   duration: 0.3,
-//     //   delay: 0,
-//     //   },
-
-//   }
-// }).to("#firstCircleCont",{
-//     yPercent:-100,
-//     ease:"easeOut",
-  
-//    }).to("#secondCircleCont",{
-//     yPercent:-100,
-//     ease:"easeOut",
-    
-//    }).to("#_00",{
-//     opacity:1,
-//     duration:0.08,
-//     delay:1,
-//   },)
-//   .fromTo("#_11",{
-//     y:30,
-//   },{
-//     opacity:1,
-//     y:0,
-//     duration:0.08,
-//   })
-//   .fromTo("#_22",{
-//     y:30,
-    
-  
-//   },{
-//     y:0,
-//     opacity:1,
-//     duration:0.08,
-//   },).fromTo("#_33",{
-//     y:30,
-   
-  
-//   },{
-//     y:0,
-//     opacity:1,
-//     duration:0.08,
-  
-//   })
-//   .fromTo("#_44",{
-//     y:30,
-//   },{
-//     y:0,
-//     opacity:1,
-//     duration:0.8,
-  
-  
-  
-    
-//   }).fromTo('.text_container_2',
-//     {
-//         y:30,
-//       },{
-//         y:0,
-//         autoAlpha:1,
-//         duration:0.08,
-      
-      
-    
-//   }).fromTo('.count_text_container_2',
-//   {
-//     y:30,
-//   },{
-//     y:0,
-//     autoAlpha:1,
-//     duration:0.08,
-  
-  
-  
-//   })
-
-// Third Trigger
 const newT1CenterThird=gsap.timeline({
   scrollTrigger:{
     trigger:newRef.current,
@@ -1163,15 +685,22 @@ const newT1CenterThird=gsap.timeline({
               
               
             
-        },0.5)
+        },0.5).to("#secondCircleCont",{
+          opacity:0,
+        })
     },
     onEnterBack:()=>{
       const tss=gsap.timeline()
-            tss.to("#thirdCircleCont",{
+            tss.to("#secondCircleCont",{
+              opacity:1,
+            })
+            
+            .to("#thirdCircleCont",{
               yPercent:-100,
               ease:"easeOut",
   
-             }).to("#secondCircleCont",{
+             },0.1).to("#secondCircleCont",{
+              opacity:1,
               yPercent:-100,
               ease:"easeOut",
               
@@ -1200,489 +729,6 @@ const newT1CenterThird=gsap.timeline({
   }
 })
 
-
-
-    //   ScrollTrigger.create({
-    //     trigger:'#checkCon',
-    //     start:'top -50%',
-    //     end:'top -100%',
-    //     onEnter:()=>{
-    //       const tss=gsap.timeline()
-    //       tss.to("#firstCircleCont",{
-    //         yPercent:-100,
-    //         ease:"easeOut",
-
-    //        }).to("#secondCircleCont",{
-    //         yPercent:-100,
-    //         ease:"easeOut",
-            
-    //        },0.1).to("#_00",{
-    //         opacity:1,
-    //         duration:0.08,
-    //         delay:1,
-    //       },)
-    //       .fromTo("#_11",{
-    //         y:30,
-    //       },{
-    //         opacity:1,
-    //         y:0,
-    //         duration:0.08,
-    //       })
-    //       .fromTo("#_22",{
-    //         y:30,
-            
-          
-    //       },{
-    //         y:0,
-    //         opacity:1,
-    //         duration:0.08,
-    //       },).fromTo("#_33",{
-    //         y:30,
-           
-          
-    //       },{
-    //         y:0,
-    //         opacity:1,
-    //         duration:0.08,
-          
-    //       })
-    //    .fromTo("#_44",{
-    //         y:30,
-    //       },{
-    //         y:0,
-    //         opacity:1,
-    //         duration:0.08,
-          
-          
-        
-            
-    //     }).fromTo('.text_container_2',
-    //         {
-    //             y:30,
-    //           },{
-    //             y:0,
-    //             autoAlpha:1,
-    //             duration:0.08,
-              
-              
-            
-    //     },1).fromTo('.count_text_container_2',
-    //     {
-    //         y:30,
-    //       },{
-    //         y:0,
-    //         autoAlpha:1,
-    //         duration:0.08,
-           
-          
-        
-    // },1)
-    //     },
-    //     onLeaveBack:()=>{
-    //       const tss=gsap.timeline()
-    //       tss.to("#secondCircleCont",{
-    //         yPercent:0,
-    //         ease:"easeOut",
-
-    //        }).to("#firstCircleCont",{
-    //         yPercent:0,
-    //         ease:"easeOut",
-            
-    //        },0.1)
-    //     }
-    //   })
-    //   ScrollTrigger.create({
-    //     trigger:'#checkCon',
-    //     start:'top -100%',
-    //     end:'top -150%',
-        
-    //     onEnter:()=>{
-    //       const tss=gsap.timeline()
-    //       tss.to("#secondCircleCont",{
-    //         yPercent:-200,
-    //         ease:"easeOut",
-
-    //        }).to("#thirdCircleCont",{
-    //         yPercent:-200,
-    //         ease:"easeOut",
-            
-    //        },0.1) .to("#_000",{
-    //         opacity:1,
-    //         duration:0.08,
-    //         delay:1,
-    //       },)
-    //       .fromTo("#_111",{
-    //         y:30,
-    //       },{
-    //         opacity:1,
-    //         y:0,
-    //         duration:0.08,
-    //       },">")
-    //       .fromTo("#_222",{
-    //         y:30,
-            
-          
-    //       },{
-    //         y:0,
-    //         opacity:1,
-    //         duration:0.08,
-    //       },).fromTo("#_333",{
-    //         y:30,
-           
-          
-    //       },{
-    //         y:0,
-    //         opacity:1,
-    //         duration:0.08,
-          
-    //       })
-    //    .fromTo("#_444",{
-    //         y:30,
-    //       },{
-    //         y:0,
-    //         opacity:1,
-    //         duration:0.08,
-          
-          
-        
-            
-    //     }).fromTo('.text_container_3',
-    //         {
-    //             y:30,
-    //           },{
-    //             y:0,
-    //             autoAlpha:1,
-    //             duration:0.08,
-              
-              
-            
-    //     },1).fromTo('.count_text_container_3',
-    //     {
-    //         y:30,
-    //       },{
-    //         y:0,
-    //         autoAlpha:1,
-    //         duration:0.08,
-          
-          
-        
-    // },1)
-    //     },
-    //     onLeaveBack:()=>{
-    //       const tss=gsap.timeline()
-    //       tss.to("#thirdCircleCont",{
-    //         yPercent:-100,
-    //         ease:"easeOut",
-
-    //        }).to("#secondCircleCont",{
-    //         yPercent:-100,
-    //         ease:"easeOut",
-            
-    //        },0.1)
-    //     }
-    //   })
-
-      // Observer.create({
-      //             type: "wheel,touch",
-      //             target:'#checkCon',
-      //             // wheelSpeed: -1,
-      //             // onDown: () => !animating && gotoSection(currentIndex - 1, -1),
-      //             // onUp: () => !animating && gotoSection(currentIndex + 1, 1),
-      //             onDown: () => {
-                    
-                   
-      //               if(targetElement1>0){
-      //                 targetElement1=targetElement1-1 
-      //                   }
-      //                   circleKeyDown(targetElement1)
-      //                 },
-      //                 onUp:() => {
-                    
-      //             animating1&&circleKeyUp(targetElement1)
-                   
-      //             },
-      //             wheelSpeed: -1,
-      //             tolerance: 10,
-      //             preventDefault: true,
-                 
-      //           });
-
-                // function circleKeyUp(e){
-                //               if(targetElement1<3){
-               
-                //                 targetElement1=targetElement1+1 
-                //                   }
-                //             const tss=gsap.timeline()
-                //             const tss1=gsap.timeline()
-
-                //             if(targetElement1==1){
-                             
-                //                  tss.to("#firstCircleCont",{
-                //                   yPercent:-100,
-                //                   ease:"easeOut",
-            
-                //                  }).to("#secondCircleCont",{
-                //                   yPercent:-100,
-                //                   ease:"easeOut",
-                                  
-                //                  },0.1).to("#_00",{
-                //                   opacity:1,
-                //                   duration:0.08,
-                //                   delay:1,
-                //                 },)
-                //                 .fromTo("#_11",{
-                //                   y:30,
-                //                 },{
-                //                   opacity:1,
-                //                   y:0,
-                //                   duration:0.08,
-                //                 })
-                //                 .fromTo("#_22",{
-                //                   y:30,
-                                  
-                                
-                //                 },{
-                //                   y:0,
-                //                   opacity:1,
-                //                   duration:0.08,
-                //                 },).fromTo("#_33",{
-                //                   y:30,
-                                 
-                                
-                //                 },{
-                //                   y:0,
-                //                   opacity:1,
-                //                   duration:0.08,
-                                
-                //                 })
-                //              .fromTo("#_44",{
-                //                   y:30,
-                //                 },{
-                //                   y:0,
-                //                   opacity:1,
-                //                   duration:0.08,
-                                
-                                
-                              
-                                  
-                //               }).fromTo('.text_container_2',
-                //                   {
-                //                       y:30,
-                //                     },{
-                //                       y:0,
-                //                       autoAlpha:1,
-                //                       duration:0.08,
-                                    
-                                    
-                                  
-                //               },1).fromTo('.count_text_container_2',
-                //               {
-                //                   y:30,
-                //                 },{
-                //                   y:0,
-                //                   autoAlpha:1,
-                //                   duration:0.08,
-                                
-                                
-                              
-                //           },1)
-                //             }
-                //             if(targetElement1==2){
-
-                //               tss1.to("#secondCircleCont",{
-                //                 yPercent:-200,
-                //                 ease:"easeOut",
-            
-                //                }).to("#thirdCircleCont",{
-                //                 yPercent:-200,
-                //                 ease:"easeOut",
-                                
-                //                },0.1) .to("#_000",{
-                //                 opacity:1,
-                //                 duration:0.08,
-                //                 delay:1,
-                //               },)
-                //               .fromTo("#_111",{
-                //                 y:30,
-                //               },{
-                //                 opacity:1,
-                //                 y:0,
-                //                 duration:0.08,
-                //               },">")
-                //               .fromTo("#_222",{
-                //                 y:30,
-                                
-                              
-                //               },{
-                //                 y:0,
-                //                 opacity:1,
-                //                 duration:0.08,
-                //               },).fromTo("#_333",{
-                //                 y:30,
-                               
-                              
-                //               },{
-                //                 y:0,
-                //                 opacity:1,
-                //                 duration:0.08,
-                              
-                //               })
-                //            .fromTo("#_444",{
-                //                 y:30,
-                //               },{
-                //                 y:0,
-                //                 opacity:1,
-                //                 duration:0.08,
-                              
-                              
-                            
-                                
-                //             }).fromTo('.text_container_3',
-                //                 {
-                //                     y:30,
-                //                   },{
-                //                     y:0,
-                //                     autoAlpha:1,
-                //                     duration:0.08,
-                                  
-                                  
-                                
-                //             },1).fromTo('.count_text_container_3',
-                //             {
-                //                 y:30,
-                //               },{
-                //                 y:0,
-                //                 autoAlpha:1,
-                //                 duration:0.08,
-                              
-                              
-                            
-                //         },1)
-                //        .to("#_00",{
-                //           opacity:0,
-                         
-                //         },1)
-                //         .to("#_11",{
-                       
-                //           opacity:0,
-                         
-                //         },1)
-                //         .to("#_22",{
-                          
-                //           opacity:0,
-                        
-                //         },1).to("#_33",{
-                          
-                //           opacity:0,
-                        
-                //         },1)
-                //      .to("#_44",{
-                          
-                //       opacity:0,
-                    
-                //     },1).to('.text_container_2',
-                //     {
-                          
-                //       autoAlpha:0,
-                    
-                //     },1).to('.count_text_container_2',
-                //     {
-                          
-                //       autoAlpha:0,
-                    
-                //     },1)
-                //             }
-                //           }
-                //             function circleKeyDown(e){
-                             
-            
-                //             const tss=gsap.timeline()
-                //             const tss1=gsap.timeline()
-
-                //             if(e==0){
-                //                  tss.to("#secondCircleCont",{
-                //                   yPercent:0,
-                //                   ease:"easeOut",
-            
-                //                  }).to("#firstCircleCont",{
-                //                   yPercent:0,
-                //                   ease:"easeOut",
-                                  
-                //                  },0.1)
-                //             }
-                //             if(e==1){
-                            
-                //               tss.to("#thirdCircleCont",{
-                //                 yPercent:-100,
-                //                 ease:"easeOut",
-            
-                //                }).to("#secondCircleCont",{
-                //                 yPercent:-100,
-                //                 ease:"easeOut",
-                                
-                //                },0.1).to("#_00",{
-                //                 opacity:1,
-                //                 duration:0.08,
-                //                 delay:1,
-                //               },)
-                //               .fromTo("#_11",{
-                //                 y:30,
-                //               },{
-                //                 opacity:1,
-                //                 y:0,
-                //                 duration:0.08,
-                //               })
-                //               .fromTo("#_22",{
-                //                 y:30,
-                                
-                              
-                //               },{
-                //                 y:0,
-                //                 opacity:1,
-                //                 duration:0.08,
-                //               },).fromTo("#_33",{
-                //                 y:30,
-                               
-                              
-                //               },{
-                //                 y:0,
-                //                 opacity:1,
-                //                 duration:0.08,
-                              
-                //               })
-                //            .fromTo("#_44",{
-                //                 y:30,
-                //               },{
-                //                 y:0,
-                //                 opacity:1,
-                //                 duration:0.08,
-                              
-                              
-                            
-                                
-                //             }).fromTo('.text_container_2',
-                //                 {
-                //                     y:30,
-                //                   },{
-                //                     y:0,
-                //                     autoAlpha:1,
-                //                     duration:0.08,
-                                  
-                                  
-                                
-                //             },1).fromTo('.count_text_container_2',
-                //             {
-                //                 y:30,
-                //               },{
-                //                 y:0,
-                //                 autoAlpha:1,
-                //                 duration:0.08,
-                              
-                              
-                            
-                //         },1)
-                //             }
-                //             }
             return () => {
               {/* A return function for killing the animation on component unmount */ }
               
@@ -1707,7 +753,7 @@ return ()=>contextCreate.revert();
   return(
   <section>
 
-                <div className='min-h-[200vh] md:min-h-[300vh] ' >
+                <div id="checkConMain" className='min-h-[200vh]  md:min-h-[250vh]' >
                   <div ref={newRef} id="checkCon" className='newCont  min-h-[100vh] m-6 flex   justify-center     '>
                   <div className='flex flex-col h-[100vh]  self-center overflow-hidden '>
 <div id="firstCircleCont"  className=' self-center hidden md:block'>
@@ -1741,7 +787,7 @@ return ()=>contextCreate.revert();
     </div>
     </div>
     <div id="firstCircleCont1" className=' min-h-[100vh] md:hidden  flex gap-11 flex flex-col  justify-center ' >
-                    <div className=' flex justify-between self-center w-[80%] gap-11 '>
+                    <div className=' flex justify-between  w-[95%] gap-11 '>
                       <div className='flex flex-col justify-start gap-6'>
             <h1 className='count count_text_container_1 '>01</h1>
             <h1 className='container_about_header'>
@@ -1761,7 +807,7 @@ return ()=>contextCreate.revert();
 
     </div>
     <div className='flex flex-col  gap-4 text_container  text_container_1  '>
-<p className='container_about_description w-[80%] self-center'>
+<p className='container_about_description w-[90%] self-cente'>
 Building a brand is not an overnight endeavor; it's a long-term process requiring ongoing reflection on its purpose and vision. At Herbet, we partner with brands to empower them. Through our internal training solutions, we ensure that each brand fully understands its vision and is equipped to operate independently.
 </p>
  
@@ -1801,7 +847,7 @@ Building a brand is not an overnight endeavor; it's a long-term process requirin
     </div>
     </div>
     <div id="secondCircleCont1" className=' min-h-[100vh] md:hidden flex gap-11 flex flex-col point justify-center ' >
-                    <div className=' flex justify-between self-center w-[80%] gap-11 '>
+                    <div className=' flex justify-between  w-[95%] gap-11 '>
                       <div className='flex flex-col justify-start gap-6'>
             <h1 className='count count_text_container_1 '>02</h1>
             <h1 className='container_about_header'>
@@ -1820,7 +866,7 @@ Building a brand is not an overnight endeavor; it's a long-term process requirin
 
     </div>
     <div className='flex flex-col  gap-4 text_container  text_container_1  '>
-<p className='container_about_description w-[80%] self-center'>
+<p className='container_about_description w-[90%]'>
 Building a brand is not an overnight endeavor; it's a long-term process requiring ongoing reflection on its purpose and vision. At Herbet, we partner with brands to empower them. Through our internal training solutions, we ensure that each brand fully understands its vision and is equipped to operate independently.
 </p>
  
@@ -1862,7 +908,7 @@ Building a brand is not an overnight endeavor; it's a long-term process requirin
 
     </div>
     <div id="thirdCircleCont1" className=' min-h-[100vh] md:hidden flex gap-11 flex flex-col point justify-center ' >
-                    <div className=' flex justify-between self-center w-[80%] gap-11 '>
+                    <div className=' flex justify-between w-[95%] gap-11 '>
                       <div className='flex flex-col justify-start gap-6'>
             <h1 className='count count_text_container_1 '>03</h1>
             <h1 className='container_about_header'>
@@ -1881,7 +927,7 @@ Building a brand is not an overnight endeavor; it's a long-term process requirin
 
     </div>
     <div className='flex flex-col  gap-4 text_container  text_container_1  '>
-<p className='container_about_description w-[80%] self-center'>
+<p className='container_about_description w-[90%] '>
 In a world where brand identity is paramount, the essence of messaging from within the brand cannot be overstated. It's vital for brands to cultivate their messaging from their core, ensuring authenticity remains consistent and unambiguous.
 </p>
  

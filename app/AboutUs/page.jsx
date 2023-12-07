@@ -175,7 +175,7 @@ function AboutUs() {
                                         scale:1.5,
                                           opacity:1,
                                           y:0,
-                                          x:50
+                                          x:100
                                       },0).to("#green4",{
                                         rotation:180,
                                         scale:1,
@@ -208,7 +208,7 @@ function AboutUs() {
                                           rotation:90,
                                           scale:1.5,
                                           opacity:1,
-                                          y:-50,
+                                          y:-100,
                                           x:0
                                         },0)
                                         .to("#green2",{
@@ -278,7 +278,7 @@ function AboutUs() {
                                             rotation:270,
                                             scale:1.5,
                                             opacity:1,
-                                            y:50,
+                                            y:100,
                                             x:0
                                           },0)
                                           .to("#green3",{
@@ -294,7 +294,6 @@ function AboutUs() {
                                             y:0,
                                             x:0
                                           },0).to("#text_cont_2",{
-                                            opacity:0,
                                             yPercent:-200,
                                             x:0
                                         },0)
@@ -302,7 +301,10 @@ function AboutUs() {
                                           opacity:1,
                                           yPercent:-200,
                                           x:0
-                                      },0.1)
+                                      },0.1).to("#text_cont_2",{
+                                        opacity:0,
+                                       
+                                    })
                                         
                                       
                       
@@ -319,7 +321,7 @@ function AboutUs() {
                                             scale:1,
                                            y:0,
                                             opacity:0.4,
-                                          },0.1)
+                                          },0)
                                           .to("#green2",{
                                             rotation:180,
                                             scale:1,
@@ -332,7 +334,7 @@ function AboutUs() {
                                             scale:1.5,
                                             opacity:1,
                                             y:0,
-                                            x:50
+                                            x:100
           
                                           },0).to("#green4",{
                                             rotation:180,
@@ -405,7 +407,7 @@ function AboutUs() {
                                               scale:1.5,
                                               opacity:1,
                                               y:0,
-                                              x:-50
+                                              x:-100
                                             },0).to("#text_cont_3",{
               
                                               yPercent:-300,
@@ -417,7 +419,11 @@ function AboutUs() {
                                             yPercent:-300,
                                             x:0,
                                             opacity:1,
-                                        },0.1)
+                                        },0.1).to("#text_cont_3",{
+              
+                              
+                                          opacity:0
+                                      })
                                           
                                           
                                         
@@ -440,7 +446,7 @@ function AboutUs() {
                                             .to("#green2",{
                                               rotation:"270",
                                               scale:1.5,
-                                              y:50,
+                                              y:100,
                                               x:0,
                                              opacity:1,
                                             },0)
@@ -839,7 +845,7 @@ function keyDown(e){
                   trigger: ".fourth_container",
                  pin: true,
                   start: "top top",
-                  end:"+=150%",
+                  end:"+=190%",
                   // snap: {
                   //       snapTo: 0.2,
                   //       duration: 0.3,
@@ -914,7 +920,7 @@ function keyDown(e){
                   scrollTrigger: {
                     trigger: ".fourth_container",
                     start: "top 0%",
-                    end:'top -40%',
+                    end:'top -50%',
                    
                   //   snap: {
                   //         snapTo: 0.2,
@@ -1020,7 +1026,7 @@ function keyDown(e){
                     scrollTrigger: {
                       trigger: ".fourth_container",
                       start: "top 0%",
-                      end:'top -80%',
+                      end:'top -90%',
                      
                     //   snap: {
                     //         snapTo: 0.2,
@@ -1065,10 +1071,13 @@ function keyDown(e){
                                           x:0
                                       },0)
                                       .to("#text_cont_3",{
-                                        
+                                        opacity:1,
                                         yPercent:-200,
                                         x:0
-                                    },0.1)
+                                    },0.1).to("#text_cont_2",{
+                          
+                                     opacity:0
+                                  })
                                       
                                     
                     
@@ -1108,11 +1117,12 @@ function keyDown(e){
                                           x:0
         
                                         },0).to("#text_cont_2",{
-                        
+                                          opacity:1,
                                           yPercent:-100,
                                           x:0
                                       },0)
                                       .to("#text_cont_3",{
+                                        opacity:1,
                                         
                                         yPercent:-100,
                                         x:0
@@ -1130,7 +1140,7 @@ function keyDown(e){
                       scrollTrigger: {
                         trigger: ".fourth_container",
                         start: "top 0%",
-                        end:'top -120%',
+                        end:'top -130%',
                        
                       //   snap: {
                       //         snapTo: 0.2,
@@ -1177,7 +1187,10 @@ function keyDown(e){
                                           
                                           yPercent:-300,
                                           x:0
-                                      },0.1)
+                                      },0.1).to("#text_cont_3",{
+            
+                                       opacity:0
+                                    })
                                         
                                         
                                       
@@ -1217,11 +1230,12 @@ function keyDown(e){
                                             y:0,
                                             x:0
                                           },0).to("#text_cont_3",{
-                                          
+                                          opacity:1,
                                             yPercent:-200,
                                             x:0
                                         },0)
                                         .to("#text_cont_4",{
+                                          opacity:1,
                                           
                                           yPercent:-200,
                                           x:0
@@ -1591,11 +1605,11 @@ ts.to('#green',{
          <Feedback />
     
         <div className=''>
-        <section id="checkCon1" className=' md:min-h-[300vh] min-h-[150vh]    bg-[#463838]  ' >
+        <section id="checkCon1" className=' md:min-h-[300vh] min-h-[300vh]    bg-[#463838]  ' >
           <div className=' flex flex-col justify-center another_containaer fourth_container min-h-[100vh] '>
           <div className='flex md:flex-row flex-col md:justify-between self-center w-[90%] '>
-            <div it="text_cont" className='flex flex-col self-center  h-[400px] overflow-hidden'>
-                    <div id='text_cont_1' className='text_cont_1 flex justify-center w-[90%] gap-11 min-h-[400px] '>
+            <div it="text_cont" className='flex flex-col self-center   h-[300px]  md:h-[400px] overflow-hidden'>
+                    <div id='text_cont_1' className='text_cont_1 flex justify-center w-[90%] gap-11 min-h-[300px] md:min-h-[400px] '>
                       <div className='flex flex-col justify-center'>
                       <h1 className='count_1 count_text_container_ menus small'>01</h1>
             </div>
@@ -1605,7 +1619,7 @@ ts.to('#green',{
 
     <h1 className='container_about_header menus '>
     Identity    </h1>
-    <p className='container_about_description menus small'>
+    <p className='container_about_description menus small '>
     We're the folks you go to before shooting for the stars. Before aiming high, we ensure your brand's essence is undeniably strong
     </p>
    
@@ -1614,7 +1628,7 @@ ts.to('#green',{
 
 
     </div>
-    <div id='text_cont_2' className=' flex justify-center  w-[90%]  gap-11 min-h-[400px] '>
+    <div id='text_cont_2' className=' flex justify-center  w-[90%]  gap-11 min-h-[300px] md:min-h-[400px] '>
                       <div className='flex flex-col justify-center'>
                       <h1 className='count_1 count_text_container_  menus small'>02</h1>
             </div>
@@ -1624,7 +1638,7 @@ ts.to('#green',{
 
     <h1 className='container_about_header menus '>
     Strategy    </h1>
-    <p className='container_about_description menus small'>
+    <p className='container_about_description menus small relative '>
     We're the folks you go to before shooting for the stars. Before aiming high, we ensure your brand's essence is undeniably strong
     </p>
    
@@ -1633,7 +1647,7 @@ ts.to('#green',{
 
 
     </div>
-    <div id='text_cont_3' className=' flex justify-center  text_hhide_cont   w-[90%]  gap-11 min-h-[400px] '>
+    <div id='text_cont_3' className=' flex justify-center     w-[90%]  gap-11 min-h-[300px] md:min-h-[400px] '>
                       <div className='flex flex-col justify-center'>
                       <h1 className='count_1 count_text_container_  menus small'>03</h1>
             </div>
@@ -1652,7 +1666,7 @@ ts.to('#green',{
 
 
     </div>
-    <div id='text_cont_4' className=' flex justify-center  w-[90%]  gap-11 min-h-[400px] '>
+    <div id='text_cont_4' className=' flex justify-center  w-[90%]  gap-11 min-h-[300px] md:min-h-[400px] '>
                       <div className='flex flex-col justify-center'>
                       <h1 className='count_1 count_text_container_ menus small'>04</h1>
             </div>
@@ -1673,7 +1687,7 @@ ts.to('#green',{
     </div>
     
     </div>
-    <div  id="green" className="circle_main_container flex mt-11 md:mt-0 md:justify-end w-fit self-center  items-center relative left-[200px] md:left-[450px]   ">
+    <div  id="green" className="circle_main_container flex relative md:mt-0 md:justify-end w-fit self-center  items-center  left-[200px] md:left-[450px]   ">
           <div id="green4"  className="circle_container_new circle3  relative left-[15%] menus ">
             <h1   className="circle_text_new self-center ">Communication</h1>
           </div>
@@ -1695,111 +1709,7 @@ ts.to('#green',{
     </div>
 </section> 
 </div>  
-{/* <div className='md:hidden'>
-<section className='    bg-[#463838]  ' >
-          <div className=' flex flex-col justify-center another_containaer fourth_container min-h-[100vh] '>
-          <div className='flex flex-col justify-around   self-center w-[90%] '>
-            <div className='flex flex-col self-center mt-24  h-[400px] overflow-hidden'>
-                    <div id='text_cont_1' className='text_cont_1 flex justify-center   w-[90%] gap-11 min-h-[400px] '>
-                      <div className='flex flex-col justify-center'>
-                      <h1 className='count_1 count_text_container_ '>01</h1>
-            </div>
-           
-<div  className='flex flex-col justify-center gap-4  text_container_  '>
 
-
-    <h1 className='container_about_header'>
-    Identity    </h1>
-    <p className='container_about_description'>
-    We're the folks you go to before shooting for the stars. Before aiming high, we ensure your brand's essence is undeniably strong
-    </p>
-   
-    </div>
-   
-
-
-    </div>
-    <div id='text_cont_2' className=' flex justify-center  w-[90%]  gap-11 min-h-[400px] '>
-                      <div className='flex flex-col justify-center'>
-                      <h1 className='count_1 count_text_container_ '>02</h1>
-            </div>
-           
-<div  className='flex flex-col justify-center gap-4  text_container_  '>
-
-
-    <h1 className='container_about_header'>
-    Strategy    </h1>
-    <p className='container_about_description'>
-    We're the folks you go to before shooting for the stars. Before aiming high, we ensure your brand's essence is undeniably strong
-    </p>
-   
-    </div>
-   
-
-
-    </div>
-    <div id='text_cont_3' className=' flex justify-center  w-[90%]  gap-11 min-h-[400px] '>
-                      <div className='flex flex-col justify-center'>
-                      <h1 className='count_1 count_text_container_ '>03</h1>
-            </div>
-           
-<div  className='flex flex-col justify-center gap-4  text_container_  '>
-
-
-    <h1 className='container_about_header'>
-    Experience    </h1>
-    <p className='container_about_description'>
-    We're the folks you go to before shooting for the stars. Before aiming high, we ensure your brand's essence is undeniably strong
-    </p>
-   
-    </div>
-   
-
-
-    </div>
-    <div id='text_cont_4' className=' flex justify-center  w-[90%]  gap-11 min-h-[400px] '>
-                      <div className='flex flex-col justify-center'>
-                      <h1 className='count_1 count_text_container_ '>04</h1>
-            </div>
-           
-<div  className='flex flex-col justify-center gap-4  text_container_  '>
-
-
-    <h1 className='container_about_header'>
-    Communication    </h1>
-    <p className='container_about_description'>
-    We're the folks you go to before shooting for the stars. Before aiming high, we ensure your brand's essence is undeniably strong
-    </p>
-   
-    </div>
-   
-
-
-    </div>
-    
-    </div>
-    <div  id="green" className="circle_main_container flex justify-center  w-fit self-center  w-[60%] items-center relative left-[200px]   ">
-          <div id="green4"  className="circle_container_new circle3  relative left-[35%] md:left-[15%]  ">
-            <h1   className="circle_text_new self-center ">Communication</h1>
-          </div>
-          <div   className='flex flex-col gap-6 relative'>
-          <div id="green1" className="circle_container_new circle3  relative   ">
-            <h1   className="circle_text_new self-center "> Identity </h1>
-          </div>
-          <div id="green2" className="circle_container_new circle3  relative   ">
-            <h1   className="circle_text_new self-center ">  Experience</h1>
-          </div>
-          </div>
-          <div id="green3" className="circle_container_new circle3  relative left-[-35%] md:left-[-15%] ">
-            <h1   className="circle_text_new self-center ">Strategy</h1>
-          </div>
-       
-        </div>
-
-    </div>
-    </div>
-</section> 
-</div> */}
 <section id="main2" className='min-h-screen flex flex-col justify-center bg-[#463838] pt-11 md:pt-0 pb-11'>
 <div className='md:w-[80%] flex flex-col gap-11 self-center'>
   <div className='hide_profile_text p-2 md:p-0  menus self-center'>

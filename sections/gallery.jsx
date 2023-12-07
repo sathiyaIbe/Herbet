@@ -56,7 +56,7 @@ const Gallery = () => {
     const t2=gsap.timeline({
       scrollTrigger:{
         trigger:'#main_gallery',
-        start:"top bottom",
+        start:"bottom bottom",
       }
       })
     var mySplitText = new SplitType(".gallery_texts"),
