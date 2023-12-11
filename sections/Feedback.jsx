@@ -835,12 +835,10 @@ Building a brand is not an overnight endeavor; it's a long-term process requirin
 <div className='flex flex-col justify-center gap-4 text_container text_container_2   '>
 
     <h1 className='container_about_header menus'>
-    The Consultancy Approach
+    Communicating From Within
     </h1>
     <p className='container_about_description menus small'>
-    Building a brand is not an overnight endeavor; it's a long-term process requiring ongoing reflection on its purpose and vision. At Herbet, we partner with brands to empower them. Through our internal training solutions, we ensure that each brand fully understands its vision and is equipped to operate independently.
-    </p>
-   
+    In a world where brand identity is paramount, the essence of messaging from within the brand cannot be overstated. It's vital for brands to cultivate their messaging from their core, ensuring authenticity remains consistent and unambiguous.    </p>
     </div>
     </div>
     </div>
@@ -851,8 +849,7 @@ Building a brand is not an overnight endeavor; it's a long-term process requirin
                       <div className='flex flex-col justify-start gap-6'>
             <h1 className='count count_text_container_1 '>02</h1>
             <h1 className='container_about_header'>
-            The Consultancy Approach
-    </h1>
+            Communicating From Within    </h1>
     
             </div>
             
@@ -867,11 +864,8 @@ Building a brand is not an overnight endeavor; it's a long-term process requirin
     </div>
     <div className='flex flex-col  gap-4 text_container  text_container_1  '>
 <p className='container_about_description w-[90%]'>
-Building a brand is not an overnight endeavor; it's a long-term process requiring ongoing reflection on its purpose and vision. At Herbet, we partner with brands to empower them. Through our internal training solutions, we ensure that each brand fully understands its vision and is equipped to operate independently.
-</p>
+In a world where brand identity is paramount, the essence of messaging from within the brand cannot be overstated. It's vital for brands to cultivate their messaging from their core, ensuring authenticity remains consistent and unambiguous.</p>
  
-   
-   
     </div>
 </div>
 <div id="thirdCircleCont" className=' self-center hidden md:block'>
@@ -894,7 +888,7 @@ Building a brand is not an overnight endeavor; it's a long-term process requirin
 <div className='flex flex-col justify-center gap-4 text_container text_container_3   '>
 
     <h1 className='container_about_header menus'>
-    The Consultancy Approach
+    Hollistic Guardianship
     </h1>
     <p className='container_about_description  menus small'>
     Building a brand is not an overnight endeavor; it's a long-term process requiring ongoing reflection on its purpose and vision. At Herbet, we partner with brands to empower them. Through our internal training solutions, we ensure that each brand fully understands its vision and is equipped to operate independently.

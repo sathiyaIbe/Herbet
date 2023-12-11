@@ -30,24 +30,24 @@ function AboutUs() {
       }
         // gsap.to('.resourse_texts', {opacity:0})
         
-        const lenis = new Lenis({
-          duration: 1.2,
-          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
-          direction: 'vertical', // vertical, horizontal
-          gestureDirection: 'vertical', // vertical, horizontal, both
-          smooth: true,
-          mouseMultiplier: 1,
-          smoothTouch: false,
-          touchMultiplier: 2,
-          infinite: false,
-        })
+        // const lenis = new Lenis({
+        //   duration: 1.2,
+        //   easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
+        //   direction: 'vertical', // vertical, horizontal
+        //   gestureDirection: 'vertical', // vertical, horizontal, both
+        //   smooth: true,
+        //   mouseMultiplier: 1,
+        //   smoothTouch: false,
+        //   touchMultiplier: 2,
+        //   infinite: false,
+        // })
       
-        function raf(time) {
-            lenis.raf(time)
-            requestAnimationFrame(raf)
-        }
+        // function raf(time) {
+        //     lenis.raf(time)
+        //     requestAnimationFrame(raf)
+        // }
       
-        requestAnimationFrame(raf)
+        // requestAnimationFrame(raf)
         const contextCreate=gsap.context(()=>{
 
             var tl = gsap.timeline({
@@ -106,6 +106,7 @@ function AboutUs() {
                   opacity:1,
                   y:-100,
                   rotation:90,
+                  ease:'power3.inOut',
                 },0)
                 .to("#green2",{
                   scale:1,
@@ -155,7 +156,7 @@ function AboutUs() {
                         ts.to('#green',{
                                         rotation:"-180",
                                         repeat:0,
-                        
+                                     
                                       },0).to("#green1",{
                                         rotation:180,
                                         scale:1,
@@ -171,12 +172,14 @@ function AboutUs() {
                                           x:0
                                       },0)
                                       .to("#green3",{
-                                        rotation:180,
+                                        // rotation:180,
                                         scale:1.5,
                                           opacity:1,
                                           y:0,
-                                          x:100
-                                      },0).to("#green4",{
+                                          x:100,
+                                              ease:'power3.inOut',
+                                          rotation:180,
+                                      },0.2).to("#green4",{
                                         rotation:180,
                                         scale:1,
                                           opacity:0.4,
@@ -203,14 +206,17 @@ function AboutUs() {
                         ts.to('#green',{
                                           rotation:"-90",
                                           repeat:0,
+                                           
                         
                                         },0).to("#green1",{
+                                          ease:'power3.inOut',
+                                       
                                           rotation:90,
                                           scale:1.5,
                                           opacity:1,
                                           y:-100,
                                           x:0
-                                        },0)
+                                        },0.1)
                                         .to("#green2",{
                                           rotation:90,
                                           scale:1,
@@ -264,7 +270,10 @@ function AboutUs() {
                       onLeave:()=>{const ts=gsap.timeline()
                           ts.to('#green',{
                                             rotation:"-270",
-                                            repeat:0,
+                                            repeat:0, 
+                                            //  ease:'power4.in',
+                                            // duration:0.5,
+
                           
                                           },0).to("#green1",{
                                             rotation:270,
@@ -275,12 +284,15 @@ function AboutUs() {
             
                                           },0)
                                           .to("#green2",{
-                                            rotation:270,
                                             scale:1.5,
-                                            opacity:1,
                                             y:100,
-                                            x:0
-                                          },0)
+                                            x:0,
+                                          
+                                            ease:'power3.inOut',
+                                            rotation:270,
+                                            
+                                            opacity:1,
+                                          },0.1)
                                           .to("#green3",{
                                             rotation:270,
                                             scale:1,
@@ -314,7 +326,7 @@ function AboutUs() {
                           ts.to('#green',{
                                             rotation:"-180",
                                             repeat:0,
-                                           
+                                            // ease:'power4.in',
                                         
                                           },0).to("#green1",{
                                             rotation:180,
@@ -334,8 +346,8 @@ function AboutUs() {
                                             scale:1.5,
                                             opacity:1,
                                             y:0,
-                                            x:100
-          
+                                            x:100,
+                                            ease:'power3.inOut',
                                           },0).to("#green4",{
                                             rotation:180,
                                             scale:1,
@@ -406,6 +418,8 @@ function AboutUs() {
                                               rotation:360,
                                               scale:1.5,
                                               opacity:1,
+                                            ease:'power3.inOut',
+
                                               y:0,
                                               x:-100
                                             },0).to("#text_cont_3",{
@@ -447,6 +461,7 @@ function AboutUs() {
                                               rotation:"270",
                                               scale:1.5,
                                               y:100,
+                                            ease:'power3.inOut',
                                               x:0,
                                              opacity:1,
                                             },0)
@@ -1610,77 +1625,78 @@ ts.to('#green',{
           <div className='flex md:flex-row flex-col md:justify-between self-center w-[90%] '>
             <div it="text_cont" className='flex flex-col self-center   h-[300px]  md:h-[400px] overflow-hidden'>
                     <div id='text_cont_1' className='text_cont_1 flex justify-center w-[90%] gap-11 min-h-[300px] md:min-h-[400px] '>
-                      <div className='flex flex-col justify-center'>
-                      <h1 className='count_1 count_text_container_ menus small'>01</h1>
-            </div>
+                    
            
-<div  className='flex flex-col justify-center gap-4  text_container_  '>
 
 
-    <h1 className='container_about_header menus '>
+<div className='flex flex-col  justify-center gap-4'>
+  <div className='flex items-center gap-6'>
+  <h1 className='count_1 count_text_container_ menus small self-start mt-2'>01</h1>
+<div className='flex flex-col gap-4'>
+    <h1 className='container_about_header1 menus '>
     Identity    </h1>
     <p className='container_about_description menus small '>
     We're the folks you go to before shooting for the stars. Before aiming high, we ensure your brand's essence is undeniably strong
     </p>
-   
     </div>
+    </div>
+  
+   
+
    
 
 
+    </div>
     </div>
     <div id='text_cont_2' className=' flex justify-center  w-[90%]  gap-11 min-h-[300px] md:min-h-[400px] '>
-                      <div className='flex flex-col justify-center'>
-                      <h1 className='count_1 count_text_container_  menus small'>02</h1>
-            </div>
-           
-<div  className='flex flex-col justify-center gap-4  text_container_  '>
-
-
-    <h1 className='container_about_header menus '>
+    <div className='flex flex-col  justify-center gap-4'>
+  <div className='flex items-center gap-6'>
+  <h1 className='count_1 count_text_container_ menus small self-start mt-2'>02</h1>
+<div className='flex flex-col gap-4'>
+    <h1 className='container_about_header1 menus '>
     Strategy    </h1>
-    <p className='container_about_description menus small relative '>
+    <p className='container_about_description menus small '>
     We're the folks you go to before shooting for the stars. Before aiming high, we ensure your brand's essence is undeniably strong
     </p>
-   
     </div>
+    </div>
+  
+   
+
    
 
 
+    </div>
     </div>
     <div id='text_cont_3' className=' flex justify-center     w-[90%]  gap-11 min-h-[300px] md:min-h-[400px] '>
-                      <div className='flex flex-col justify-center'>
-                      <h1 className='count_1 count_text_container_  menus small'>03</h1>
-            </div>
-           
-<div  className='flex flex-col justify-center gap-4  text_container_  '>
-
-
-    <h1 className='container_about_header menus'>
+    <div className='flex flex-col  justify-center gap-4'>
+  <div className='flex items-center gap-6'>
+  <h1 className='count_1 count_text_container_ menus small self-start mt-2'>03</h1>
+<div className='flex flex-col gap-4'>
+    <h1 className='container_about_header1 menus '>
     Experience    </h1>
-    <p className='container_about_description menus small'>
+    <p className='container_about_description menus small '>
     We're the folks you go to before shooting for the stars. Before aiming high, we ensure your brand's essence is undeniably strong
     </p>
-   
     </div>
-   
-
-
+    </div>
+   </div>
     </div>
     <div id='text_cont_4' className=' flex justify-center  w-[90%]  gap-11 min-h-[300px] md:min-h-[400px] '>
-                      <div className='flex flex-col justify-center'>
-                      <h1 className='count_1 count_text_container_ menus small'>04</h1>
-            </div>
-           
-<div  className='flex flex-col justify-center gap-4  text_container_  '>
-
-
-    <h1 className='container_about_header menus'>
+    <div className='flex flex-col  justify-center gap-4'>
+  <div className='flex items-center gap-6'>
+  <h1 className='count_1 count_text_container_ menus small self-start mt-2'>04</h1>
+<div className='flex flex-col gap-4'>
+    <h1 className='container_about_header1 menus '>
     Communication    </h1>
-    <p className='container_about_description menus small'>
+    <p className='container_about_description menus small '>
     We're the folks you go to before shooting for the stars. Before aiming high, we ensure your brand's essence is undeniably strong
     </p>
-   
     </div>
+    </div>
+   </div>
+           
+
    
 
 

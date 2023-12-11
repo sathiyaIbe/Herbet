@@ -102,9 +102,9 @@ mm.add("(max-width:768px)",()=>{
   gsap.timeline()
 .fromTo(lines,{opacity:0, y:80} , {duration: 0.5 ,opacity:1, y:0 ,  ease:"easeInOut",stagger:0.1, delay:2});
 })
-circleTimeline.fromTo(".menus1",{x:20, rotation:"-5", y:-10},{x: -40,y:10, rotation:5, repeat:-1, duration:2.5,scrub: true, yoyo: true ,  ease: "easeOut(10, 2.3)"})
-circleTimeline.fromTo(".menus2",{x:20, rotation:"-5" , y:-10},{x: -40,y:10, rotation:5, repeat:-1, duration:2.5,scrub: true, yoyo: true ,  ease: "ease.out(1, 2.3)"},0.3)
-circleTimeline.fromTo(".menus3",{x:20, rotation:"-5" , y:-10},{x: -40,y:10, rotation:5, repeat:-1,  duration:2.5,scrub: true, yoyo: true ,  ease: "ease.out(1, 2.3)"},0.6)
+circleTimeline.fromTo(".menus1",{x:20, rotation:"-5", y:-5},{x: -40,y:5, rotation:5, repeat:-1, duration:2.5,scrub: true, yoyo: true ,  ease: "easeOut(1, 2.3)"})
+circleTimeline.fromTo(".menus2",{x:20, rotation:"-5" , y:-5},{x: -40,y:5, rotation:5, repeat:-1, duration:2.5,scrub: true, yoyo: true ,  ease: "easeOut(1, 2.3)"},0.3)
+circleTimeline.fromTo(".menus3",{x:20, rotation:"-5" , y:-5},{x: -40,y:5, rotation:5, repeat:-1,  duration:2.5,scrub: true, yoyo: true ,  ease: "easeOut(1, 2.3)"},0.6)
 
 
 
@@ -215,9 +215,9 @@ function heroAnimation(){
  gsap.fromTo(circleRef2,  {opacity: 0.8,y:-200 , }, {opacity: 1,  duration: 1,y:0, delay:2 });
   gsap.fromTo(circleRef3,  {opacity: 0,x:-100,y:-100}, {opacity: 1, duration: 1,x:0 , y:0, delay:2.3 });
   gsap.fromTo(textRef,  {opacity: 0,x:200}, {opacity: 0.8, duration: 1,x:0 ,delay:3 , ease: Power1.easeIn});
-  gsap.fromTo(circleText1,{opacity: 0} , {opacity:1, delay:2.5 , ease: "Power1.easeIn"})
-  gsap.fromTo(circleText2,{opacity: 0} , {opacity:1, delay:2.5 , ease: "Power1.easeIn"})
-  gsap.fromTo(circleText3,{opacity: 0} , {opacity:1, delay:2.5 , ease: "Power1.easeIn"})
+  gsap.fromTo(circleText1,{opacity: 0} , {opacity:1, delay:2.5 , ease: "Power1.easein"})
+  gsap.fromTo(circleText2,{opacity: 0} , {opacity:1, delay:2.5 , ease: "Power1.easein"})
+  gsap.fromTo(circleText3,{opacity: 0} , {opacity:1, delay:2.5 , ease: "Power1.easein"})
   gsap.to(textRef,{opacity:1})
   var mySplitText = new SplitType("#hero_headers"),
  
@@ -229,50 +229,6 @@ function heroAnimation(){
   gsap.timeline()
 .fromTo(lines,{opacity:0, y:80} , {duration: 2 ,opacity:1, y:0 ,  ease:"easeInOut",stagger:0.1, delay:2.3});
 }
-
-// useLayoutEffect(() => {
-//   const ctx = gsap.context((self) => {
-//     const sections = self.selector("section");
-
-//     const stopPanel = sections.findIndex((section) => section.dataset.pin);
-//     const stopPanel2 = sections.findIndex((section) => section.dataset.pin2);
-
-//     const tl = gsap
-//       .timeline({
-//         defaults: {
-//           ease: "easeOut"
-//         },
-//         scrollTrigger: {
-//           trigger: wrapperRef.current,
-//           pin: true,
-//           scrub: 1,
-//           end: () => "+=" + wrapperRef.current.offsetWidth
-//         }
-//       })
-//       .to(sections, {
-//         xPercent: -(100 * stopPanel),
-//         duration: stopPanel,
-//         // snap: 1 / (sections.length - 1),
-
-
-//       })
-//       .to(firstRef.current, {
-//         duration: 1,
-//         scale: 1
-//       })
-
-//       .to(sections, {
-//         xPercent: -(100 * stopPanel2),
-//         duration: stopPanel2
-//       })
-//       .to(secondRef.current, {
-//         scale: 1,
-//        duration: 1,
-//       })
-     
-//   }, wrapperRef);
-//   return () => ctx.revert();
-// }, []);
 
 
 function getMenu(){
