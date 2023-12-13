@@ -6,6 +6,7 @@ import NewFeatures from './NewFeatures';
 import InsightCard from './InsightCard';
 import Footer from './Footer';
 import FooterWork from './footerWork';
+
 export {
   Navbar,
   TitleText,
@@ -15,4 +16,5 @@ export {
   ExploreCard,
   InsightCard,
   FooterWork,
+  Footer,
 };
