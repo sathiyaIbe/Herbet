@@ -18,5 +18,4 @@ export {
   InsightCard,
   Footer,
   Footer1,
-
 };
