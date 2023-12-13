@@ -286,7 +286,9 @@ return ()=>contextCreate.revert();
         viewport={{ once: true }}
          whileInView={()=>{skew('.skewElem')}} className='flex flex-col md:flex-row skewElem'>
         <img
-        src='/work_6.png' alt='work' className="w-2/3 menus  hidden md:block " />
+        src='/work_6.png' alt='work' className="w-2/3 menus hover:opacity-0 absolute hidden md:block " />
+        <img
+        src='/work_6.gif' alt='work' className="w-2/3 menus  hidden md:block " />
         <img
          src='/work_1.png' alt='work' className="w-1/3 menus hidden md:block" />
 <img

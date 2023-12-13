@@ -22,23 +22,23 @@ const Footer = () => {
       });
   })
   return(
-  <footer id="footer" className="min-h-[40vh] flex flex-col bg-[#FFD551] z-40">
-    <div className="w-[80%] self-center flex md:flex-row  flex-col gap-11 md:gap-0 pt-11 pb-11">
-<div className="basis-1/2 flex flex-col justify-center ">
-  <img src='/calendar.svg' className="menus h-5/6 " alt='calendar'/> 
-</div>
-<div className="basis-1/2 flex flex-col justify-center">
+  <footer id="footer" className="min-h-[60vh] flex flex-col justify-between bg-[#FFD551] z-40">
+    <div className="w-[80%] h-[50vh] self-center flex md:flex-row justify-center flex-col gap-11 md:gap-0 pt-11 pb-11">
+
+<div className="flex flex-col justify-center">
 <ul className="flex flex-col self-cente gap-6">
-  <li className="calendar_list menus">Get Faciliated branding workshop</li>
-  <li className="calendar_list menus">Learn design fundamentals</li>
-  <li className="calendar_list menus">Brand with business strategies in mind</li>
-  <button type='button' className="button_footer w-fit menus ">Get in touch with us now</button>
+  <li className="calendar_list1 menus">Looking for something similar<span className="font-bold font-[founder]">?</span>
+</li>
+  
+  <button type='button' className=" w-fit menus self-center calendar_list1_talk">Talk to us</button>
 </ul>
 </div>
 
     </div>
-    <hr className="footer_hr menus small"/>
+    <div className="flex flex-col">    <hr className="footer_hr menus small"/>
+
     <div className="w-[90%] gap-11 self-center flex md:flex-row flex-col md:justify-between pt-4 pb-4">
+
       <h1 className="footer_bottom_text order-2 md:order-1 text-center menus small">
       Created by © Herbet 2023 
       </h1>
@@ -51,6 +51,7 @@ const Footer = () => {
 
 
       </div>
+    </div>
     </div>
   </footer>
 );
