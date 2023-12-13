@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { useTransform, useScroll, motion } from 'framer-motion';
-import { Footer1 } from '../../components';
+import { FooterWork } from '../../components';
 const images=[ "/show_8.png","/show_9.png", "/show_10.png", "/show_11.png", "/show_12.png", "/show_13.png", "/show_14.png", ]
 export default function Work1 () {
     const gallery = useRef(null);
@@ -133,7 +133,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
     </div>
 
 </div>
-<Footer1/>
+<FooterWork />
     </div>
   )
 }

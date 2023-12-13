@@ -3,7 +3,7 @@
 
 import { useEffect } from "react";
 
-const Footer = () => {
+const FooterWork = () => {
   useEffect(()=>{
     let cursorScale = document.querySelectorAll('.menus')
     var cursor = document.querySelector('.cursor')
@@ -57,4 +57,4 @@ const Footer = () => {
 );
   }
 
-export default Footer;
+export default FooterWork;
