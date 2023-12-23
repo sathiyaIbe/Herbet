@@ -2,13 +2,9 @@
 'use client';
 import { motion } from "framer-motion";
 import SplitType from "split-type";
-import MagnetEffect from "../sections/MagnetEffect"
-import gsap from "gsap";
-import { fadeIn,slideIn, planetVariants, staggerContainer, textContainer, textVariant, textVariant2 } from "/utils/motion.js";
-import { useEffect, useLayoutEffect, useRef } from "react";
-import { zoomIn } from "../utils/motion";
+import {gsap} from "gsap";
+import { useEffect, useRef } from "react";
 import Link from "next/link";
-import { Observer } from "gsap/Observer";
 
 const HeroAbout = () =>{
   const text=["aa", "bb", "ccc", "dddd", "eeee", "ffff", "gggg"]
@@ -64,7 +60,7 @@ mm.add("(min-width:768px)",()=>{
   gsap.fromTo(circleRef2,  { scaleX:2.5, scaleY:2.5, y:-200}, { scaleX:1, scaleY:1, duration: 1,});
  gsap.fromTo(circleRef2,  {opacity: 0.8,y:-200 , }, {opacity: 1,  duration: 1,y:0, delay:2 });
   gsap.fromTo(circleRef3,  {opacity: 0,x:-100,y:-100}, {opacity: 1, duration: 1,x:0 , y:0, delay:2.3 });
-  gsap.fromTo(textRef,  {opacity: 0,x:200}, {opacity: 0.8, duration: 1,x:0 ,delay:3 , ease: Power1.easeIn});
+  gsap.fromTo(textRef,  {opacity: 0,x:200}, {opacity: 0.8, duration: 1,x:0 ,delay:3 , ease: "Power1.easeIn"});
   gsap.fromTo(circleText1,{opacity: 0} , {opacity:1, delay:2.5 , ease: "Power1.easeIn"})
   gsap.fromTo(circleText2,{opacity: 0} , {opacity:1, delay:2.5 , ease: "Power1.easeIn"})
   gsap.fromTo(circleText3,{opacity: 0} , {opacity:1, delay:2.5 , ease: "Power1.easeIn"})
@@ -87,7 +83,7 @@ mm.add("(max-width:768px)",()=>{
 .fromTo(circleRef1,  {opacity: 0,x:100, y:0}, {opacity: 1, duration: 1,x:0 , y:0,  },1.8)
 
 .fromTo(circleRef3,  {opacity: 0,x:-100,y:0}, {opacity: 1, duration: 1,x:0 , y:0,  },1.8);
-  gsap.fromTo(textRef,  {opacity: 0,x:200}, {opacity: 0.8, duration: 1,x:0 ,delay:3 , ease: Power1.easeIn});
+  gsap.fromTo(textRef,  {opacity: 0,x:200}, {opacity: 0.8, duration: 1,x:0 ,delay:3 , ease: "Power1.easeIn"});
   gsap.fromTo(circleText1,{opacity: 0} , {opacity:1, delay:2.5 , ease: "Power1.easeIn"})
   gsap.fromTo(circleText2,{opacity: 0} , {opacity:1, delay:2.5 , ease: "Power1.easeIn"})
   gsap.fromTo(circleText3,{opacity: 0} , {opacity:1, delay:2.5 , ease: "Power1.easeIn"})
@@ -209,26 +205,7 @@ circleTimeline.fromTo(".menus3",{x:20, rotation:"-5" , y:-5},{x: -40,y:5, rotati
 
 
 
-function heroAnimation(){
-  gsap.fromTo(circleRef1,  {opacity: 0,x:100, y:-100}, {opacity: 1, duration: 1,x:0 , y:0, delay:2.3 });
-  gsap.fromTo(circleRef2,  { scaleX:2.5, scaleY:2.5, y:-200}, { scaleX:1, scaleY:1, duration: 1,});
- gsap.fromTo(circleRef2,  {opacity: 0.8,y:-200 , }, {opacity: 1,  duration: 1,y:0, delay:2 });
-  gsap.fromTo(circleRef3,  {opacity: 0,x:-100,y:-100}, {opacity: 1, duration: 1,x:0 , y:0, delay:2.3 });
-  gsap.fromTo(textRef,  {opacity: 0,x:200}, {opacity: 0.8, duration: 1,x:0 ,delay:3 , ease: Power1.easeIn});
-  gsap.fromTo(circleText1,{opacity: 0} , {opacity:1, delay:2.5 , ease: "Power1.easein"})
-  gsap.fromTo(circleText2,{opacity: 0} , {opacity:1, delay:2.5 , ease: "Power1.easein"})
-  gsap.fromTo(circleText3,{opacity: 0} , {opacity:1, delay:2.5 , ease: "Power1.easein"})
-  gsap.to(textRef,{opacity:1})
-  var mySplitText = new SplitType("#hero_headers"),
- 
-  lines=(mySplitText.words)
-  function allDone() {
-    mySplitText.revert();
-   // tl.kill()
-  }
-  gsap.timeline()
-.fromTo(lines,{opacity:0, y:80} , {duration: 2 ,opacity:1, y:0 ,  ease:"easeInOut",stagger:0.1, delay:2.3});
-}
+
 
 
 function getMenu(){
@@ -250,7 +227,7 @@ function getBack(){
   return (
 
 
-<div   className="flex   mmin-h-screen w-screen overflow-hidden " ref={el=>wrapperRef=el} >
+<div   className="flex   min-h-screen w-screen overflow-hidden " ref={el=>wrapperRef=el} >
       <section ref={el=>firstRef=el} className=" flex flex-col    bg-[#463838] min-w-[100vw] header">
       <motion.div  className="flex justify-end w-[95%] self-end  md:h-[10vh] ">
         

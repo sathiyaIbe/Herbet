@@ -149,12 +149,12 @@ const Gallery = () => {
       className="gallery_text  w-[80%]  ">
         <span className="gallery_texts min-w-[70%] menus">We’re forged in the heartbeat of Malaysia, proudly servicing a global portfolio of brands. &nbsp;
         <motion.svg  className="svg_01 menus" width="58" height="35" viewBox="0 0 58 35" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle id="_0" className="opacity-0" cx="17.1205" cy="17.1205" r="16.4699" stroke="#FFD551" stroke-width="1.3012"/>
+<circle id="_0" className="opacity-0" cx="17.1205" cy="17.1205" r="16.4699" stroke="#FFD551" strokeWidth="1.3012"/>
 
-<circle id="_1" className="opacity-0" cx="23.0604" cy="17.1205" r="16.4699" stroke="#FFD551" stroke-width="1.3012"/>
-<circle id="_2" className="opacity-0" cx="29.0004" cy="17.1205" r="16.4699" stroke="#FFD551" stroke-width="1.3012"/>
-<circle id="_3" className="opacity-0" cx="34.9403" cy="17.1205" r="16.4699" stroke="#FFD551" stroke-width="1.3012"/>
-<circle id="_4" className="opacity-0" cx="40.8796" cy="17.1205" r="16.4699" stroke="#FFD551" stroke-width="1.3012"/>
+<circle id="_1" className="opacity-0" cx="23.0604" cy="17.1205" r="16.4699" stroke="#FFD551" strokeWidth="1.3012"/>
+<circle id="_2" className="opacity-0" cx="29.0004" cy="17.1205" r="16.4699" stroke="#FFD551" strokeWidth="1.3012"/>
+<circle id="_3" className="opacity-0" cx="34.9403" cy="17.1205" r="16.4699" stroke="#FFD551" strokeWidth="1.3012"/>
+<circle id="_4" className="opacity-0" cx="40.8796" cy="17.1205" r="16.4699" stroke="#FFD551" strokeWidth="1.3012"/>
 </motion.svg></span>
      
       </span>

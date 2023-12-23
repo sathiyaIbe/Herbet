@@ -1,18 +1,16 @@
 'use client'
 import React from 'react'
-import { Feedback, Gallery, Hero, HeroAbout } from '../../sections'
+import { Feedback, Gallery, HeroAbout } from '../../sections'
 import Footer from '../../components/Footer'
 import {gsap} from "gsap";
 import { motion } from "framer-motion";
 
 import {  useEffect, useRef, useState } from "react";
 import {ScrollTrigger} from "gsap/dist/ScrollTrigger";
-import { MotionPathPlugin } from 'gsap/all';
 import SplitType from "split-type";
 import { Observer } from "gsap/Observer";
-import Lenis from '@studio-freight/lenis';
 import { fadeIn } from '../../utils/motion';
-gsap.registerPlugin(ScrollTrigger,MotionPathPlugin,Observer);
+gsap.registerPlugin(ScrollTrigger,Observer);
 function AboutUs() {
   // const [targetElement,setTargerElement]=useState(0)
   let targetElement=0

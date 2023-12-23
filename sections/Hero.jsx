@@ -2,13 +2,9 @@
 'use client';
 import { motion } from "framer-motion";
 import SplitType from "split-type";
-import MagnetEffect from "../sections/MagnetEffect"
-import gsap from "gsap";
-import { fadeIn,slideIn, planetVariants, staggerContainer, textContainer, textVariant, textVariant2 } from "/utils/motion.js";
-import { useEffect, useLayoutEffect, useRef } from "react";
-import { zoomIn } from "../utils/motion";
+import {gsap} from "gsap";
+import { useEffect, useRef } from "react";
 import Link from "next/link";
-import { Observer } from "gsap/Observer";
 
 const Hero = () =>{
   const text=["aa", "bb", "ccc", "dddd", "eeee", "ffff", "gggg"]
@@ -55,7 +51,7 @@ let secondRef=useRef()
 // });
 
 useEffect(()=>{
-   heroAnimation()
+  //  heroAnimation()
   const ctx3=gsap.context(()=>{
     const circleTimeline=gsap.timeline();
     circleTimeline.fromTo(".menus1",{x:20, rotation:"-5", y:-10},{x: -40,y:10, rotation:5, repeat:-1, duration:2.5,scrub: true, yoyo: true ,  ease: "easeOut(10, 2.3)"})
@@ -206,24 +202,24 @@ mm.add("(min-width:768px)",()=>{
 
 
 function heroAnimation(){
-  gsap.fromTo(circleRef1,  {opacity: 0,x:100, y:-200}, {opacity: 1, duration: 1,x:0 , y:0, delay:2.3 });
-  gsap.fromTo(circleRef2,  { scaleX:2.5, scaleY:2.5, y:-200}, { scaleX:1, scaleY:1, duration: 1,});
- gsap.fromTo(circleRef2,  {opacity: 0.8,y:-200 , }, {opacity: 1,  duration: 1,y:0, delay:2 });
-  gsap.fromTo(circleRef3,  {opacity: 0,x:-100,y:-200}, {opacity: 1, duration: 1,x:0 , y:0, delay:2.3 });
-  gsap.fromTo(textRef,  {opacity: 0,x:200}, {opacity: 0.8, duration: 1,x:0 ,delay:3 , ease: Power1.easeIn});
-  gsap.fromTo(circleText1,{opacity: 0} , {opacity:1, delay:2.5 , ease: "Power1.easeIn"})
-  gsap.fromTo(circleText2,{opacity: 0} , {opacity:1, delay:2.5 , ease: "Power1.easeIn"})
-  gsap.fromTo(circleText3,{opacity: 0} , {opacity:1, delay:2.5 , ease: "Power1.easeIn"})
-  gsap.to(textRef,{opacity:1})
-  var mySplitText = new SplitType("#hero_headers"),
+//   gsap.fromTo(circleRef1,  {opacity: 0,x:100, y:-200}, {opacity: 1, duration: 1,x:0 , y:0, delay:2.3 });
+//   gsap.fromTo(circleRef2,  { scaleX:2.5, scaleY:2.5, y:-200}, { scaleX:1, scaleY:1, duration: 1,});
+//  gsap.fromTo(circleRef2,  {opacity: 0.8,y:-200 , }, {opacity: 1,  duration: 1,y:0, delay:2 });
+//   gsap.fromTo(circleRef3,  {opacity: 0,x:-100,y:-200}, {opacity: 1, duration: 1,x:0 , y:0, delay:2.3 });
+//   gsap.fromTo(textRef,  {opacity: 0,x:200}, {opacity: 0.8, duration: 1,x:0 ,delay:3 , ease: "Power1.easeIn"});
+//   gsap.fromTo(circleText1,{opacity: 0} , {opacity:1, delay:2.5 , ease: "Power1.easeIn"})
+//   gsap.fromTo(circleText2,{opacity: 0} , {opacity:1, delay:2.5 , ease: "Power1.easeIn"})
+//   gsap.fromTo(circleText3,{opacity: 0} , {opacity:1, delay:2.5 , ease: "Power1.easeIn"})
+//   gsap.to(textRef,{opacity:1})
+//   var mySplitText = new SplitType("#hero_headers"),
  
-  lines=(mySplitText.words)
-  function allDone() {
-    mySplitText.revert();
-   // tl.kill()
-  }
-  gsap.timeline()
-.fromTo(lines,{opacity:0, y:80} , {duration: 1 ,opacity:1, y:0 ,  ease:"easeInOut",stagger:0.1, delay:2.3});
+//   lines=(mySplitText.words)
+//   function allDone() {
+//     mySplitText.revert();
+//    // tl.kill()
+//   }
+//   gsap.timeline()
+// .fromTo(lines,{opacity:0, y:80} , {duration: 1 ,opacity:1, y:0 ,  ease:"easeInOut",stagger:0.1, delay:2.3});
 }
 
 // useLayoutEffect(() => {
@@ -273,14 +269,13 @@ function heroAnimation(){
 
 function getMenu(){
   
-  // gsap.to(firstRef,{x:"-100%" , duration:3})
-  gsap.to(secondRef,{x:"-100%", duration:2})
+  // gsap.to(secondRef,{x:"-100%", duration:2})
   
 }
 
 function getBack(){
   
-  gsap.to(secondRef,{x:"0%", duration:2})
+  // gsap.to(secondRef,{x:"0%", duration:2})
   
 }
 

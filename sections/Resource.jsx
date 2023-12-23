@@ -176,21 +176,6 @@ t1.fromTo(".circle1",{
     stagger:0.05,
 },1.5)
 
-    //   const pin = gsap.to(
-    //     circleRef,
-    //   {
-
-    //     scrollTrigger: {
-    //       trigger:circleRef.current,
-    //       pin:true,
-    //      
-    //       start: "top top",
-    //       end:"+=1000",
-    //       toggleActions: "play none none reverse"
-    //     },
-
-    //   }
-    // );
 
   var mySplitText = new SplitType(".resourse_texts"),
  
@@ -264,22 +249,15 @@ return ()=>contextCreate.revert();
   
   },[])
   function skew(a,s){ 
-// gsap.to(a,
- 
-//   { x:s},
 
-
-// )
   }
 
 
 
   return(
     <div id="work" className=" flex flex-col">
-       <div className="flex justify-between self-center w-[95%] ">
-          <h1 className="work_text menus small">OUR WORK</h1>
-          <h1 className="work_text menus small">2023</h1>
-        </div>
+      
+      
   <section  className="min-h-screen image_container bg-[#463838]">
     <div  className="flex flex-col  waves ">
      <motion.div
@@ -363,12 +341,12 @@ return ()=>contextCreate.revert();
       className="resourse_text  w-[50%]  ">
         <span className="resourse_texts min-w-[70%] menus flex">From the next big thing to the world's best-known brands, we're at the heart of visionary &nbsp;
         <motion.svg  className="svg_01 menus small" width="58" height="35" viewBox="0 0 58 35" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle id="_0" className="opacity-0" cx="17.1205" cy="17.1205" r="16.4699" stroke="#FFD551" stroke-width="1.3012"/>
+<circle id="_0" className="opacity-0" cx="17.1205" cy="17.1205" r="16.4699" stroke="#FFD551" strokeWidth="1.3012"/>
 
-<circle id="_1" className="opacity-0" cx="23.0604" cy="17.1205" r="16.4699" stroke="#FFD551" stroke-width="1.3012"/>
-<circle id="_2" className="opacity-0" cx="29.0004" cy="17.1205" r="16.4699" stroke="#FFD551" stroke-width="1.3012"/>
-<circle id="_3" className="opacity-0" cx="34.9403" cy="17.1205" r="16.4699" stroke="#FFD551" stroke-width="1.3012"/>
-<circle id="_4" className="opacity-0" cx="40.8796" cy="17.1205" r="16.4699" stroke="#FFD551" stroke-width="1.3012"/>
+<circle id="_1" className="opacity-0" cx="23.0604" cy="17.1205" r="16.4699" stroke="#FFD551" strokeWidth="1.3012"/>
+<circle id="_2" className="opacity-0" cx="29.0004" cy="17.1205" r="16.4699" stroke="#FFD551" strokeWidth="1.3012"/>
+<circle id="_3" className="opacity-0" cx="34.9403" cy="17.1205" r="16.4699" stroke="#FFD551" strokeWidth="1.3012"/>
+<circle id="_4" className="opacity-0" cx="40.8796" cy="17.1205" r="16.4699" stroke="#FFD551" strokeWidth="1.3012"/>
 </motion.svg>&nbsp;partnerships.</span>
      
       </span>
@@ -454,12 +432,12 @@ return ()=>contextCreate.revert();
       className="resourse_text  w-[50%]  ">
         <span className="resourse_texts min-w-[70%] menus flex">From the next big thing to the world's best-known brands, we're at the heart of visionary &nbsp;
         <motion.svg  className="svg_01 menus small" width="58" height="35" viewBox="0 0 58 35" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle id="_0" className="opacity-0" cx="17.1205" cy="17.1205" r="16.4699" stroke="#FFD551" stroke-width="1.3012"/>
+<circle id="_0" className="opacity-0" cx="17.1205" cy="17.1205" r="16.4699" stroke="#FFD551" strokeWidth="1.3012"/>
 
-<circle id="_1" className="opacity-0" cx="23.0604" cy="17.1205" r="16.4699" stroke="#FFD551" stroke-width="1.3012"/>
-<circle id="_2" className="opacity-0" cx="29.0004" cy="17.1205" r="16.4699" stroke="#FFD551" stroke-width="1.3012"/>
-<circle id="_3" className="opacity-0" cx="34.9403" cy="17.1205" r="16.4699" stroke="#FFD551" stroke-width="1.3012"/>
-<circle id="_4" className="opacity-0" cx="40.8796" cy="17.1205" r="16.4699" stroke="#FFD551" stroke-width="1.3012"/>
+<circle id="_1" className="opacity-0" cx="23.0604" cy="17.1205" r="16.4699" stroke="#FFD551" strokeWidth="1.3012"/>
+<circle id="_2" className="opacity-0" cx="29.0004" cy="17.1205" r="16.4699" stroke="#FFD551" strokeWidth="1.3012"/>
+<circle id="_3" className="opacity-0" cx="34.9403" cy="17.1205" r="16.4699" stroke="#FFD551" strokeWidth="1.3012"/>
+<circle id="_4" className="opacity-0" cx="40.8796" cy="17.1205" r="16.4699" stroke="#FFD551" strokeWidth="1.3012"/>
 </motion.svg>&nbsp;partnerships.</span>
      
       </span>
