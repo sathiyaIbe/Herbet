@@ -39,7 +39,7 @@ const Page = () =>{
     <Insights />
     <Feedback />
  */}
-     {/* <Footer /> */}
+     <Footer />
   </div>
 );
   }

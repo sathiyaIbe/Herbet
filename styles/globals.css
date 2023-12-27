@@ -524,3 +524,48 @@ header {
 h2 * {
   will-change: transform;
 }
+
+
+.al_gif_play{
+  background: url('/al/al_gallery_3.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.al_gif_play:hover{
+  background: url('/al/al_gif_2.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.al_gif_play_1{
+  background: url('/al/al_gallery_2.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.al_gif_play_1:hover{
+  background: url('/al/al_gif_1.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.al_gif_play_2{
+  background: url('/al/al_demo_pic_1.png');
+  background-repeat: no-repeat;
+  background-size:cover;
+  width: 100%;
+
+}
+
+.al_gif_play_2:hover{
+  background: url('/al/al_gif_3.gif');
+  background-repeat: no-repeat;
+  background-size:cover;
+  width: 100%;
+}
+
+.haw_header{
+  @apply font-[ogg] text-[32px] md:text-[68px] leading-[36px] md:leading-[78px] font-medium   text-[#fff]
+
+}

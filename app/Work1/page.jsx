@@ -17,7 +17,7 @@ export default function Work1 () {
         </div>
         <div className='flex flex-col gap-3 mt-11 overflow-hidden'>
             <img src='/show_1.png' className='' alt='show case'/>
-            <div className='flex gap-1'>
+            <div className='flex gap-3'>
 
                  <div className='basis-1/2 h-[600px] bg-[#828FA3] flex flex-col justify-center'>
                     <div className='self-center flex flex-col  gap-6 w-[80%]'>
@@ -31,8 +31,8 @@ export default function Work1 () {
             <div className='basis-1/2 h-[600px]'>
                     <img src="/show_2.png" className=' ' alt="show2"/>
                 </div> 
-            </div>
-            <div className='flex gap-1'>
+            </div>``
+            <div className='flex gap-3'>
             <img src='/show_3.png' className='w-3/5 ' alt='show case'/>
             <img src='/show_4.png' className='w-2/5' alt='show case'/>
 
@@ -45,7 +45,7 @@ export default function Work1 () {
             <h1 className='work1_text_header'>
             Challenges
             </h1>
-<div className='flex flex-col gap-1'>
+<div className='flex flex-col gap-3'>
     <h1 className='work1_text_subtitle'>
     Timeline
     </h1>
@@ -54,7 +54,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
     </p>
 </div>
-<div className='flex flex-col gap-1'>
+<div className='flex flex-col gap-3'>
     <h1 className='work1_text_subtitle'>
     Product
     </h1>
