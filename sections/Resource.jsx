@@ -264,8 +264,8 @@ return ()=>contextCreate.revert();
       <Link href="adlabs">
      <motion.div
         viewport={{ once: true }}
-         whileInView={()=>{skew('.skewElem')}} className='flex flex-col mb-1 md:flex-row skewElem'>
-          <div className="flex gap-1">
+         whileInView={()=>{skew('.skewElem')}} className='flex flex-col mb-2 md:flex-row skewElem'>
+          <div className="flex gap-2">
           <div className="bg-[#0618DE] w-1/3 p-24 flex justify-center">  
            <img src='/ad_home_1.png' alt='work' className=" w-64 menus  hidden md:block " />
            </div>
