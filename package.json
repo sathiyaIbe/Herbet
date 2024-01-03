@@ -16,6 +16,7 @@
     "next": "13.0.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-player": "^2.14.1",
     "split-type": "^0.3.4"
   },
   "devDependencies": {

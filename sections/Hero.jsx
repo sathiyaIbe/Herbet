@@ -269,13 +269,13 @@ function heroAnimation(){
 
 function getMenu(){
   
-  // gsap.to(secondRef,{x:"-100%", duration:2})
+  gsap.to(secondRef,{x:"-100%", duration:2})
   
 }
 
 function getBack(){
   
-  // gsap.to(secondRef,{x:"0%", duration:2})
+  gsap.to(secondRef,{x:"0%", duration:2})
   
 }
 
@@ -337,7 +337,7 @@ function getBack(){
      
       </section>
 
-      <section id='container' ref={el=>secondRef=el} className="bg-[#FFD551] md:min-h-screen flex flex-col min-w-[100vw] menu_conatainer">
+      <section id='container' ref={el=>secondRef=el} className="bg-[#FFD551] md:min-h-screen flex flex-col overflow_check min-w-[100vw] menu_conatainer">
       {/* <div className='cursour'>  </div> */}
 
       <svg onClick={()=>{getBack()}} width="57" height="64" className="p-4 menus cursor-pointer" viewBox="0 0 57 64" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -115,7 +115,7 @@ useEffect(()=>{
         wheelSpeed: -1,
         onDown: () => !animating && gotoSection(currentIndex - 1, -1),
         onUp: () => !animating && gotoSection(currentIndex + 1, 1),
-        tolerance: 10,
+        tolerance: 1,
         preventDefault: true
       });
       

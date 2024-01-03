@@ -6,6 +6,7 @@ import { fadeIn,ImgWave, staggerContainer } from "../utils/motion";
 import {  useEffect, useRef, useState } from "react";
 import {ScrollTrigger} from "gsap/dist/ScrollTrigger";
 import SplitType from "split-type";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 const Resource = () => {
@@ -260,18 +261,31 @@ return ()=>contextCreate.revert();
       
   <section  className="min-h-screen image_container bg-[#463838]">
     <div  className="flex flex-col  waves ">
+      <Link href="adlabs">
      <motion.div
         viewport={{ once: true }}
-         whileInView={()=>{skew('.skewElem')}} className='flex flex-col md:flex-row skewElem'>
-        <img
-        src='/work_6.png' alt='work' className="w-2/3 menus hover:opacity-0 absolute hidden md:block " />
-        <img
-        src='/work_6.gif' alt='work' className="w-2/3 menus  hidden md:block " />
-        <img
-         src='/work_1.png' alt='work' className="w-1/3 menus hidden md:block" />
-<img
-         src='/work_1_mob.png' alt='work' className=" md:hidden" />
+         whileInView={()=>{skew('.skewElem')}} className='flex flex-col mb-1 md:flex-row skewElem'>
+          <div className="flex gap-1">
+          <div className="bg-[#0618DE] w-1/3 p-24 flex justify-center">  
+           <img src='/ad_home_1.png' alt='work' className=" w-64 menus  hidden md:block " />
+           </div>
+          <img src='/ad_home_2.png' alt='work' className="w-2/3 menus  hidden md:block " />
+          </div>
+         
+     
+
       </motion.div>
+      </Link>
+      <Link href="pinkfish">
+      <motion.div
+        viewport={{ once: true }}
+         whileInView={()=>{skew('.skewElem3')}} className='flex flex-col  md:flex-row mb-1 skewElem'>
+          <img src='/pf_home_1.png' alt='work' className="w-2/3 pr-1 menus  hidden md:block " />
+         
+          <img src='/pf_home_2.png' alt='work' className="w-1/3 pl-1 menus  hidden md:block " />
+          </motion.div>
+          </Link>
+      <Link href="yarra-capital">
       <motion.div
         viewport={{ once: true }}
          whileInView={()=>{skew('.skewElem1')}} className='flex skewElem'>
@@ -284,7 +298,10 @@ return ()=>contextCreate.revert();
          <img
          src='/work_2_mob.png' alt='work' className=" md:hidden" />
 
+      
       </motion.div>
+      </Link>
+      <Link href="huawei">
       <motion.div
         viewport={{ once: true }}
          whileInView={()=>{skew('.skewElem2')}} className='flex skewElem'>
@@ -298,6 +315,7 @@ return ()=>contextCreate.revert();
          src='/work_3_mob.png' alt='work' className=" md:hidden" />
 
       </motion.div>
+      </Link>
     </div>
   </section>
 <section id="main1" className="min-h-screen  mb-24 max-w-[100vw] flex flex-col gap-11 justify-evenly md:justify-center  bg-[#463838] skewEle">

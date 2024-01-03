@@ -565,7 +565,45 @@ h2 * {
   width: 100%;
 }
 
+.pf_gif_play_1{
+  background: url('/pf/half_pf_1.png');
+  background-repeat: no-repeat;
+  background-size:contain;
+
+}
+
+.pf_gif_play_1:hover{
+  background: url('/pf/pf_tab_gif.gif');
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+
+
+.pf_gif_play_2{
+  background: url('/pf/pf_2_2.png');
+  background-repeat: no-repeat;
+  background-size:cover;
+
+}
+
+.pf_gif_play_2:hover{
+  background: url('/pf/pf_icon_gif.gif');
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+
+.hover_opacity{
+  opacity: 1;
+}
+.unhover_opacity{
+  opacity: 0;
+}
+
 .haw_header{
   @apply font-[ogg] text-[32px] md:text-[68px] leading-[36px] md:leading-[78px] font-medium   text-[#fff]
 
+}
+
+.overflow_check{
+  overflow:hidden !important;
 }
