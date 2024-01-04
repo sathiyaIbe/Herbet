@@ -592,6 +592,47 @@ h2 * {
   background-size:cover;
 }
 
+.ad_home_bg{
+  background: url('/ad_home_1.png') ;
+  background-repeat: no-repeat;
+  background-size:cover;
+  @apply w-[70%] m-6;
+}
+
+.ad_home_bg:hover{
+  background: url('/al/al_logo_animation.gif');
+  background-repeat: no-repeat;
+  background-size:cover;
+  @apply w-[180%];
+ 
+}
+
+.yara_home_bg{
+  background: url('/work_3.png') ;
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+
+.yara_home_bg:hover{
+  background: url('/yara_gif_home_1.gif');
+  background-repeat: no-repeat;
+  background-size:cover;
+  @apply m-1;
+}
+
+.pf_home_bg{
+  background: url('/pf/half_pf_1.png') ;
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+
+.pf_home_bg:hover{
+  background: url('/pf/pf_tab_gif.gif');
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+
+
 .hover_opacity{
   opacity: 1;
 }

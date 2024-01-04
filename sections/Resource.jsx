@@ -265,12 +265,15 @@ return ()=>contextCreate.revert();
      <motion.div
         viewport={{ once: true }}
          whileInView={()=>{skew('.skewElem')}} className='flex flex-col mb-2 md:flex-row skewElem'>
-          <div className="flex gap-2">
-          <div className="bg-[#0618DE] w-1/3 p-24 flex justify-center">  
-           <img src='/ad_home_1.png' alt='work' className=" w-64 menus  hidden md:block " />
+       
+          <div className="bg-[#0618DE] w-1/3  menus flex justify-center">  
+           {/* <img src='/ad_home_1.png' alt='work' className="    hidden md:block " /> */}
+           <div className="ad_home_bg  ">
            </div>
+           </div>
+
           <img src='/ad_home_2.png' alt='work' className="w-2/3 menus  hidden md:block " />
-          </div>
+         
          
      
 
@@ -280,9 +283,10 @@ return ()=>contextCreate.revert();
       <motion.div
         viewport={{ once: true }}
          whileInView={()=>{skew('.skewElem3')}} className='flex flex-col  md:flex-row mb-1 skewElem'>
-          <img src='/pf_home_1.png' alt='work' className="w-2/3 pr-1 menus  hidden md:block " />
+          <img src='/pf_home_1.png' alt='work' className="w-1/2 pr-1 menus  hidden md:block " />
          
-          <img src='/pf_home_2.png' alt='work' className="w-1/3 pl-1 menus  hidden md:block " />
+          {/* <img src='/pf_home_2.png' alt='work' className="w-1/3 pl-1 menus  hidden md:block " /> */}
+          <div className="pf_home_bg w-1/2 pl-1 menus  hidden md:block"> </div>
           </motion.div>
           </Link>
       <Link href="yarra-capital">
@@ -292,9 +296,10 @@ return ()=>contextCreate.revert();
         <img
        
          src='/work_2.png' alt='work' className="w-1/3 menus hidden md:block" />
-        <img 
+        {/* <img 
          
-         src='/work_3.png' alt='work' className="w-2/3 menus hidden md:block" />
+         src='/work_3.png' alt='work' className="w-2/3 menus hidden md:block" /> */}
+         <div className="yara_home_bg w-2/3 menus hidden md:block"></div>
          <img
          src='/work_2_mob.png' alt='work' className=" md:hidden" />
 
