@@ -5,6 +5,8 @@ import SplitType from "split-type";
 import {gsap} from "gsap";
 import { useEffect, useRef } from "react";
 import Link from "next/link";
+import scrollToElement from 'scroll-to-element'
+import { useRouter } from 'next/navigation'
 
 const HeroAbout = () =>{
   const text=["aa", "bb", "ccc", "dddd", "eeee", "ffff", "gggg"]
@@ -22,6 +24,7 @@ let circleText3=useRef()
 let wrapperRef=useRef()
 let firstRef=useRef()
 let secondRef=useRef()
+const router = useRouter()
 
 
 // gsap.set(".ball", {xPercent: -50, yPercent: -50});
@@ -102,9 +105,6 @@ circleTimeline.fromTo(".menus1",{x:20, rotation:"-5", y:-5},{x: -40,y:5, rotatio
 circleTimeline.fromTo(".menus2",{x:20, rotation:"-5" , y:-5},{x: -40,y:5, rotation:5, repeat:-1, duration:2.5,scrub: true, yoyo: true ,  ease: "easeOut(1, 2.3)"},0.3)
 circleTimeline.fromTo(".menus3",{x:20, rotation:"-5" , y:-5},{x: -40,y:5, rotation:5, repeat:-1,  duration:2.5,scrub: true, yoyo: true ,  ease: "easeOut(1, 2.3)"},0.6)
 
-
-
-  
    const t1=gsap.timeline()
    var pText = new SplitType(".description_header")
    var hText = new SplitType(".hero_header")
@@ -211,14 +211,49 @@ circleTimeline.fromTo(".menus3",{x:20, rotation:"-5" , y:-5},{x: -40,y:5, rotati
 function getMenu(){
   
   // gsap.to(firstRef,{x:"-100%" , duration:3})
-  gsap.to(secondRef,{x:"-100%", duration:2})
+  gsap.to(secondRef,{x:"-100%", duration:1})
   
 }
 
 function getBack(){
   
-  gsap.to(secondRef,{x:"0%", duration:2})
+  gsap.to(secondRef,{x:"0%", duration:1})
   
+}
+
+function workOnClick(path,activeCircle,otherCircle2,otherCircle3){
+  const t1=gsap.timeline()
+setTimeout(()=>{
+scrollTo(path)
+  },250);
+  if(path==="/"){
+  t1.to(".hero_hide_container_1", {duration:0.01, opacity:0})
+  }
+
+  t1.to(activeCircle, {scale:10, duration:1, opacity:0
+  })
+  t1.to(otherCircle2, {opacity:0
+  },0)
+  t1.to(otherCircle3, {opacity:0
+  },0)
+  .to(secondRef,{opacity:0, duration:1.5,},0)
+  .to(secondRef,{x:"0%", duration:0.1})
+  .to(secondRef,{opacity:1, duration:0.1})
+  t1.to(activeCircle, {scale:1,opacity:1,duration:0.1 })
+  t1.to(otherCircle2, {opacity:1
+  })
+  t1.to(otherCircle3, {opacity:1
+  })
+}
+function scrollTo(a){
+  if (a==="/"){
+    router.push(a)
+
+  }else{
+    scrollToElement(a);
+
+  }
+
 }
 
 
@@ -227,7 +262,7 @@ function getBack(){
   return (
 
 
-<div   className="flex   min-h-screen w-screen overflow-hidden " ref={el=>wrapperRef=el} >
+<div id="About"   className="flex   min-h-screen w-screen overflow-hidden " ref={el=>wrapperRef=el} >
       <section ref={el=>firstRef=el} className=" flex flex-col    bg-[#463838] min-w-[100vw] header">
       <motion.div  className="flex justify-end w-[95%] self-end  md:h-[10vh] ">
         
@@ -247,18 +282,16 @@ function getBack(){
 </svg>
 
        </motion.div>
-        <div  className="flex flex-col justify-center min-h-[80vh] md:h-[90vh] ">
+        <div  className="flex flex-col justify-center min-h-[80vh]  hero_hide_container_1 md:h-[90vh] ">
      
        
-       <div className="flex flex-col self-center justify-center hide_container gap-6   md:max-w-[850px] w-[80%]">
-        <div  className="flex flex-col  gap-6  justify-center">
-        <h1  id="hero_headers" className="m hero_header_about text-centr self-center text-[#FFD551]  menus">We help craft transformative brands 
+       <div className="flex flex-col self-center justify-center hide_container gap-6  md:max-w-[720px] ">
+        <div  className="flex flex-col   gap-6  ">
+        <h1  id="hero_headers" className="m hero_header_about items-center   text-[#FFD551]  menus">We help craft transformative brands 
 that propel the world forward, 
-<a className="text-[#FFD551]">one story at a time. </a></h1>
+<a className="text-[#FFD551]"> one story at a time. </a></h1>
     </div>
-    {/* <div className="description_container self-center flex justify-center md:w-[70%] ">
-    <p className="description_header menus small">We're the folks you go to before shooting for the stars. Before aiming high, we ensure your brand's essence is undeniably strong.</p>
-        </div> */}
+ 
        
     
         </div>
@@ -300,18 +333,18 @@ that propel the world forward,
 <div className="flex flex-col justify-center min-h-[90vh] mb-24 ">
 
         <div className="circle_main_containe gap-11 flex  self-center ">
-          <a  onClick={()=>{getBack()}} href="#resourse" className="circle_container_menu relative  menus menus1 left-[-20%] " >
-            <h1 className="circle_text_menu circle_cursour self-center  ">Work</h1>
+          <a  onClick={()=>{workOnClick("/",".menus1", "menus2", "menus3")}} className="circle_container_menu relative  menus menus1 left-[-20%] " >
+            <h1 className="circle_text_menu circle_cursour self-center  ">Home</h1>
           </a>
          
-          <Link href={"AboutUs"} className="circle_container_menu relative menus menus3 left-[20%]  " >
-            <h1  className="circle_text_menu circle_cursour self-center">Resources</h1>
-          </Link>
+          <a  onClick={()=>{workOnClick("#About",".menus3",".menus1", "menus2",)}} className="circle_container_menu relative menus menus3 left-[20%]  " >
+            <h1  className="circle_text_menu circle_cursour self-center">AboutUs</h1>
+          </a>
 
 
         </div>
         <div className="flex justify-center">
-        <a  onClick={()=>{getBack()}} href="#footer" className="circle_container_menu  circle_cursour relative menus2 menus left-[0%]  "  >
+        <a  onClick={()=>{workOnClick("#footer",".menus2",".menus3",".menus1",)}} className="circle_container_menu  circle_cursour relative menus2 menus left-[0%]  "  >
             <h1  className="circle_text_menu self-center ">Contact</h1>
           </a>
           </div>

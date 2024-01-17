@@ -5,10 +5,12 @@ import { motion } from "framer-motion";
 import { fadeIn,ImgWave, staggerContainer } from "../utils/motion";
 import {  useEffect, useRef, useState } from "react";
 import {ScrollTrigger} from "gsap/dist/ScrollTrigger";
+import { Observer } from "gsap/Observer";
+
 import SplitType from "split-type";
 import Link from "next/link";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger,Observer);
 const Resource = () => {
   const circleRef=useRef(null)
   const [svgIcon,setSvgIcon]=useState(false)
@@ -39,6 +41,42 @@ mm.add("(min-width:768px)",()=>{
   skewSetter = gsap.quickSetter(".skewElem", "skewY", "deg"), // fast
   clamp = gsap.utils.clamp(3, -3); // don't let the skew go beyond 20 degrees. 
 
+
+// let waveElement=document.querySelectorAll('.wavess')
+console.clear()
+
+// const t1=gsap.timeline({
+//   scrollTrigger:{
+//     trigger:'.waves',
+//     start:"top 90%",
+//     markers:true,
+//   }
+//   })
+
+// function onComplete(){
+// gsap.to(".waves",{ duration: 1, rotation:0 })
+
+// }
+
+// function gotoSection(a){
+//   if(a>0){
+// gsap.to(".waves",{skew: 0, duration: 1.4, ease: "power3.out", overwrite: true,})
+//   }else{
+//     gsap.to(".waves",{ duration: 1, rotate:-1.5,transformOrigin: "right center", force3D: true,onComplete:onComplete })
+
+//   }
+// }
+
+//   Observer.create({
+//     type: "wheel,touch,pointer",
+//     wheelSpeed: -1,
+//     onDown: () => gotoSection(0),
+//     onUp: () =>  gotoSection(1),
+    
+//   });
+
+
+
 ScrollTrigger.create({
 onUpdate: (self) => {
   let skew = clamp(self.getVelocity() / -300);
@@ -51,6 +89,10 @@ onUpdate: (self) => {
   }
 }
 });
+
+
+
+
 
 // make the right edge "stick" to the scroll bar. force3D: true improves performance
 gsap.set(".skewElem", {transformOrigin: "right center", force3D: true});
@@ -261,11 +303,8 @@ return ()=>contextCreate.revert();
       
   <section  className="min-h-screen image_container bg-[#463838]">
     <div  className="flex flex-col  waves ">
-      <Link href="adlabs">
-     <motion.div
-        viewport={{ once: true }}
-         whileInView={()=>{skew('.skewElem')}} className='flex flex-col mb-2 md:flex-row skewElem'>
-       
+      <Link className='wavess1' href="adlabs">
+     <motion.div viewport={{ once: true }} whileInView={()=>{skew('.skewElem')}} className='flex flex-col  mb-2 md:flex-row skewElem'>    
           <div className="bg-[#0618DE] w-1/3  menus flex justify-center">  
            {/* <img src='/ad_home_1.png' alt='work' className="    hidden md:block " /> */}
            <div className="ad_home_bg  ">
@@ -273,13 +312,9 @@ return ()=>contextCreate.revert();
            </div>
 
           <img src='/ad_home_2.png' alt='work' className="w-2/3 menus  hidden md:block " />
-         
-         
-     
-
-      </motion.div>
+          </motion.div>
       </Link>
-      <Link href="pinkfish">
+      <Link className='wavess' href="pinkfish">
       <motion.div
         viewport={{ once: true }}
          whileInView={()=>{skew('.skewElem3')}} className='flex flex-col  md:flex-row mb-1 skewElem'>
@@ -289,7 +324,7 @@ return ()=>contextCreate.revert();
           <div className="pf_home_bg w-1/2 pl-1 menus  hidden md:block"> </div>
           </motion.div>
           </Link>
-      <Link href="yarra-capital">
+      <Link className='wavess' href="yarra-capital">
       <motion.div
         viewport={{ once: true }}
          whileInView={()=>{skew('.skewElem1')}} className='flex skewElem'>
@@ -306,7 +341,7 @@ return ()=>contextCreate.revert();
       
       </motion.div>
       </Link>
-      <Link href="huawei">
+      <Link className='wavess' href="huawei">
       <motion.div
         viewport={{ once: true }}
          whileInView={()=>{skew('.skewElem2')}} className='flex skewElem'>

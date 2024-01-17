@@ -72,6 +72,7 @@ const Feedback = () => {
               scrollTrigger:{
                 trigger:'#checkCon',
                 start: "top 40%",
+                ease:'power4.easeeOut'
                 // toggleActions:'restart none none reset '
 
               //  // snap: {

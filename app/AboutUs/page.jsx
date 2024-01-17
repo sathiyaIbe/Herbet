@@ -26,26 +26,7 @@ function AboutUs() {
       window.onbeforeunload = function () {
         window.scrollTo(0, 0);
       }
-        // gsap.to('.resourse_texts', {opacity:0})
-        
-        // const lenis = new Lenis({
-        //   duration: 1.2,
-        //   easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
-        //   direction: 'vertical', // vertical, horizontal
-        //   gestureDirection: 'vertical', // vertical, horizontal, both
-        //   smooth: true,
-        //   mouseMultiplier: 1,
-        //   smoothTouch: false,
-        //   touchMultiplier: 2,
-        //   infinite: false,
-        // })
-      
-        // function raf(time) {
-        //     lenis.raf(time)
-        //     requestAnimationFrame(raf)
-        // }
-      
-        // requestAnimationFrame(raf)
+
         const contextCreate=gsap.context(()=>{
 
             var tl = gsap.timeline({
@@ -505,51 +486,7 @@ function keyUp(e){
       }
 
 const ts=gsap.timeline()
-// if(targetElement==1){
-//   ts.set("#green",{autoAlpha:1})
-  
-//   .to('#green',{
-//                     rotation:"-90",
-//                     repeat:0,
-                  
-  
-//                   },0).to("#green1",{
-//                     rotation:90,
-//                     scale:1.5,
-//                   opacity:1,
-//                   y:-100,
-//                   rotation:90,
-//                   },0)
-//                   .to("#green2",{
-//                     rotation:90,
-//                       scale:1,
-//                       opacity:0.4,
-//                       y:0,
-//                       x:0
-//                   },0)
-//                   .to("#green3",{
-//                     rotation:90,
-//                     scale:1,
-//                       opacity:0.4,
-//                       y:0,
-//                       x:0
-//                   },0).to("#green4",{
-//                     rotation:90,
-//                     scale:1,
-//                       opacity:0.4,
-//                       y:0,
-//                       x:0
-//                   },0)
-//                   .to("#text_cont_1",{
-//                     autoAlpha:1,
-//                       ease:Power3.easeInOut,
-//                   },0)
-//                 //   .to("#text_cont_2",{
-                    
-//                 //     yPercent:-0,
-//                 //     x:0
-//                 // },0.1)
-//                 }
+
 if(targetElement==1){
 ts.to('#green',{
                   rotation:"-180",
@@ -815,26 +752,6 @@ function keyDown(e){
                                                 }
 }
 
-                // Observer.create({
-                //   type: "wheel,touch,pointer",
-                //   target:'.another_containaer',
-                //   wheelSpeed: -1,
-               
-                //   onDown: () => {
-                    
-                //     keyDown(targetElement)
-                //     if(targetElement>0){
-                //       targetElement=targetElement-1 
-                //         }
-                //       },
-                //   onUp: () => {
-                    
-                //   animating2&&  keyUp(targetElement)
-                   
-                //   },
-                //   tolerance: 10,
-                //   preventDefault: true
-                // });
               
                 return () => {
                   {/* A return function for killing the animation on component unmount */ }
@@ -867,8 +784,13 @@ function keyDown(e){
                 },
         
               },0)
-
-              
+// gsap.quickSetter("green2",{
+//   scale:1,
+//   opacity:0.4,
+//   y:0,
+//   x:0,
+//   rotation:90,
+// })
               const pinCenter = gsap.timeline(
              
                 {
@@ -941,6 +863,7 @@ function keyDown(e){
                   //         delay: 0,
                   //         },
                   onLeave:()=>{const ts=gsap.timeline()
+                    alert("zz")
                       ts.to('#green',{
                                       rotation:"-180",
                                       repeat:0,
@@ -1160,7 +1083,7 @@ function keyDown(e){
                       //         duration: 0.3,
                       //         delay: 0,
                       //         },
-                      onLeave:()=>{const ts=gsap.timeline()                              
+                      onLeave:()=>{const ts=gsap.timeline()  
                           ts.to('#green',{
                                             rotation:"-360",
                                             repeat:0,
@@ -1356,7 +1279,7 @@ ts.to('#green',{
                           },0.1)
                             }
                             if(targetElement==3){
-                              
+                              alert("jjj")
                               ts.to('#green',{
                                                 rotation:"-360",
                                                 repeat:0,
@@ -1534,30 +1457,7 @@ ts.to('#green',{
                                               }
 }
 
-              // Observer.create({
-              //   type: "touch",
-              //   target:'.another_containaer',
-              //    wheelSpeed: -1,
-             
-              //   onDown: () => {
-                  
-              //     keyDown(targetElement)
-              //     if(targetElement>0){
-              //       targetElement=targetElement-1 
-              //         }
-              //       },
-              //   onUp: () => {
-                  
-              //   animating2&&  keyUp(targetElement)
-                 
-              //   },
-              //   tolerance: 100,
-              //   // preventDefault: true,
-              //   // onPress: self => {
-              //   //   // on touch devices like iOS, if we want to prevent scrolling, we must call preventDefault() on the touchstart (Observer doesn't do that because that would also prevent side-scrolling which is undesirable in most cases)
-              //   //   ScrollTrigger.isTouch && self.event.preventDefault()
-              //   // }
-              // });
+        
               return () => {
                 {/* A return function for killing the animation on component unmount */ }
                
@@ -1724,7 +1624,7 @@ ts.to('#green',{
 </section> 
 </div>  
 
-<section id="main2" className='min-h-screen flex flex-col justify-center bg-[#463838] pt-11 md:pt-0 pb-11'>
+<section id="main2" className='min-h-screen flex flex-col justify-center bg-[#463838] pt-11 mt-32 md:pt-0 pb-11'>
 <div className='md:w-[80%] flex flex-col gap-11 self-center'>
   <div className='hide_profile_text p-2 md:p-0  menus self-center'>
   <h1 className='header_profile pr-6 md:pr-0 '>
@@ -1738,8 +1638,8 @@ together with a global and diverse team.
        initial="hidden"
        whileInView="show"
       viewport={{ once: true }} className='flex flex-col'>
-      <img src='/profile_1.png' className='md:block hidden' alt="pic"/>
-      <img src='/profile_1_mob.png' className='md:hidden w-64'  alt="pic"/>
+      <img src='/profile_1.jpg' className='md:block hidden' alt="pic"/>
+      <img src='/profile_1.jpg' className='md:hidden w-64'  alt="pic"/>
 
       <h1 className='card_header_about menus small'>
       Saravanan Sahadevan
@@ -1753,8 +1653,8 @@ together with a global and diverse team.
        initial="hidden"
        whileInView="show"
       viewport={{ once: true }} className='flex flex-col '>
-        <img src='/profile_1.png' className='md:block hidden ' alt="pic"/>
-      <img src='/profile_1_mob.png' className='md:hidden w-64 md:slef-start self-end'  alt="pic"/>
+        <img src='/profile_2.jpg' className='md:block hidden ' alt="pic"/>
+      <img src='/profile_2.jpg' className='md:hidden w-64 md:slef-start self-end'  alt="pic"/>
       <h1 className='card_header_about md:self-start self-end menus small'>
       Amir Norman
       </h1>
@@ -1767,8 +1667,8 @@ together with a global and diverse team.
        initial="hidden"
        whileInView="show"
       viewport={{ once: true }} className='flex flex-col'>
-       <img src='/profile_1.png' className='md:block hidden ' alt="pic"/>
-      <img src='/profile_1_mob.png' className='md:hidden w-64'  alt="pic"/>
+       <img src='/profile_3.jpg' className='md:block hidden ' alt="pic"/>
+      <img src='/profile_3.jpg' className='md:hidden w-64'  alt="pic"/>
       <h1 className='card_header_about menus small'>
       Farra Khalili
       </h1>

@@ -13,10 +13,10 @@
 }
 
 ::-webkit-scrollbar {
-  width:10px
+  width:10px;
+  background-color:transparent;
 }
 ::-webkit-scrollbar-track {
- background-color: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -102,7 +102,7 @@ html.lenis {
 }
 
 .hero_header_about{
-  @apply text-[24px]  md:text-[68.57px] leading-[42px] md:leading-[88px] font-[ogg] text-[#fff] ;
+  @apply text-[24px]  md:text-[58.57px] leading-[42px] md:leading-[68px] font-[ogg] text-[#fff] ;
 }
 
 .hide_container{
@@ -118,7 +118,7 @@ cursor: none;
 }
 
 .circle_container{
- @apply border border-[#FFD551]  rounded-full h-32 w-32 md:h-[320px] md:w-[320px] flex justify-center ;
+ @apply border border-[#FFD551]  rounded-full h-32 w-32 md:h-[220px] md:w-[220px] flex justify-center ;
  border-width: thin;
  font-weight: lighter;
 }
@@ -288,7 +288,7 @@ cursor: none;
 }
 
 .card_header_about{
-  @apply text-[32px] md:text-[38px]  text-[#fff] font-[founderMedium] leading-[60px] md:leading-[56px] tracking-[0.5px] ;
+  @apply text-[32px] md:text-[32px]  text-[#fff] font-[founderMedium] leading-[60px] md:leading-[56px] tracking-[0.5px] ;
 
 }
 
@@ -330,7 +330,9 @@ cursor: none;
 
 
 
-
+.postion_menu{
+  position:fixed;
+}
 
 
 @keyframes neon2 {

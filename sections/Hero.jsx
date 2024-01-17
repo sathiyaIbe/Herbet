@@ -5,7 +5,8 @@ import SplitType from "split-type";
 import {gsap} from "gsap";
 import { useEffect, useRef } from "react";
 import Link from "next/link";
-
+import scrollToElement from 'scroll-to-element'
+import { useRouter } from 'next/navigation'
 const Hero = () =>{
   const text=["aa", "bb", "ccc", "dddd", "eeee", "ffff", "gggg"]
 
@@ -22,7 +23,7 @@ let circleText3=useRef()
 let wrapperRef=useRef()
 let firstRef=useRef()
 let secondRef=useRef()
-
+const router = useRouter()
 
 // gsap.set(".ball", {xPercent: -50, yPercent: -50});
 
@@ -193,7 +194,9 @@ mm.add("(min-width:768px)",()=>{
 
 
   })
-
+  const getMenu = () => {
+    gsap.to(secondRef,{x:"-100%", duration:1.5})
+  };
 
   return () => ctx3.revert();  //cleaedUp
 
@@ -269,17 +272,52 @@ function heroAnimation(){
 
 function getMenu(){
   
-  gsap.to(secondRef,{x:"-100%", duration:2})
+  gsap.to(secondRef,{x:"-100%", duration:1.5, 
+
+})
   
 }
 
 function getBack(){
   
-  gsap.to(secondRef,{x:"0%", duration:2})
+  gsap.to(secondRef,{x:"0%", duration:1.5, removeClass:'.postion_menu'})
   
 }
+function workOnClick(path,activeCircle,otherCircle2,otherCircle3){
+  const t1=gsap.timeline()
+setTimeout(()=>{
+scrollTo(path)
+  },250);
+  if(path==="AboutUs"){
 
+  t1.to(".hero_hide_container", {duration:0.01, opacity:0})
+  }
+  
+  t1.to(activeCircle, {scale:10, duration:1, opacity:0
+  })
+  t1.to(otherCircle2, {opacity:0
+  },0)
+  t1.to(otherCircle3, {opacity:0
+  },0)
+  .to(secondRef,{opacity:0, duration:1.5,},0)
 
+  .to(secondRef,{x:"0%", duration:0.1})
+  .to(secondRef,{opacity:1, duration:0.1})
+  t1.to(activeCircle, {scale:1,opacity:1,duration:0.1 })
+  t1.to(otherCircle2, {opacity:1
+  })
+  t1.to(otherCircle3, {opacity:1
+  })
+}
+function scrollTo(a){
+if (a==="AboutUs"){
+  const t1=gsap.timeline()
+
+   router.push(a)
+}else{
+  scrollToElement(a);
+}
+}
 
 
   return (
@@ -308,7 +346,7 @@ function getBack(){
         <div  className="flex flex-col justify-center h-[90vh] ">
      
        
-       <div className="flex flex-col self-center justify-center hide_container gap-6   md:max-w-[850px] w-[80%]">
+       <div className="flex flex-col self-center justify-center hide_container gap-6 hero_hide_container  md:max-w-[850px] w-[80%]">
         <div  className="flex flex-col  gap-6  justify-center">
         <h1  id="hero_headers" className="menus hero_header text-center self-center text-[#FFD551]  "><a className="text-white font-black">&#123;</a>Herbet is a brand 
   strategy, design and 
@@ -358,18 +396,18 @@ function getBack(){
 <div className="flex flex-col justify-center md:min-h-[90vh] md:mb-24 ">
 
         <div className="circle_main_containe gap-11 flex  self-center ">
-          <a  onClick={()=>{getBack()}} href="#work" className="circle_container_menu relative  menus menus1 left-[-20%] " >
-            <h1 className="circle_text_menu circle_cursour self-center  ">Work</h1>
+          <a  onClick={()=>{workOnClick("#work", ".menus1",".menus2",".menus3" )}}  className="circle_container_menu relative  menus menus1 left-[-20%] " >
+            <h1 className="circle_text_menu circle_cursour self-center menus_text_1  ">Work</h1>
           </a>
          
-          <Link href={"AboutUs"} className="circle_container_menu relative menus menus3 left-[20%]  " >
-            <h1  className="circle_text_menu circle_cursour self-center">Resources</h1>
-          </Link>
+          <a  onClick={()=>{workOnClick("AboutUs",".menus3", ".menus1",".menus2",)}} className="circle_container_menu relative menus menus3 left-[20%]  " >
+            <h1  className="circle_text_menu circle_cursour self-center">About Us</h1>
+          </a>
 
 
         </div>
         <div className="flex justify-center">
-        <a  onClick={()=>{getBack()}} href="#footer" className="circle_container_menu  circle_cursour relative menus2 menus left-[0%]  "  >
+        <a   onClick={()=>{workOnClick("#footer",".menus2",".menus3", ".menus1",)}}  className="circle_container_menu  circle_cursour relative menus2 menus left-[0%]  "  >
             <h1  className="circle_text_menu self-center ">Contact</h1>
           </a>
           </div>
@@ -378,7 +416,7 @@ function getBack(){
         </div>
         </div>
 
-        <div className="flex flex-col self-center h-fit relative md:hidden  ">
+        <div className="flex flex-col self-center h-fit relative md:hidden">
       
           <div className="circle_container_menu relative   bottom-[-40px] " >
             <h1 className="circle_text_menu self-center  ">Design</h1>

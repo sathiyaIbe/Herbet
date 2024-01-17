@@ -28,7 +28,7 @@ const Page = () =>{
   //   requestAnimationFrame(raf)
   // },[])
   return (
-  <div className='bg-[#463838]'>
+  <div data-lenis-prevent className='bg-[#463838]'>
     {/* <Navbar /> */}
     <Hero />
     <Resource />
